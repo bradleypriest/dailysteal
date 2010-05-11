@@ -3,11 +3,16 @@ body {
   background-color: #4B7399;
   font-size: 14px;
   font-family: Verdana, Helvetica, Arial;
-  list-style-type:none
+  
 
 }
 ul.deal {
+	background-color:#5E8EB5;
 	list-style-type:none;
+	border: solid 1px black;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	display: block;
 	
 	
 	}
