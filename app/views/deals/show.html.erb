@@ -1,0 +1,28 @@
+<p>
+  <b>Title:</b>
+  <%=h @deal.title %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%=h @deal.price %>
+</p>
+
+<p>
+  <b>Fullprice:</b>
+  <%=h @deal.fullprice %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @deal.description %>
+</p>
+
+<p>
+  <b>Site:</b>
+  <%=h @deal.site %>
+</p>
+
+
+<%= link_to 'Edit', edit_deal_path(@deal) %> |
+<%= link_to 'Back', deals_path %>

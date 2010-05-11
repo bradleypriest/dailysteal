@@ -1,0 +1,29 @@
+<h1>Listing Deals</h1>
+
+
+
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Price</th>
+    <th>Fullprice</th>
+    <th>Description</th>
+    <th>Site</th>
+  </tr>
+
+<% @feeds.each do |feed_entry| %>
+  <tr>
+    <td><%=h feed_entry.name %></td>
+    <td><%=h feed_entry.price %></td>
+    <td><%=h feed_entry.fullprice %></td>
+    <td><%=h feed_entry.description %></td>
+    <td><%=h feed_entry.url %></td>
+    <td><%=# link_to 'Show', feed_entry %></td> 
+    <td><%= link_to 'Destroy', feed_entry, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<%=end%>
+</table>
+
+<br />
+
