@@ -1,9 +1,16 @@
+
 body {
   background-color: #4B7399;
   font-size: 14px;
   font-family: Verdana, Helvetica, Arial;
-}
+  list-style-type:none
 
+}
+ul.deal {
+	list-style-type:none;
+	
+	
+	}
 a img {
   margin:-0.5em 0 0 0;
   border: none;
