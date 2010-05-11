@@ -187,4 +187,36 @@ M	db/schema.rb
 Switched to branch 'master'
 ]0;Bradley@bradley-priests-macbook: ~/dev/agg[1m[7m%[m[1m[m                                                                                                                                                                                  [m[m[m[J[01;31m➜ [01;32m [36magg [01;34mgit:([31mmaster[34m) [33m✗[00m[00m[01;34m [00m[Kggit merge otb
 ]0;Bradley@bradley-priests-macbook: git merge otbAlready up-to-date.
-]0;Bradley@bradley-priests-macbook: ~/dev/agg[1m[7m%[m[1m[m                                                                                                                                                                                  [m[m[m[J[01;31m➜ [01;32m [36magg [01;34mgit:([31mmaster[34m) [33m✗[00m[00m[01;34m [00m[K
+]0;Bradley@bradley-priests-macbook: ~/dev/agg[1m[7m%[m[1m[m                                                                                                                                                                                  [m[m[m[J[01;31m➜ [01;32m [36magg [01;34mgit:([31mmaster[34m) [33m✗[00m[00m[01;34m [00m[Kggit add .
+]0;Bradley@bradley-priests-macbook: git add .]0;Bradley@bradley-priests-macbook: ~/dev/agg[1m[7m%[m[1m[m                                                                                                                                                                                  [m[m[m[J[01;31m➜ [01;32m [36magg [01;34mgit:([31mmaster[34m) [33m✗[00m[00m[01;34m [00m[Kgit add .merge otb[9Dcheckout master      otb
+]0;Bradley@bradley-priests-macbook: git checkout otbA	Feeds (Autosaved).txt
+D	app/controllers/deals_controller.rb
+M	app/models/feed_entry.rb
+M	app/views/feeds/index.html.erb
+M	db/schema.rb
+A	typescript
+Switched to branch 'otb'
+]0;Bradley@bradley-priests-macbook: ~/dev/agg[1m[7m%[m[1m[m                                                                                                                                                                                  [m[m[m[J[01;31m➜ [01;32m [36magg [01;34mgit:([31motb[34m) [33m✗[00m[00m[01;34m [00m[Kaatb a  ggit add .
+]0;Bradley@bradley-priests-macbook: git add .]0;Bradley@bradley-priests-macbook: ~/dev/agg[1m[7m%[m[1m[m                                                                                                                                                                                  [m[m[m[J[01;31m➜ [01;32m [36magg [01;34mgit:([31motb[34m) [33m✗[00m[00m[01;34m [00m[Kggit  g   ggit commit -m 'OTB'
+]0;Bradley@bradley-priests-macbook: git commit -m 'OTB'[otb 532c30f] OTB
+ 5 files changed, 229 insertions(+), 46 deletions(-)
+ create mode 100644 Feeds (Autosaved).txt
+ rewrite app/views/feeds/index.html.erb (81%)
+ create mode 100644 typescript
+]0;Bradley@bradley-priests-macbook: ~/dev/agg[1m[7m%[m[1m[m                                                                                                                                                                                  [m[m[m[J[01;31m➜ [01;32m [36magg [01;34mgit:([31motb[34m) [33m✗[00m[00m[01;34m [00m[Kggit t commit -m 'OTB'[15Dadd .          [10Dcheckout otb[12Dadd .       merge otb[9Dcheckout master
+]0;Bradley@bradley-priests-macbook: git checkout mastererror: You have local changes to 'typescript'; cannot switch branches.
+]0;Bradley@bradley-priests-macbook: ~/dev/agg[1m[7m%[m[1m[m                                                                                                                                                                                  [m[m[m[J[01;31m➜ [01;32m [36magg [01;34mgit:([31motb[34m) [33m✗[00m[00m[01;34m [00m[Kggit add .
+]0;Bradley@bradley-priests-macbook: git add .]0;Bradley@bradley-priests-macbook: ~/dev/agg[1m[7m%[m[1m[m                                                                                                                                                                                  [m[m[m[J[01;31m➜ [01;32m [36magg [01;34mgit:([31motb[34m) [33m✗[00m[00m[01;34m [00m[Ks ggit status
+]0;Bradley@bradley-priests-macbook: git status# On branch otb
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	modified:   typescript
+#
+# Changed but not updated:
+#   (use "git add/rm <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	deleted:    app/controllers/deals_controller.rb
+#
+]0;Bradley@bradley-priests-macbook: ~/dev/agg[1m[7m%[m[1m[m                                                                                                                                                                                  [m[m[m[J[01;31m➜ [01;32m [36magg [01;34mgit:([31motb[34m) [33m✗[00m[00m[01;34m [00m[K
