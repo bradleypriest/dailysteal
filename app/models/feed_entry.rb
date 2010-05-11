@@ -29,6 +29,20 @@ class FeedEntry < ActiveRecord::Base
           :url          => entry.url,
           :guid         => entry.id
         )
+        
+      else entry.url = "http://www.offtheback.co.nz/"
+        unless exists? :name => entry.title
+          create!(
+          :name         => entry.title,
+          :description  => entry.summary,
+          :price        => entry.title,
+          :url          => entry.url,
+          :guid         => entry.id,
+          :published    => entry.published
+          )
+        
+        
+        end
       end
     end
   end
