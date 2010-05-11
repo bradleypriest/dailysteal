@@ -4,7 +4,7 @@ class FeedEntry < ActiveRecord::Base
     add_entries(feed.entries)
   end
   
-  def self.update_from_feed_continuously(feed_url, delay_interval = 240.minutes)
+ def self.update_from_feed_continuously(feed_url, delay_interval = 240.minutes)
     feed = Feedzirra::Feed.fetch_and_parse(feed_url)
     add_entries(feed.entries)
     loop do
@@ -19,30 +19,32 @@ class FeedEntry < ActiveRecord::Base
   def self.add_entries(entries)
     entries.each do |entry|
       
-      
-    if entry.url = "http://feed.1-day.co.nz/*"  
-      unless exists? :guid => entry.id
+  unless exists? :name => entry.title     
+    if entry.id.include? "http://www.1-day.co.nz/"
         create!(
           :name         => entry.title[/[^-]+/],
           :description  => entry.summary,
           :price        => entry.title[/\$[0-9\.]+/],
           :url          => entry.url,
+          :published    => entry.published,
+          :picture      => 'http://www.1-day.co.nz/images/products/'+entry.id[/\w+\z/]+'_small.jpg',
           :guid         => entry.id
         )
         
-      else entry.url = "http://www.offtheback.co.nz/"
-        unless exists? :name => entry.title
+      elsif entry.id == "http://www.offtheback.co.nz/"
          unless entry.published<(Time.now-1.day)
           create!(
           :name         => entry.title,
           :description  => entry.summary,
           :price        => entry.summary[/\$[0-9\.]+/],
           :url          => entry.summary[/\/\/images\S+[a-z]/],
-          :guid         => entry.id,
-          :published    => entry.published
+          :published    => entry.published,
+          :picture      => 'http:'+entry.summary[/\/\/images\S+[a-z]/],
+          :guid         => entry.id
+          
           )
+       else 
         
-        end
         end
       end
     end

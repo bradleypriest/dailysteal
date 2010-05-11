@@ -1,0 +1,9 @@
+FeedEntry.update_from_feed("http://feed.1-day.co.nz/1-day")
+
+
+
+FeedEntry.update_from_feed("http://feeds.feedburner.com/offtheback")
+
+
+
+
