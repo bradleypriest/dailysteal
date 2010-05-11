@@ -1,7 +1,5 @@
-<h1>Listing Deals</h1>
-
-
-
+<div id="product-list">
+	<h1>Listing Deals</h1>
 
 <table>
   <tr>
@@ -17,13 +15,12 @@
     <td><%=h feed_entry.name %></td>
     <td><%=h feed_entry.price %></td>
     <td><%=h feed_entry.fullprice %></td>
-    <td><%=h feed_entry.description %></td>
-    <td><%=h feed_entry.url %></td>
-    <td><%=# link_to 'Show', feed_entry %></td> 
-    <td><%= link_to 'Destroy', feed_entry, :confirm => 'Are you sure?', :method => :delete %></td>
+
+    <td><img src= "http://www.1-day.co.nz/images/products/<%=h feed_entry.guid[/\w+\z/]%>_small.jpg"</td>
+ 
   </tr>
-<%=end%>
+ <%end%>
 </table>
-
+</div>
 <br />
-
+  <td><%-# feed_entry.description -%></td>
