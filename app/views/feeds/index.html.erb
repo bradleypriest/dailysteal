@@ -1,26 +1,27 @@
-<div id="product-list">
-	<h1>Listing Deals</h1>
+<div id="deal-list">
+	<h1>Today's Deals'</h1>
 
 <table>
-  <tr>
+  <%#- tr>
     <th>Title</th>
     <th>Price</th>
     <th>Fullprice</th>
     <th>Picture</th>
     <th>Site</th>
-  </tr>
-
+  </tr %>
 <% @feeds.each do |feed_entry| %>
-  <tr>
-    <td><%=h feed_entry.name %></td>
-    <td><%=h feed_entry.price %></td>
-    <td><%=h feed_entry.fullprice %></td>
-
-    <td><img src= "http://www.1-day.co.nz/images/products/<%=h feed_entry.guid[/\w+\z/]%>_small.jpg"</td>
- 
-  </tr>
+<%#- if <%=h feed_entry.guid[a-zA-Z:\/\/a-zA-Z+\.\d\-[a-z]+\.] > = "http://feed.1-day."%>
+  <dl class = "deal" >
+	
+    <dt><%=h feed_entry.name %></dt>
+    <dd><img src= "http://www.1-day.co.nz/images/products/<%=h feed_entry.guid[/\w+\z/]%>_small.jpg" title =<%=h feed_entry.name %> ></dd>
+ 	<dd><%=h feed_entry.price %></dd>
+  </dl>
  <%end%>
 </table>
 </div>
 <br />
   <td><%-# feed_entry.description -%></td>
+
+
+<dd><%#- h feed_entry.fullprice %></dd >

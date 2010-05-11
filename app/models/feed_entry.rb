@@ -18,6 +18,9 @@ class FeedEntry < ActiveRecord::Base
   
   def self.add_entries(entries)
     entries.each do |entry|
+      
+      
+    if entry.url = "http://feed.1-day.co.nz/*"  
       unless exists? :guid => entry.id
         create!(
           :name         => entry.title[/[^-]+/],
@@ -29,4 +32,5 @@ class FeedEntry < ActiveRecord::Base
       end
     end
   end
+end
 end
