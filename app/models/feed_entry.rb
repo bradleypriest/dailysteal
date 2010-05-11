@@ -32,16 +32,17 @@ class FeedEntry < ActiveRecord::Base
         
       else entry.url = "http://www.offtheback.co.nz/"
         unless exists? :name => entry.title
+         unless entry.published<(Time.now-1.day)
           create!(
           :name         => entry.title,
           :description  => entry.summary,
-          :price        => entry.title,
+          :price        => entry.summary,
           :url          => entry.url,
           :guid         => entry.id,
           :published    => entry.published
           )
         
-        
+        end
         end
       end
     end
