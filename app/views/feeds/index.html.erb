@@ -1,18 +1,16 @@
 <div id="deal-list">
-	<h1>Today's Deals'</h1>
+  <table>
 
-<table>
+	<% @feeds.each do |feed_entry| %>
 
-<% @feeds.each do |feed_entry| %>
-
-  <dl class = "deal" >
+  	<dl class = "deal" >
 	
-    <dt><%=h feed_entry.name %></dt>
-    <dd><img src= <%=h feed_entry.picture.gsub(/\s/,'%20')%> height= '150'></dd>
- 	<dd><%=h feed_entry.price %></dd>
+    	<dt><%=h feed_entry.name %></dt>
+    	<dd><img src= <%=h feed_entry.picture.gsub(/\s/,'%20')%> height= '150'></dd>
+ 		<dd><%=h feed_entry.price %></dd>
 	
-  </dl>
- <%end%>
-</table>
+  	</dl>
+ 	<%end%>
+  </table>
 </div>
-<br />
+

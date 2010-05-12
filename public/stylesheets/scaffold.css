@@ -1,20 +1,21 @@
 
 body {
-  background-color: #4B7399;
+  background-color: #8C8C8C;
   font-size: 14px;
   font-family: Verdana, Helvetica, Arial;
   
 
 }
 dl.deal {
-	width:300px;
+	min-width:200px;
 	background-color:#5E8EB5;
 	list-style-type:none;
 	border: solid 1px black;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
-	display: block;
-	
+	display: inline-block;
+	margin: 5px;
+	padding: 10px;
 	
 	}
 img {
@@ -51,10 +52,11 @@ a{
 #container {
   width: 75%;
   margin: 0 auto;
-  background-color: white;
+  background-color: #d4d4d4;
   padding: 20px 20px;
   margin-top: 20px;
-  -webkit-box-shadow: 10px 10px 5px #325D85;
+  margin-bottom: 20px;
+  -webkit-box-shadow: 10px 10px 5px #636363;
 }
 
 
@@ -66,7 +68,7 @@ a{
 	font-size:14px;
 	float:right;
 	 padding: 0.2em 0.5em;
-	 margin: 10px 0 0 0;
+	 margin: -60px 0 0 0;
 	-webkit-box-shadow:inset 7px 5px 5px #325D85
 }
 
