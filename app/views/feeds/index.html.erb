@@ -5,12 +5,13 @@
 
 <% @feeds.each do |feed_entry| %>
 
-  <ul class = "deal" >
+  <dl class = "deal" >
 	
-    <li><%=h feed_entry.name %></li>
-    <li><img src= <%=h feed_entry.picture.gsub(/\s/,'%20')%>></li>
- 	<li><%=h feed_entry.price %></li>
-  </ul>
+    <dt><%=h feed_entry.name %></dt>
+    <dd><img src= <%=h feed_entry.picture.gsub(/\s/,'%20')%> height= '150'></dd>
+ 	<dd><%=h feed_entry.price %></dd>
+	
+  </dl>
  <%end%>
 </table>
 </div>

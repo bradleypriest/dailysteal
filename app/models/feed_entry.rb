@@ -27,8 +27,9 @@ class FeedEntry < ActiveRecord::Base
           :price        => entry.title[/\$[0-9\.]+/],
           :url          => entry.url,
           :published    => entry.published,
-          :picture      => 'http://www.1-day.co.nz/images/products/'+entry.id[/\w+\z/]+'_small.jpg',
-          :guid         => entry.id
+          :picture      => 'http://www.1-day.co.nz/images/products/'+entry.id[/\w+\z/]+'_large.jpg',
+          :guid         => entry.id,
+          :home         => 'http://www.1-day.co.nz'
         )
       elsif entry.summary.include? "http://www.6shooter.co.nz/"
               create!(
@@ -36,7 +37,8 @@ class FeedEntry < ActiveRecord::Base
               :description  => entry.summary,
               :picture      => entry.summary[/.+\.jpg/],
               :price        => entry.summary[/NOW\s(\$\d+\.\d\d)/],
-              :guid         => entry.id
+              :guid         => entry.id,
+              :home         => 'http://www.6shooter.co.nz'
               )
                 
       elsif entry.id == "http://www.offtheback.co.nz/"
@@ -48,7 +50,8 @@ class FeedEntry < ActiveRecord::Base
           :url          => entry.summary[/\/\/images\S+[a-z]/],
           :published    => entry.published,
           :picture      => 'http:'+entry.summary[/\/\/images\S+[a-z]/],
-          :guid         => entry.id
+          :guid         => entry.id,
+          :home         => 'http://www.offtheback.co.nz'
           
           )
   

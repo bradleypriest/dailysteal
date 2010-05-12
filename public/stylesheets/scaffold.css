@@ -6,7 +6,8 @@ body {
   
 
 }
-ul.deal {
+dl.deal {
+	width:300px;
 	background-color:#5E8EB5;
 	list-style-type:none;
 	border: solid 1px black;
@@ -16,30 +17,36 @@ ul.deal {
 	
 	
 	}
+img {
+ 	text-align:center;
+	display:inline;
+}
 a img {
   margin:-0.5em 0 0 0;
   border: none;
 }
-a{
-	color: blue;
-text-decoration:none
 
-}
+
+
 
 ul.logo{
-	font-family:Arial Rounded MT Bold,Verdana, Helvetica, Arial;
+	font-family:Bradley hand ITC TT ,Verdana, Helvetica, Arial;
 	font-variant:small-caps;
 	letter-spacing:0.0em;
 	margin:-10px 0px 0 -30px ;
 	text-decoration:none;
- 	font-size:120px;
+ 	font-size:60px;
 	font-weight:bolder;
- 	color:#4B7399 ;
+ 	color:#4B7399 !important;
 	list-style-type: none;
 	text-shadow: -3px -2px 1px #193754;
 }
 .logo li a{
 	 color:#4B7399; 
+}
+a{
+	color: #4B7399;
+    text-decoration:none
 }
 #container {
   width: 75%;
