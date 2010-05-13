@@ -25,7 +25,7 @@ class FeedEntry < ActiveRecord::Base
           :name         => entry.title[/[^-]+/],
           :description  => entry.summary,
           :price        => entry.title[/\$[0-9\.]+/],
-          :url          => entry.url,
+          :url          => entry.id,
           :published    => entry.published,
           :picture      => 'http://www.1-day.co.nz/images/products/'+entry.id[/\w+\z/]+'_large.jpg',
           :guid         => entry.id,
@@ -37,25 +37,70 @@ class FeedEntry < ActiveRecord::Base
               :description  => entry.summary,
               :picture      => entry.summary[/.+\.jpg/],
               :price        => entry.summary[/NOW\s(\$\d+\.\d\d)/],
+              :url          => entry.summary[/http:\/\/www\.6shooter\.co\.nz\/deals\/\d+/],
               :guid         => entry.id,
               :home         => 'http://www.6shooter.co.nz'
               )
-                
+              
+      elsif entry.summary.include? "http://www.3deals.co.nz"         
+             create!(
+              :name         => entry.title,
+              :description  => entry.summary,
+              :picture      => entry.summary[/http:\/\/\S+\.jpg/],
+              :price        => entry.summary[/\$\d+\.\d\d/],
+              :url          => entry.summary[/http:[\/\d\w.-]+.html/],
+              :guid         => entry.id,
+              :home         => 'http://www.3deals.co.nz'
+              )
+     
+      elsif entry.summary.include? "http://www.snatchadeal.co.nz"         
+             create!(
+              :name         => entry.title,
+              :description  => entry.summary,
+              :picture      => entry.summary[/http:\/\/[\w._ \/]+.jpg/],
+              :price        => entry.summary[/\s\s\$\d+\.\d\d/],
+              :url          => entry.summary[/http:[\/\d\w.-?]+/],
+              :guid         => entry.id,
+              :home         => 'http://www.snatchadeal.co.nz'
+              )      
+     
+      elsif entry.summary.include? "http://www.dealaday.co.nz"         
+            create!(
+              :name         => entry.title,
+              :description  => entry.summary,
+              :picture      => entry.summary[/http:\/\/[\w._ \/]+.jpg/],
+              :price        => entry.summary[/\$\d+\.\d\d/],
+              :url          => 'http://www.dealaday.co.nz',
+              :guid         => entry.id,
+              :home         => 'http://www.dealaday.co.nz'
+              )
+     
+      elsif entry.summary.include? "http://www.catchoftheday.co.nz"         
+          create!(
+              :name         => entry.title,
+              :description  => entry.summary,
+              :picture      => entry.summary[/http:\/\/[\w._ \/]+\/images\/\/[\w._ \/]+jpg/],
+              :price        => entry.summary[/\$\d+\.\d\d/],
+              :url          => 'http://www.catchoftheday.co.nz',
+              :guid         => entry.id,
+              :home         => 'http://www.catchoftheday.co.nz'
+              )      
+     
       elsif entry.id == "http://www.offtheback.co.nz/"
-         unless entry.published<(Time.now-1.day)
+        unless entry.published<(Time.now-1.day)
           create!(
           :name         => entry.title,
           :description  => entry.summary,
           :price        => entry.summary[/\$[0-9\.]+/],
-          :url          => entry.summary[/\/\/images\S+[a-z]/],
+          :url          => 'http://www.offtheback.co.nz',
           :published    => entry.published,
           :picture      => 'http:'+entry.summary[/\/\/images\S+[a-z]/],
           :guid         => entry.id,
           :home         => 'http://www.offtheback.co.nz'
-          
           )
-  
-        end
+          end
+      
+        
       end
     end
   end

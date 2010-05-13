@@ -11,3 +11,9 @@ To run in it's current form run these commands from your console.
 FeedEntry.update_from_feed("http://feed.1-day.co.nz/1-day")|
 FeedEntry.update_from_feed("http://feeds.feedburner.com/offtheback")|
 FeedEntry.update_from_feed("http://pipes.yahoo.com/pipes/pipe.run?_id=7551b7c81b8e4eed6ca5f677bf9fad0a&_render=rss")|
+FeedEntry.update_from_feed("http://pipes.yahoo.com/pipes/pipe.run?_id=4dbdf814e48d1d3a1c5704848dafb34d&_render=rss")|
+FeedEntry.update_from_feed("http://pipes.yahoo.com/pipes/pipe.run?_id=b9a74f43a6f4fcfa0b398f1c4e72daa0&_render=rss")|
+FeedEntry.update_from_feed("http://pipes.yahoo.com/pipes/pipe.run?_id=dc9edde73bea56eb0bc2904050e0b53c&_render=rss")|
+FeedEntry.update_from_feed("http://pipes.yahoo.com/pipes/pipe.run?_id=0f0936783e6023eae277b075bdcee0d3&_render=rss")
+
+

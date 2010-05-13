@@ -5,9 +5,10 @@
 
   	<dl class = "deal" >
 	
-    	<dt><%=h feed_entry.name %></dt>
-    	<dd><img src= <%=h feed_entry.picture.gsub(/\s/,'%20')%> height= '150'></dd>
- 		<dd><%=h feed_entry.price %></dd>
+    	<dd><%=h feed_entry.name %></dd>
+    	<dd><a href=<%=h feed_entry.url %>><img src= <%=h feed_entry.picture.gsub(/\s/,'%20')%> title=<%=h feed_entry.name %> alt =<%=h feed_entry.name %> height='150'></a></dd>
+		<dr><%=h feed_entry.price %></dr>
+ 		
 	
   	</dl>
  	<%end%>
