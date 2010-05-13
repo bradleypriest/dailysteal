@@ -85,7 +85,18 @@ class FeedEntry < ActiveRecord::Base
               :guid         => entry.id,
               :home         => 'http://www.catchoftheday.co.nz'
               )      
-     
+
+      elsif entry.summary.include? "http://www.thedeal.co.nz"         
+          create!(
+              :name         => entry.title,
+              :description  => entry.summary,
+              :picture      => entry.summary[/http:\/\/[\w._% \/]+.jpg/i],
+              :price        => entry.summary[/\$[\d,]+\.\d\d/],
+              :url          => entry.summary[/http:[\/\d\w.?=-]+/],
+              :guid         => entry.id,
+              :home         => 'http://www.thedeal.co.nz'
+                    )
+                         
       elsif entry.id == "http://www.offtheback.co.nz/"
         unless entry.published<(Time.now-1.day)
           create!(
@@ -100,7 +111,11 @@ class FeedEntry < ActiveRecord::Base
           )
           end
       
-        
+        else   
+           create!(
+            :name         => entry.title,
+            :description  => entry.summary
+            )
       end
     end
   end
