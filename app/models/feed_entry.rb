@@ -21,6 +21,7 @@ class FeedEntry < ActiveRecord::Base
       
   unless exists? :name => entry.title     
     if entry.id.include? "http://www.1-day.co.nz/"
+      unless exists? :name => entry.title[/[^-]+/]
         create!(
           :name         => entry.title[/[^-]+/],
           :description  => entry.summary,
@@ -31,6 +32,7 @@ class FeedEntry < ActiveRecord::Base
           :guid         => entry.id,
           :home         => 'http://www.1-day.co.nz'
         )
+        end
       elsif entry.summary.include? "http://www.6shooter.co.nz/"
               create!(
               :name         => entry.title,
