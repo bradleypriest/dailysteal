@@ -18,3 +18,7 @@ FeedEntry.update_from_feed("http://pipes.yahoo.com/pipes/pipe.run?_id=0f0936783e
 FeedEntry.update_from_feed("http://pipes.yahoo.com/pipes/pipe.run?_id=a32754f374426e06785e6c1bec9b3124&_render=rss")
 
 
+
+FeedEntry.update_from_feed("http://pipes.yahoo.com/pipes/pipe.run?_id=dd6395d74f34449af130b258b43336cd&_render=rss")
+
+
