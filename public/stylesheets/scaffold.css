@@ -1,6 +1,14 @@
 li{
 	list-style-type: none;
 }	
+dd{
+	margin-left:0px;
+}
+div dd a,div dr a{
+	display:block;
+	color:#636B8A;
+	font-weight:normal;
+}
 body {
   background-color: #707070;
   font-size: 14px;
@@ -16,36 +24,34 @@ a img {
   border: none;
 }
 #container {
-  width: 796px;
+  width: 838px;
   margin:auto;
   background-color: #E6E6FF;
   padding: 20px 20px;
   margin-top: 20px;
   margin-bottom: 20px;
   border:1px solid black;
-  -webkit-box-shadow: 2px 2px 2px #636363;
-  -moz-box-shadow: 2px 2px 2px #636363;
+  box-shadow: 2px 2px 2px #636363;
+  
 }
-dl.deal{
+#deal{
 	margin:7px 7px 7px 7px;
-	width:220px;
+	width:240px;
+	
 	padding: 10px;
 	background-color:#ffffff;
 	list-style-type:none;	
 	display: inline-block;
 	text-align:center;
 	border: solid 1px black;
-	position: relative;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	-webkit-box-shadow: 0.5px 0.5px 1px #636363;
-	-moz-box-shadow: 0.5px 0.5px 1px #636363;
+	
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+	-webkit-box-shadow: 0px 0px 2px #636363;
+	-moz-box-shadow: 0px 0px 2px #636363;
 	
 	}
-dd{
-
-	margin-left:0px;
-}	
+	
 
 
 /*ul.logo{
@@ -79,13 +85,13 @@ dd{
 	
 	background-color: white;
 	border:solid 1px black; 
-	-webkit-box-shadow: 1px 1px 1px #325D85;
-	-moz-box-shadow: 1px 1px 1px #325D85;
+	-webkit-box-shadow: 0.5px 0.5px 2px #325D85;
+	-moz-box-shadow: 0.5px 0.5px 2px #325D85;
 	text-shadow: 1px 1px 2px #C8C8FA;
 	font-size:14px;
 	float:right;
 	 padding: 0em 0.2em;
-	 margin: -100px 0px 0 0;
+	 margin: -120px 0px 0 0;
 	
 	
 }
