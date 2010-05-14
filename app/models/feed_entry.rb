@@ -41,9 +41,10 @@ class FeedEntry < ActiveRecord::Base
               :price        => entry.summary[/NOW\s(\$\d+\.\d\d)/],
               :url          => entry.summary[/http:\/\/www\.6shooter\.co\.nz\/deals\/\d+/],
               :guid         => entry.id,
-              :home         => 'http://www.6shooter.co.nz'
-              )
-              
+              :home         => 'http://www.6shooter.co.nz',
+              :published    => (Time.now.hour+12)>12? Date.today+12.hours : Date.today-12.hours
+             )
+             
       elsif entry.summary.include? "http://www.3deals.co.nz"         
              create!(
               :name         => entry.title,
@@ -52,7 +53,8 @@ class FeedEntry < ActiveRecord::Base
               :price        => entry.summary[/\$\d+\.\d\d/],
               :url          => entry.summary[/http:[\/\d\w.-]+.html/],
               :guid         => entry.id,
-              :home         => 'http://www.3deals.co.nz'
+              :home         => 'http://www.3deals.co.nz',
+              :published    => (Time.now.hour+12)>12? Date.today+12.hours : Date.today-12.hours
               )
      
       elsif entry.summary.include? "http://www.snatchadeal.co.nz"         
@@ -63,7 +65,8 @@ class FeedEntry < ActiveRecord::Base
               :price        => entry.summary[/\s\s\$\d+\.\d\d/],
               :url          => entry.summary[/http:[\/\d\w.-?]+/],
               :guid         => entry.id,
-              :home         => 'http://www.snatchadeal.co.nz'
+              :home         => 'http://www.snatchadeal.co.nz',
+              :published    => (Time.now.hour+12)>11? Date.today+11.hours : Date.today-13.hours
               )      
      
       elsif entry.summary.include? "http://www.dealaday.co.nz"         
@@ -74,7 +77,8 @@ class FeedEntry < ActiveRecord::Base
               :price        => entry.summary[/\$\d+\.\d\d/],
               :url          => 'http://www.dealaday.co.nz',
               :guid         => entry.id,
-              :home         => 'http://www.dealaday.co.nz'
+              :home         => 'http://www.dealaday.co.nz',
+              :published    => (Time.now.hour+12)>10? Date.today+10.hours : Date.today-14.hours
               )
      
       elsif entry.summary.include? "http://www.catchoftheday.co.nz"         
@@ -85,7 +89,9 @@ class FeedEntry < ActiveRecord::Base
               :price        => entry.summary[/\$\d+\.\d\d/],
               :url          => 'http://www.catchoftheday.co.nz',
               :guid         => entry.id,
+              :published    => (Time.now.hour+12)>12? Date.today+12.hours : Date.today-12.hours,
               :home         => 'http://www.catchoftheday.co.nz'
+              
               )      
 
       elsif entry.summary.include? "http://www.thedeal.co.nz"         
@@ -96,6 +102,7 @@ class FeedEntry < ActiveRecord::Base
               :price        => entry.summary[/\$[\d,]+\.\d\d/],
               :url          => entry.summary[/http:[\/\d\w.?=-]+/],
               :guid         => entry.id,
+              :published    => (Time.now.hour+12)>9? Date.today+9.hours : Date.today-15.hours,
               :home         => 'http://www.thedeal.co.nz'
                     )
                          

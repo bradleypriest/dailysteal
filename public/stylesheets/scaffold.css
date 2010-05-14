@@ -27,24 +27,25 @@ a img {
   -moz-box-shadow: 2px 2px 2px #636363;
 }
 dl.deal{
-	margin:7px;
-	height:220px;
-	width:250px;
+	margin:7px 7px 7px 7px;
+	width:220px;
+	padding: 10px;
 	background-color:#ffffff;
-	list-style-type:none;
-	padding: 10px;	
-	display: inline-table;
+	list-style-type:none;	
+	display: inline-block;
 	text-align:center;
-	position:relative;
 	border: solid 1px black;
+	position: relative;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	-webkit-box-shadow: 0.5px 0.5px 1px #636363;
 	-moz-box-shadow: 0.5px 0.5px 1px #636363;
+	
 	}
 dd{
-	margin:0px;
+	margin-left:0px;
 }	
+
 
 /*ul.logo{
 	font-family:Bradley hand ITC TT ,Verdana, Helvetica, Arial;
