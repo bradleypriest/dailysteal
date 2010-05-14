@@ -7,7 +7,8 @@
 	
     	<dd><%=h feed_entry.name %></dd>
     	<dd><a href=<%=h feed_entry.url %>><img src= <%=h feed_entry.picture.gsub(/\s/,'%20')%> title=<%=h feed_entry.name %> alt =<%=h feed_entry.name %> height='150'></a></dd>
-		<dr><%=h feed_entry.price %></dr>
+		<dr><%=h feed_entry.price %></dr><br/>
+		<dr><%=h feed_entry.home%></dr>
  		
 	
   	</dl>
