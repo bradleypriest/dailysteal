@@ -85,7 +85,7 @@ class FeedEntry < ActiveRecord::Base
           create!(
               :name         => entry.title,
               :description  => entry.summary,
-              :picture      => entry.summary[/http:\/\/[\w._ \/]+\/images\/\/[\w._ \/]+jpg/],
+              :picture      => entry.summary[/http:[\w.\/][^38]+jpg/],
               :price        => entry.summary[/\$\d+\.\d\d/],
               :url          => 'http://www.catchoftheday.co.nz',
               :guid         => entry.id,
