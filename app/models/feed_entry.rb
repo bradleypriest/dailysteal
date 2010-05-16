@@ -74,7 +74,7 @@ class FeedEntry < ActiveRecord::Base
               :name         => entry.title,
               :description  => entry.summary,
               :picture      => entry.summary[/http:\/\/[\w._ \/]+.jpg/],
-              :price        => entry.summary[/\$\d+\.\d\d/],
+              :price        => entry.summary[/\$[\d,]+\.\d\d/],
               :url          => 'http://www.dealaday.co.nz',
               :guid         => entry.id,
               :home         => 'Dealaday.co.nz',
