@@ -61,7 +61,7 @@ class FeedEntry < ActiveRecord::Base
              create!(
               :name         => entry.title,
               :description  => entry.summary,
-              :picture      => entry.summary[/http:\/\/[\w._ \/]+.jpg/],
+              :picture      => entry.summary[/http:\/\/[\w._ \/]+.(jpg|gif)/],
               :price        => entry.summary[/\s\s\$\d+\.\d\d/],
               :url          => entry.summary[/http:[\/\d\w.-?]+/],
               :guid         => entry.id,
