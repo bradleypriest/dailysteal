@@ -128,6 +128,17 @@ class FeedEntry < ActiveRecord::Base
               :published    => (Time.now.hour+12)>12? Date.today+12.hours : Date.today-12.hours,
               :home         => 'Ziwi.co.nz'
                                       ) 
+    elsif entry.summary.include? "mightyape.co.nz"
+         create!(
+          :name         => entry.title,
+          :description  => entry.summary,
+          :picture      => entry.summary[/http:\/\/media[\w._% \/-]+/],
+          :price        => entry.summary[/\$[\d,]+\.\d\d/],
+          :url          => entry.summary[/http:[\/\d\w.=-]+/],
+          :guid         => entry.id,
+          :published    => (Time.now.hour+12)>10? Date.today+10.hours : Date.today-14.hours,
+          :home         => 'MightyApe.co.nz'
+                                      )
       elsif entry.id == "http://www.offtheback.co.nz/"
         unless entry.published<(Time.now-1.day)
           create!(
