@@ -6,5 +6,6 @@ doc/app
 db/*.sqlite3
 *.swp
 *~
+config/database.yml
 .DS_Store
 Feeds (Autosaved).txt
