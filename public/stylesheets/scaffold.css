@@ -73,6 +73,7 @@ a img {
 		float:left;
 		display: block;
 		padding: 8px 16px;
+		
 		text-decoration: none;
 		font-weight: bold;
 		color: #069;
@@ -90,6 +91,7 @@ a img {
 	
 	margin:7px 7px 7px 7px;
 	width:240px;
+
 	padding: 10px;
 	background-color:#ffffff;
 	list-style-type:none;	
@@ -102,7 +104,7 @@ a img {
 	-moz-box-shadow:inset 0px 0px 2px #636363;
 	
 	}
-	
+
 .hidden{
 	display:none;
 }

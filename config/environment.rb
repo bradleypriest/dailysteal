@@ -16,6 +16,8 @@ Rails::Initializer.run do |config|
 
   # Specify gems that this application depends on and have them installed with rake gems:install
   config.gem "pauldix-feedzirra", :lib => "feedzirra", :source => "http://gems.github.com"
+  config.gem 'javan-whenever', :lib => false, :source => 'http://gems.github.com'
+  
   # config.gem "scrapi"
   # config.gem "bj"
   # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"

@@ -14,4 +14,19 @@ class FeedsController < ApplicationController
     @feed = Feed.find(params[:id])
   end
   
+  def yesterday
+    @feeds = FeedEntry.all
+
+    respond_to do |format|
+      format.html # yesterday.html.erb
+      format.xml  { render :xml => @feed_entries }
+    end
+  end
+  
+  def help
+  end
+
+  def about
+  end
+  
 end
