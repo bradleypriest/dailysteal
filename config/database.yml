@@ -19,8 +19,8 @@ test:
     adapter: mysql
     encoding: utf8
     reconnect: false
-    database: something_production
+    database: agg_production
     pool: 5
     username: root
-    password: 
+    password: tauranga
     socket: /opt/local/var/run/mysql5/mysqld.sock
