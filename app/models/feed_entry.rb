@@ -4,11 +4,11 @@ class FeedEntry < ActiveRecord::Base
     add_entries(feed.entries)
   end
   
- def self.update_from_feed_continuously(feed_url, delay_interval = 1.minutes)
+ def self.update_from_feed_continuously(feed_url, delay_interval = 10.minutes)
     feed = Feedzirra::Feed.fetch_and_parse(feed_url)
     add_entries(feed.entries)
     loop do
-      sleep delay_interval
+      sleep delay_interval.to_i
       feed = Feedzirra::Feed.update(feed)
       add_entries(feed.new_entries) if feed.updated?
     end
@@ -64,7 +64,7 @@ class FeedEntry < ActiveRecord::Base
              create!(
               :name         => entry.title,
               :description  => entry.summary,
-              :picture      => entry.summary[/http:\/\/[\w._ \/]+.(jpg|gif)/],
+              :picture      => entry.summary[/http:\/\/[\w._ \/-]+.(jpg|gif)/],
               :price        => entry.summary[/\s\s\$\d+\.\d\d/],
               :url          => entry.summary[/http:[\/\d\w.-?]+/],
               :guid         => entry.id,
@@ -90,7 +90,7 @@ class FeedEntry < ActiveRecord::Base
           create!(
               :name         => entry.title,
               :description  => entry.summary,
-              :picture      => entry.summary[/http:[\w.\/][^38]+jpg/],
+              :picture      => entry.summary[/http:[\w.\/][^38]+(jpg|gif)/],
               :price        => entry.summary[/\$\d+\.\d\d/],
               :url          => 'http://www.catchoftheday.co.nz',
               :guid         => entry.id,

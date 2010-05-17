@@ -12,5 +12,5 @@ FeedEntry.update_from_feed("http://pipes.yahoo.com/pipes/pipe.run?_id=dc9edde73b
 FeedEntry.update_from_feed("http://pipes.yahoo.com/pipes/pipe.run?_id=0f0936783e6023eae277b075bdcee0d3&_render=rss")|
 FeedEntry.update_from_feed("http://pipes.yahoo.com/pipes/pipe.run?_id=a32754f374426e06785e6c1bec9b3124&_render=rss")|
 FeedEntry.update_from_feed("http://pipes.yahoo.com/pipes/pipe.run?_id=dd6395d74f34449af130b258b43336cd&_render=rss")|
-FeedEntry.update_from_feed("http://pipes.yahoo.com/pipes/pipe.run?_id=0038f307a5fc7bf87d5eb31d8bb7f462&_render=rss")|
-FeedEntry.update_from_feed("http://pipes.yahoo.com/pipes/pipe.run?_id=5e52b383e457dc4384246354943dee18&_render=rss")
+FeedEntry.update_from_feed("http://pipes.yahoo.com/pipes/pipe.run?_id=5e52b383e457dc4384246354943dee18&_render=rss")|
+FeedEntry.update_from_feed("http://pipes.yahoo.com/pipes/pipe.run?_id=0038f307a5fc7bf87d5eb31d8bb7f462&_render=rss")
