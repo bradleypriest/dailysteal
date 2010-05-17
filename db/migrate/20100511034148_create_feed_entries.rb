@@ -7,6 +7,10 @@ class CreateFeedEntries < ActiveRecord::Migration
       t.string :price
       t.string :fullprice
       t.string :guid
+      t.datetime :published
+      t.string :picture
+      t.string :home
+      t.string :home_url
 
       t.timestamps
     end

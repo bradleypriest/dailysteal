@@ -21,7 +21,19 @@ ActiveRecord::Schema.define(:version => 20100511110435) do
     t.datetime "updated_at"
   end
 
-# Could not dump table "feed_entries" because of following StandardError
-#   Unknown type '' for column ''
+  create_table "feed_entries", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "url"
+    t.string   "price"
+    t.string   "fullprice"
+    t.string   "guid"
+    t.datetime "published"
+    t.string   "picture"
+    t.string   "home"
+    t.string   "home_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
