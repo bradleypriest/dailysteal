@@ -9,8 +9,10 @@
 <script type="text/javascript" src="http://www.shawnolson.net/scripts/public_smo_scripts.js"></script>
 </head>
 <body>
+	<%= render 'layouts/header' %>
 	<div id="container">
-     <%= render 'layouts/header' %>
+	<%= render 'layouts/nav' %>
+     
 		<p style="color: green"><%= flash[:notice] %></p>
 
 		<div id="content">
