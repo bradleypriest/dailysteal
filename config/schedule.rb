@@ -6,7 +6,7 @@ every 1.day, :at => '12:01 am' do
 #Daysale
   runner 'FeedEntry.update_from_feed("http://pipes.yahoo.com/pipes/pipe.run?_id=dd6395d74f34449af130b258b43336cd&_render=rss&urlinput1=http%3A%2F%2Fwww.daysale.co.nz%2F")'
 #6Shooter
-  runner 'FeedEntry.update_from_feed("http://pipes.yahoo.com/pipes/pipe.run?_id=7551b7c81b8e4eed6ca5f677bf9fad0a&_render=rss&urlinput1=http%3A%2F%2Fwww.6shooter.co.nz'
+  runner 'FeedEntry.update_from_feed("http://pipes.yahoo.com/pipes/pipe.run?_id=7551b7c81b8e4eed6ca5f677bf9fad0a&_render=rss&urlinput1=http%3A%2F%2Fwww.6shooter.co.nz")'
 #Catchoftheday
   runner 'FeedEntry.update_from_feed("http://pipes.yahoo.com/pipes/pipe.run?_id=0f0936783e6023eae277b075bdcee0d3&_render=rss&urlinput1=http%3A%2F%2Fwww.catchoftheday.co.nz%2F")'
 #3deals
