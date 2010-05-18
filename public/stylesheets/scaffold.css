@@ -102,34 +102,41 @@ a img {
 	
 	margin:7px 7px 7px 7px;
 	width:240px;
-	height:200px;
+	height:205px;
 	padding: 10px;
-	
 	background-color:#ffffff;
 	list-style-type:none;	
 	display: inline-block;
 	text-align:center;
 	border: solid 1px black;
-	-moz-border-radius: 7px;
-	-webkit-border-radius: 7px;
+	/*-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;*/
 	
 	
 	}
-dt.deal_price{
-	-moz-border-radius-bottomright:10px;
-	-moz-border-radius-topright:10px;
-	background-color:#9C9C9C;
+.deal_price{
+	background-color:red;
+	color:white;
 	font-size:130%;
 	font-weight:bold;
-	margin:-150px 0 0 -10px;
+	margin:-28px 0 0 144px;
+	min-width:84px;
 	opacity:0.8;
-	padding:6px 10px;
+	padding:4px 10px;
 	position:absolute;
 }
-dd.deal_site{
+.deal_site{
+	background-color:#9C9C9C;
+	font-size:9pt;
+	margin:-179px 0 0 160px;
+	opacity:0.8;
+	padding-bottom:6px;
 	position:absolute;
-	margin:10px 0 0 160px;
+	width:86px;
 
+}
+.deal_name{
+	
 }
 .hidden{
 	display:none;
