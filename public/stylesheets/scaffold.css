@@ -102,8 +102,9 @@ a img {
 	
 	margin:7px 7px 7px 7px;
 	width:240px;
-
+	height:200px;
 	padding: 10px;
+	
 	background-color:#ffffff;
 	list-style-type:none;	
 	display: inline-block;
@@ -114,38 +115,27 @@ a img {
 	
 	
 	}
+dt.deal_price{
+	-moz-border-radius-bottomright:10px;
+	-moz-border-radius-topright:10px;
+	background-color:#9C9C9C;
+	font-size:130%;
+	font-weight:bold;
+	margin:-150px 0 0 -10px;
+	opacity:0.8;
+	padding:6px 10px;
+	position:absolute;
+}
+dd.deal_site{
+	position:absolute;
+	margin:10px 0 0 160px;
 
+}
 .hidden{
 	display:none;
 }
 
-/*ul.logo{
-	font-family:Bradley hand ITC TT ,Verdana, Helvetica, Arial;
-	font-variant:small-caps;
-	letter-spacing:0.0em;
-	margin:-10px 0px 0 -30px ;
-	text-decoration:none;
- 	font-size:60px;
-	font-weight:bolder;
- 	color:#4B7399 !important;
-	list-style-type: none;
-	text-shadow: -3px -2px 1px #193754;
-}
-*/
 
-
-/*
-.navigation li a {  
-  font-weight: bold;
-  text-decoration: none;
-  color:black ;
-  }
-.navigation li a:hover {
-  color:#709DFF;
-  text-shadow:none;
-  
-}
-*/
 #footer{
 	text-align:center;
 }
