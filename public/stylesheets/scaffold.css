@@ -124,6 +124,9 @@ a img {
 
 }
 .deal_name{
+	text-align:center;
+}
+.deal_name a{
 	
 }
 .hidden{
