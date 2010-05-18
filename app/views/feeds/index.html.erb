@@ -9,7 +9,7 @@
 	
     	<dd><a href=<%=h feed_entry.url %>> <%=h feed_entry.name.length >65? feed_entry.name[0..65]<<'...': feed_entry.name unless feed_entry.name.nil? %></a> </dd>
     	<dd><a href=<%=h feed_entry.url %>> <img src= <%=h feed_entry.picture.gsub(/\s/,'%20')%> title=<%=h feed_entry.name %> alt =<%=h feed_entry.name %> height='150'></a></dd>
-		<dr><%=h feed_entry.price %></dr><br/>
+		<dr>Was <%=h feed_entry.fullprice %> Today <%=h feed_entry.price %></dr><br/>
 		<dr><a href=<%=h feed_entry.home_url %>> <%=h feed_entry.home%> </a></dr>
  		
 	
