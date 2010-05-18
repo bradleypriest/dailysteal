@@ -1,8 +1,8 @@
-every 1.day, :at => '11:21 pm' do
+every 1.day, :at => '11:29 pm' do
 #1-day
   runner 'FeedEntry.update_from_feed("http://feed.1-day.co.nz/1-day")'
 #Ziwi  
-
+  runner 'FeedEntry.update_from_feed("http://pipes.yahoo.com/pipes/pipe.run?_id=0038f307a5fc7bf87d5eb31d8bb7f462&_render=rss&urlinput1=http://www.ziwi.co.nz/one_day_deals.php")'
 #Daysale
   runner 'FeedEntry.update_from_feed("http://pipes.yahoo.com/pipes/pipe.run?_id=dd6395d74f34449af130b258b43336cd&_render=rss&urlinput1=http://www.daysale.co.nz")'
 #6Shooter
@@ -13,12 +13,12 @@ every 1.day, :at => '11:21 pm' do
   runner 'FeedEntry.update_from_feed("http://pipes.yahoo.com/pipes/pipe.run?_id=4dbdf814e48d1d3a1c5704848dafb34d&_render=rss&urlinput1=http://www.3deals.co.nz/site/index.php")'
 end
 
-every 1.day, :at => '11:08 pm' do
+every 1.day, :at => '11:29 pm' do
 #Snatchadeal
   runner 'FeedEntry.update_from_feed("http://pipes.yahoo.com/pipes/pipe.run?_id=b9a74f43a6f4fcfa0b398f1c4e72daa0&_render=rss&urlinput1=www.snatchadeal.co.nz")'
 end
 
-every 1.day, :at => '11:08 pm' do
+every 1.day, :at => '11:29 pm' do
 #MightyApe
   runner 'FeedEntry.update_from_feed("http://pipes.yahoo.com/pipes/pipe.run?_id=5e52b383e457dc4384246354943dee18&_render=rss&urlinput1=www.mightyape.co.nz/daily-deals")'
 #Dealaday
@@ -26,7 +26,7 @@ every 1.day, :at => '11:08 pm' do
 end
 
 
-every 1.day, :at => '11:08 pm' do
+every 1.day, :at => '11:29 pm' do
 #OffTheBack
   runner 'FeedEntry.update_from_feed("http://pipes.yahoo.com/pipes/pipe.run?_id=f8139b96a3d826d39ed45d8e2f765845&_render=rss&urlinput1=feeds.feedburner.com/offtheback")'
 #TheDeal??
