@@ -102,6 +102,9 @@ a img {
 	
 	
 	}
+#deal a img{
+	text-align:center;
+}
 .deal_price{
 	background-color:red;
 	color:white;
