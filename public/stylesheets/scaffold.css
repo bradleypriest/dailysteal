@@ -25,10 +25,10 @@ a img {
   border: none;
 }
 #content {
-  width: 920px;
+  width: 1120px;
   margin:auto;
   background-color: #F2F2F2;
-  padding: 10px 10px;
+  padding: 5px;
 
   -webkit-box-shadow: 0px 0px 2px #636363;
   -moz-box-shadow: 0px 0px 2px #636363;
@@ -87,12 +87,11 @@ a img {
 }
 
 #deal{
-	
-	margin:7px 7px 7px 7px;
+	background-color:#ffffff;
+	margin:7px;
 	width:240px;
 	height:205px;
 	padding: 10px;
-	background-color:#ffffff;
 	list-style-type:none;	
 	display: inline-block;
 	text-align:center;
@@ -103,7 +102,7 @@ a img {
 	
 	}
 #deal a img{
-	text-align:center;
+	margin:0;
 }
 .deal_price{
 	background-color:red;
