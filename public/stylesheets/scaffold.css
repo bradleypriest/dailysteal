@@ -56,27 +56,25 @@ a img {
 	font-weight:bold;
 }
 #navigation {
-		-webkit-box-shadow:1px 2px 2px #C9C9C9;
-		-moz-box-shadow:1px 2px 2px #C9C9C9;
-		height:30px;
+		-webkit-box-shadow:0px 2px 6px #C9C9C9;
+		-moz-box-shadow:0px 2px 6px #C9C9C9;
+		height:25px;
 		background-color: #FF8000;
 
 	}
 	
 #navigation ul{
-		margin: 0px;				
+		margin: 0 5px 0 0;				
 		padding: 0px;
-		line-height:30px;
+		line-height:25px;
 		text-align:right;
 }
 
 #navigation li {
 		padding:8px 10px;	
 		text-decoration: none;
-		font-weight: bold;
-	
+		font-weight:bold;
 		display:inline;
-
 		}
 #navigation li a{
 		color:white;
