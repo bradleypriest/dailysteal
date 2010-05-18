@@ -24,21 +24,20 @@ a{
 a img {
   border: none;
 }
-#container {
-  width: 838px;
+#content {
+  width: 920px;
   margin:auto;
   background-color: #F2F2F2;
-  padding: 20px 40px;
-  margin-top: 40px;
-  margin-bottom: 20px;
-  
+  padding: 10px 10px;
+
   -webkit-box-shadow: 0px 0px 2px #636363;
   -moz-box-shadow: 0px 0px 2px #636363;
   
 }
 
 .logo {
-	margin:0px 0 0 150px;
+	text-align:center;
+	margin-top:-10px;
 
 }
 .logo li a{
@@ -59,25 +58,16 @@ a img {
 #navigation {
 		-webkit-box-shadow:1px 2px 2px #C9C9C9;
 		-moz-box-shadow:1px 2px 2px #C9C9C9;
-		font-size:105%;
-		height:40px;
+		height:30px;
 		background-color: #FF8000;
-		margin-top:-40px;
-		margin-left:-41px;
-		width:109.8%;
-		float:left;
-		
-		-moz-border-radius-topright:20px;
-		-moz-border-radius-topleft:20px;
-		-webkit-border-top-right-radius:20px;
-		-webkit-border-top-left-radius:20px;
-	
+
 	}
 	
 #navigation ul{
-		margin: 0px;
+		margin: 0px;				
 		padding: 0px;
-		line-height:40px;
+		line-height:30px;
+		text-align:right;
 }
 
 #navigation li {
