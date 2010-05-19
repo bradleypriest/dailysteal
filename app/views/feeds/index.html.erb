@@ -1,7 +1,6 @@
 <div id="deal-list">
   
-
-	<% @feeds.each do |feed_entry| %>
+	<% @feeds.sort_by { |feed_entry| feed_entry[:price]}.each do |feed_entry| %>
 
 	<% if feed_entry.published>=Time.now-1.day %> 
 
