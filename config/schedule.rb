@@ -10,7 +10,7 @@ every 1.day, :at => '12:01 am' do
 #Catchoftheday
   runner 'FeedEntry.update_from_feed("http://pipes.yahoo.com/pipes/pipe.run?_id=0f0936783e6023eae277b075bdcee0d3&_render=rss&urlinput1=http://www.catchoftheday.co.nz")'
 #3deals
-  runner 'FeedEntry.update_from_feed("http://pipes.yahoo.com/pipes/pipe.run?_id=4dbdf814e48d1d3a1c5704848dafb34d&_render=rss&urlinput1=http://www.3deals.co.nz")'
+  runner 'FeedEntry.update_from_feed("http://pipes.yahoo.com/pipes/pipe.run?_id=4dbdf814e48d1d3a1c5704848dafb34d&_render=rss&urlinput1=http://www.3deals.co.nz/site/index.php")'
 end
 
 every 1.day, :at => '11:01 pm' do
