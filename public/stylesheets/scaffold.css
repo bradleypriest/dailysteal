@@ -12,7 +12,8 @@ div dd a,div dr a{
 body {
   background-color: #FFFFF7;
   font-size: 14px;
-  font-family: Verdana, Helvetica, Arial;
+  font-family: Trebuchet MS, Helvetica, Arial;
+  letter-spacing:0.02em;
   margin:0px;
 }
 
@@ -49,6 +50,7 @@ a img {
 	margin-right:-20px;
 }
 .sub-logo {
+	font-family:Tahoma;
 	float:center;
 	margin-left:10px;
 	margin-top:-24px;
