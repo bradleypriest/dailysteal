@@ -140,6 +140,7 @@ a img {
 
 }
 .deal_name{
+	width:240px;
 	text-align:center;
 }
 .deal_name a{

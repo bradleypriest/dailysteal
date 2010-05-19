@@ -177,7 +177,7 @@ class FeedEntry < ActiveRecord::Base
           #:fullprice    => entry.summary[/\$\d+\.\d\d(?!.+normal)/],
           :url          => 'http://www.offtheback.co.nz',
           :published    => entry.published,
-          :picture      => entry.summary[/http:\/\/[\w._% \/-]+.jpg/i],
+          :picture      => entry.summary[/http:\/\/[\w._% \/-]+.(jpg|bmp)/i],
           :guid         => entry.id,
           :home         => 'OffTheBack',
           :home_url     => 'http://www.offtheback.co.nz/deals',
