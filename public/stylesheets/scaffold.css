@@ -132,12 +132,15 @@ a img {
 .deal_site{
 	background-color:#9C9C9C;
 	font-size:9pt;
-	margin:-179px 0 0 160px;
+	margin:-170px 0 0 -12px;
 	opacity:0.8;
-	padding-bottom:6px;
+	padding-bottom:3px;
 	position:absolute;
 	width:86px;
 
+}
+.deal_site a{
+	color:white;
 }
 .deal_name{
 	width:240px;

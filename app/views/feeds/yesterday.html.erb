@@ -5,15 +5,44 @@
 
 	<% if feed_entry.published.between? Time.now-2.day, Time.now-1.day %> 
 
-  	<div id = "deal" >
+	  	<div id = "deal" >
+			<table>
+				<tbody>
+					<tr>
+						<a href=<%=h feed_entry.url %>> 
+							<img src= <%=h feed_entry.picture.gsub(/\s/,'%20')%> 
+							title=<%=h feed_entry.name %> alt =<%=h feed_entry.name %> height='160'>
+						</a>
+					</tr>
+					<tr class="deal_price">	
+						<td class="price">
+							<%=h feed_entry.price %>
+						</td>
+						<td class="fullprice">
+							 <%=h feed_entry.fullprice %>	
+						</td>
+					</tr>
+					<tr>
+	 					<td class="deal_site">
+							<a href=<%=h feed_entry.home_url %>> 
+								<%=h feed_entry.home%>
+							</a>
+						</td>
+					</tr>
 	
-    	<dd><a href=<%=h feed_entry.url %>> <%=h feed_entry.name.length >65? feed_entry.name[0..65]<<'...': feed_entry.name unless feed_entry.name.nil? %></a> </dd>
-    	<dd><a href=<%=h feed_entry.url %>> <img src= <%=h feed_entry.picture.gsub(/\s/,'%20')%> title=<%=h feed_entry.name %> alt =<%=h feed_entry.name %> height='150'></a></dd>
-		<dr><%=h feed_entry.price %></dr><br/>
-		<dr><a href=<%=h feed_entry.home_url %>> <%=h feed_entry.home%> </a></dr>
- 		
-	
-  	</div>
-	<%end%>
- 	<%end%>
-</div>
+					<tr>
+						<td class="deal_name">
+							<h3><a href=<%=h feed_entry.url %>> 
+								<%=h feed_entry.name.length >59? feed_entry.name[0..59]<<'...': feed_entry.name unless feed_entry.name.nil? %> 
+							</a></h3>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+	 	</div>
+		<%end%>
+	 	<%end%>
+	</div>
+
+
+
