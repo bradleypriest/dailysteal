@@ -1,4 +1,4 @@
-every 1.day, :at => '12:45 am' do
+every 1.day, :at => '12:51 am' do
 #1-day
   runner 'FeedEntry.update_from_feed("http://feed.1-day.co.nz/1-day")'
 #Ziwi  
@@ -7,7 +7,7 @@ every 1.day, :at => '12:45 am' do
   runner 'FeedEntry.update_from_feed("http://pipes.yahoo.com/pipes/pipe.run?_id=dd6395d74f34449af130b258b43336cd&_render=rss&urlinput1=http://www.daysale.co.nz")'
 end
 
-every 1.day, :at => '12:46 am' do
+every 1.day, :at => '12:52 am' do
 #6Shooter
   runner 'FeedEntry.update_from_feed("http://pipes.yahoo.com/pipes/pipe.run?_id=7551b7c81b8e4eed6ca5f677bf9fad0a&_render=rss&urlinput1=http://www.6shooter.co.nz")'
 #Catchoftheday
