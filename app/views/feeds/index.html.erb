@@ -31,7 +31,7 @@
 -->
 				<tr>
 					<td class="deal_name">
-						<h3><a href=<%=h feed_entry.url %>> 
+						<h3><a href=<%=h feed_entry.url %> title="<%=h feed_entry.name %>"> 
 							<%=h feed_entry.name.length >59? feed_entry.name[0..59]<<'...': feed_entry.name unless feed_entry.name.nil? %> 
 						</a></h3>
 					</td>
