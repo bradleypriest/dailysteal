@@ -105,6 +105,7 @@ a img {
 	}
 #deal a img{
 	margin:0;
+	max-width:240px;
 }
 .deal_price{
 	background-color:red;
