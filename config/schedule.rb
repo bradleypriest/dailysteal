@@ -1,4 +1,4 @@
-every 1.day, :at => '2:19 am' do
+every 1.day, :at => '2:23 am' do
 #1-day
   runner 'FeedEntry.update_from_feed("http://feed.1-day.co.nz/1-day")'
 #Ziwi   
