@@ -31,7 +31,8 @@ class FeedEntry < ActiveRecord::Base
           :picture      => 'http://www.1-day.co.nz/images/products/'+entry.id[/\w+\z/]+'_large.jpg',
           :guid         => entry.id,
           :home         => '1-day',
-          :home_url     => 'http://www.1-day.co.nz/'
+          :home_url     => 'http://www.1-day.co.nz/',
+          :role         =>  '1'
         )
         end
       elsif entry.summary.include? "http://www.6shooter.co.nz/"
@@ -45,7 +46,8 @@ class FeedEntry < ActiveRecord::Base
               :guid         => entry.id,
               :home         => '6Shooter',
               :home_url     => 'http://www.6shooter.co.nz/',
-              :published    => (Time.now.hour+12)>12? Date.today+12.hours : Date.today-12.hours
+              :published    => (Time.now.hour+12)>12? Date.today+12.hours : Date.today-12.hours,
+              :role         => '3'
              )
              
       elsif entry.summary.include? "http://www.3deals.co.nz"         
@@ -59,7 +61,8 @@ class FeedEntry < ActiveRecord::Base
               :guid         => entry.id,
               :home         => '3deals',
               :home_url     => 'http://www.3deals.co.nz/site/index.php',
-              :published    => (Time.now.hour+12)>12? Date.today+12.hours : Date.today-12.hours
+              :published    => (Time.now.hour+12)>12? Date.today+12.hours : Date.today-12.hours,
+              :role         =>  '4'
               )
      
       elsif entry.summary.include? "http://www.snatchadeal.co.nz"         
@@ -73,7 +76,8 @@ class FeedEntry < ActiveRecord::Base
               :guid         => entry.id,
               :home         => 'Snatchadeal',
               :home_url     => 'http://www.snatchadeal.co.nz/',
-              :published    => (Time.now.hour+12)>11? Date.today+11.hours : Date.today-13.hours
+              :published    => (Time.now.hour+12)>11? Date.today+11.hours : Date.today-13.hours,
+              :role         =>  '5'
               )      
      
       elsif entry.summary.include? "http://www.dealaday.co.nz"         
@@ -87,7 +91,8 @@ class FeedEntry < ActiveRecord::Base
               :guid         => entry.id,
               :home         => 'Dealaday',
               :home_url     => 'http://www.dealaday.co.nz/',
-              :published    => (Time.now.hour+12)>10? Date.today+10.hours : Date.today-14.hours
+              :published    => (Time.now.hour+12)>10? Date.today+10.hours : Date.today-14.hours,
+              :role         => '6'
               )
      
       elsif entry.summary.include? "http://www.catchoftheday.co.nz"         
@@ -101,7 +106,8 @@ class FeedEntry < ActiveRecord::Base
               :guid         => entry.id,
               :published    => (Time.now.hour+12)>12? Date.today+12.hours : Date.today-12.hours,
               :home         => 'Catchoftheday',
-              :home_url     => 'http://www.catchoftheday.co.nz'
+              :home_url     => 'http://www.catchoftheday.co.nz',
+              :role         => '7'
               
               )      
 
@@ -116,7 +122,8 @@ class FeedEntry < ActiveRecord::Base
               :guid         => entry.id,
               :published    => (Time.now.hour+12)>9? Date.today+9.hours : Date.today-15.hours,
               :home         => 'TheDeal',
-              :home_url     => 'http://www.thedeal.co.nz/DailyDeals.aspx'
+              :home_url     => 'http://www.thedeal.co.nz/DailyDeals.aspx',
+              :role         =>  '8'
                     )
                     
       elsif entry.summary.include? "http://daysale.co.nz"
@@ -130,7 +137,8 @@ class FeedEntry < ActiveRecord::Base
               :guid         => entry.id,
               :published    => (Time.now.hour+12)>12? Date.today+12.hours : Date.today-12.hours,
               :home         => 'Daysale',
-              :home_url     => 'http://daysale.co.nz'
+              :home_url     => 'http://daysale.co.nz',
+              :role         =>  '9' 
                                 )
     elsif entry.summary.include? "ziwi.co.nz"
            create!(
@@ -143,7 +151,8 @@ class FeedEntry < ActiveRecord::Base
               :guid         => entry.id,
               :published    => (Time.now.hour+12)>12? Date.today+12.hours : Date.today-12.hours,
               :home         => 'Ziwi',
-              :home_url     => 'http://www.ziwi.co.nz/one_day_deals.php'
+              :home_url     => 'http://www.ziwi.co.nz/one_day_deals.php',
+              :role         =>  '10'
                                       ) 
     elsif entry.summary.include? "mightyape.co.nz"
          create!(
@@ -156,7 +165,8 @@ class FeedEntry < ActiveRecord::Base
           :guid         => entry.id,
           :published    => (Time.now.hour+12)>10? Date.today+10.hours : Date.today-14.hours,
           :home         => 'MightyApe',
-          :home_url     => 'http://www.mightyape.co.nz/daily-deals/'
+          :home_url     => 'http://www.mightyape.co.nz/daily-deals/',
+          :role         =>  '11'
                                       )
       elsif entry.id == "http://www.offtheback.co.nz/"
         unless entry.published<(Time.now-1.day)
@@ -170,7 +180,8 @@ class FeedEntry < ActiveRecord::Base
           :picture      => entry.summary[/http:\/\/[\w._% \/-]+.jpg/i],
           :guid         => entry.id,
           :home         => 'OffTheBack',
-          :home_url     => 'http://www.offtheback.co.nz/deals'
+          :home_url     => 'http://www.offtheback.co.nz/deals',
+          :role         =>  '2'
           )
           end
       
