@@ -23,7 +23,7 @@ class FeedEntry < ActiveRecord::Base
     if entry.id.include? "http://www.1-day.co.nz/"
       unless exists? :name => entry.title[/[^-]+/]
         create!(
-          :name         => entry.title[/.+(?=  - \$)/],
+          :name         => entry.title[/[^-]+/],
           :description  => entry.summary,
           :price        => entry.title[/\$[0-9\.]+/],
           :url          => entry.id,
