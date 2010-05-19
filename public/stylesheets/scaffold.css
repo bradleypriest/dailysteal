@@ -1,13 +1,20 @@
 li{
 	list-style-type: none;
-}	
-dd{
-	margin-left:0px;
 }
-div dd a,div dr a{
-	display:block;
-	color:#636B8A;
+h1{
+	font-weight:bold;
+	display:inline;
+	font-size:14pt;
+}	
+h2{
 	font-weight:normal;
+	display:inline;
+	font-size:12pt;
+}
+h3{
+	font-weight:normal;
+	font-size:11pt;
+	display:inline;
 }
 body {
   background-color: #FFFFF7;
@@ -16,37 +23,27 @@ body {
   letter-spacing:0.02em;
   margin:0px;
 }
-
 a{
 	color: #4B7399;
     text-decoration:none
 }
-
 a img {
   border: none;
 }
 #content {
   width: 1098px;
   margin:auto;
-  
   background-color: #F2F2F2;
   padding: 6px;
-
-
   -webkit-box-shadow: 0px 0px 2px #636363;
   -moz-box-shadow: 0px 0px 2px #636363;
-  
 }
 
 .logo {
 	text-align:center;
 	margin-top:-10px;
-
 }
-.logo li a{
 
-	 color:#4B7399; 
-}
 .logopic{
 	margin-left:-70px;
 	margin-right:-20px;
@@ -145,6 +142,7 @@ a img {
 .deal_name{
 	width:240px;
 	text-align:center;
+	font-weight:normal;
 }
 .deal_name a{
 	
