@@ -108,14 +108,26 @@ a img {
 }
 .deal_price{
 	background-color:red;
-	color:white;
-	font-size:130%;
-	font-weight:bold;
-	margin:-28px 0 0 144px;
-	min-width:84px;
+	margin:-38px 0 0 150px;
+	min-width:78px;
 	opacity:0.8;
-	padding:4px 10px;
+	padding:20px 10px;
 	position:absolute;
+}
+.price{
+	color:white;
+	font-size:15pt;
+	font-weight:bold;
+	margin:-16px 0 0 2px;
+	position:absolute;
+	text-shadow:1px 1px 5px #111111;
+	
+}
+.fullprice{
+	font-weight:normal;
+	margin:4px 0 0 28px;
+	position:absolute;
+	text-decoration:line-through;
 }
 .deal_site{
 	background-color:#9C9C9C;

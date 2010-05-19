@@ -55,7 +55,7 @@ class FeedEntry < ActiveRecord::Base
               :name         => entry.title,
               :description  => entry.summary,
               :picture      => entry.summary[/http:\/\/\S+\.jpg/],
-              :price        => entry.summary[/\$\d+\.\d\d/],
+              :price        => entry.summary[/\$\d+\.\d\d(?!(!| !))/],
               :fullprice    => entry.summary[/\$\d+\.\d\d(?=(!| !))/],
               :url          => entry.summary[/http:[\/\d\w.-]+.html/],
               :guid         => entry.id,
