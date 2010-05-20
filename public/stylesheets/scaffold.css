@@ -50,7 +50,7 @@ a img {
 }
 .sub-logo {
 	font-family:Tahoma;
-	float:center;
+
 	margin-left:10px;
 	margin-top:-24px;
 	font-size:130%;
@@ -124,12 +124,15 @@ a img {
 	text-shadow:1px 1px 5px #111111;
 	
 }
-.fullprice{
+.fullprice {
 	font-weight:normal;
+	color:black;
 	margin:4px 0 0 28px;
 	position:absolute;
 	text-decoration:line-through;
 }
+
+
 .deal_site{
 	background-color:#9C9C9C;
 	font-size:9pt;

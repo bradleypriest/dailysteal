@@ -3,42 +3,47 @@
 	<% @feeds.sort_by { |feed_entry| feed_entry[:role]}.each do |feed_entry| %>
 
 	<% if feed_entry.published>=Time.now-1.day %> 
-
-  	<div id = "deal" >
-		<table>
-			<tbody>
-				<tr>
-					<a href=<%=h feed_entry.url %>> 
+	<div id ="deal">
+		<a href=<%=h feed_entry.url %>title="<%=h feed_entry.name %>">
+			<table>
+				<tbody>
+					<tr>
+						<td>
 						<img src= <%=h feed_entry.picture.gsub(/\s/,'%20')%> 
-						title="<%=h feed_entry.name %>" alt =<%=h feed_entry.name %> height='160'>
-					</a>
-				</tr>
-				<tr class="deal_price">	
-					<td class="price">
-						<%=h feed_entry.price %>
-					</td>
-					<td class="fullprice">
-						 <%=h feed_entry.fullprice %>	
-					</td>
-				</tr>
-<!--				<tr>
- 					<td class="deal_site">
-						<a href=<%=h feed_entry.home_url %>> 
-							<%=h feed_entry.home%>
-						</a>
-					</td>
-				</tr>
--->
-				<tr>
-					<td class="deal_name">
-						<h3><a href=<%=h feed_entry.url %> title="<%=h feed_entry.name %>"> 
-							<%=h feed_entry.name.length >59? feed_entry.name[0..59]<<'...': feed_entry.name unless feed_entry.name.nil? %> 
-						</a></h3>
-					</td>
-				</tr>
-			</tbody>
-		</table>
+							 alt =<%=h feed_entry.name %> height='160'>
+						</td>
+					</tr>
+					<tr class="deal_price">	
+						<td class="price">
+							<%=h feed_entry.price %>
+						</td>
+						<td class="fullprice">
+							 <%=h feed_entry.fullprice %>	
+						</td>
+					</tr>
+					<!--
+					<tr>
+	 					<td class="deal_site">
+							<a href=<%=h feed_entry.home_url %>> 
+								<%=h feed_entry.home%>
+							</a>
+						</td>
+					</tr>
+					-->
+					<tr>
+						<td class="deal_name">
+							<h3> 
+								<%=h feed_entry.name.length >59? feed_entry.name[0..59]<<'...': feed_entry.name unless feed_entry.name.nil? %> 
+								
+							</h3>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</a>
  	</div>
+
+
 	<%end%>
  	<%end%>
 </div>
