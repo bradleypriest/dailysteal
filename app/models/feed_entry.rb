@@ -101,7 +101,7 @@ class FeedEntry < ActiveRecord::Base
               :description  => entry.summary,
               :picture      => entry.summary[/http:[\w.\/][^38]+(jpg|gif)/],
               :price        => entry.summary[/\$\d+\.\d\d/],
-              :fullprice    => entry.summary[/\$\d+(?=\s)/],
+              :fullprice    => entry.summary[/\$\d+/],
               :url          => 'http://www.catchoftheday.co.nz',
               :guid         => entry.id,
               :published    => (Time.now.hour+12)>12? Date.today+12.hours : Date.today-12.hours,
