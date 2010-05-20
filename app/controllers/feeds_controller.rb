@@ -23,6 +23,9 @@ class FeedsController < ApplicationController
     end
   end
   
+  def faq
+  end
+  
   def help
   end
 
