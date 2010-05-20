@@ -262,7 +262,20 @@ td img{
 
 
 #footer{
+	line-height:1.3;
+	padding-top:10px;
 	text-align:center;
+}
+#footer_nav{
+	background-color:white;
+	border:1px solid black;
+	display:block;
+	line-height:1.6;
+}
+#footer_nav ul{
+	display:inline-block;
+	margin-left:80px
+	width:400px;
 }
 .round {
 	-moz-border-radius:    8px;
