@@ -3,7 +3,7 @@
 <%= render 'layouts/history' %>
 	<% @feeds.each do |feed_entry| %>
 
-	<% if feed_entry.published.between? Time.now-3.day, Time.now-2.day %> 
+	<% if feed_entry.published.between? Time.now-2.day, Time.now-1.day %> 
 
 	<div id ="deal">
 		<a href=<%=h feed_entry.url %> title="<%=h feed_entry.name %>">
