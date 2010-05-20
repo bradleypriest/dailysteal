@@ -277,6 +277,14 @@ td img{
 	margin-left:80px
 	width:400px;
 }
+#history ul{
+	text-align:right;
+	margin-right:9px;
+
+}
+#history li{
+	display:inline;
+}
 .round {
 	-moz-border-radius:    8px;
 	-webkit-border-radius: 8px;
