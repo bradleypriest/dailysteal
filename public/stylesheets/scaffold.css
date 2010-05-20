@@ -101,9 +101,11 @@ h1{
 	font-size:14pt;
 }	
 h2{
-	font-weight:normal;
 	display:inline;
 	font-size:12pt;
+	font-weight:normal;
+	line-height:1.5;
+	margin-left:-235px;
 }
 h3{
 	font-weight:normal;
@@ -142,14 +144,15 @@ a img {
 .logopic{
 	margin-left:-70px;
 	margin-right:-20px;
+	margin-top:-7px;
+	position:absolute;
 }
 .sub-logo {
 	font-family:Tahoma;
-
-	margin-left:10px;
-	margin-top:-24px;
 	font-size:130%;
 	font-weight:bold;
+	margin-left:130px;
+	margin-top:-24px;
 }
 #navigation {
 	/**	-webkit-box-shadow:inset 0px -1px 2px #FF2018;
@@ -195,10 +198,10 @@ a img {
 	text-align:center;
 	-webkit-box-shadow: 0px 0px 2px #999;
 	-moz-box-shadow: 0px 0px 2px #999;
-
-	
-	
-	}
+}
+#deal a{
+	display:block;
+}
 td img{
 	margin:0;
 	max-width:240px;
@@ -219,7 +222,7 @@ td img{
 	font-weight:bold;
 	margin:-10px 0 0 0px;
 	position:absolute;
-	text-shadow:1px 1px 5px #111111;
+	text-shadow:1px 1px 4px #333;
 	
 }
 .fullprice {
@@ -239,10 +242,7 @@ td img{
 	padding:2px;
 	position:absolute;
 	width:80px;
-
-}
-.deal_site a{
-	color:white;
+	color:white
 }
 .deal_name{
 	width:240px;
