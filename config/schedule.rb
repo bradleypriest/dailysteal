@@ -30,7 +30,7 @@ end
 
 every 1.day, :at => '9:01 pm' do
 #OffTheBack
-  runner 'FeedEntry.update_from_feed("http://pipes.yahoo.com/pipes/pipe.run?_id=f8139b96a3d826d39ed45d8e2f765845&_render=rss&urlinput1=feeds.feedburner.com/offtheback")'
+  runner 'FeedEntry.update_from_feed("http://feeds.feedburner.com/offtheback")'
 end
 
 every 1.day, :at => '12.01 pm' do
