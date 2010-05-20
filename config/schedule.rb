@@ -28,11 +28,12 @@ every 1.day, :at => '10:01 pm' do
   runner 'FeedEntry.update_from_feed("http://pipes.yahoo.com/pipes/pipe.run?_id=dc9edde73bea56eb0bc2904050e0b53c&_render=rss&urlinput1=www.dealaday.co.nz")'
 end
 
-
 every 1.day, :at => '9:01 pm' do
 #OffTheBack
   runner 'FeedEntry.update_from_feed("http://pipes.yahoo.com/pipes/pipe.run?_id=f8139b96a3d826d39ed45d8e2f765845&_render=rss&urlinput1=feeds.feedburner.com/offtheback")'
+end
+
+every 1.day, :at => '12.01 pm' do
 #TheDeal
   runner 'FeedEntry.update_from_feed("http://pipes.yahoo.com/pipes/pipe.run?_id=a32754f374426e06785e6c1bec9b3124&_render=rss&urlinput2=http://www.thedeal.co.nz")'
-
 end

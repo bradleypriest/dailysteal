@@ -46,7 +46,7 @@ class FeedEntry < ActiveRecord::Base
               :guid         => entry.id,
               :home         => '6Shooter',
               :home_url     => 'http://www.6shooter.co.nz/',
-              :published    => (Time.now.hour+12)>12? Date.today+12.hours : Date.today-12.hours,
+              :published    => (Time.now.hour+12)>12? Date.today+24.hours : Date.today,
               :role         => 3
              )
              
@@ -61,7 +61,7 @@ class FeedEntry < ActiveRecord::Base
               :guid         => entry.id,
               :home         => '3deals',
               :home_url     => 'http://www.3deals.co.nz/site/index.php',
-              :published    => (Time.now.hour+12)>12? Date.today+12.hours : Date.today-12.hours,
+              :published    => (Time.now.hour+12)>12? Date.today+24.hours : Date.today,
               :role         =>  4
               )
      
@@ -76,7 +76,7 @@ class FeedEntry < ActiveRecord::Base
               :guid         => entry.id,
               :home         => 'Snatchadeal',
               :home_url     => 'http://www.snatchadeal.co.nz/',
-              :published    => (Time.now.hour+12)>11? Date.today+11.hours : Date.today-13.hours,
+              :published    => (Time.now.hour+12)>11? Date.today+23.hours : Date.today-1.hours,
               :role         =>  5
               )      
      
@@ -91,7 +91,7 @@ class FeedEntry < ActiveRecord::Base
               :guid         => entry.id,
               :home         => 'Dealaday',
               :home_url     => 'http://www.dealaday.co.nz/',
-              :published    => (Time.now.hour+12)>10? Date.today+10.hours : Date.today-14.hours,
+              :published    => (Time.now.hour+12)>10? Date.today+22.hours : Date.today-2.hours,
               :role         => 6
               )
      
@@ -104,7 +104,7 @@ class FeedEntry < ActiveRecord::Base
               :fullprice    => entry.summary[/\$\d+/],
               :url          => 'http://www.catchoftheday.co.nz',
               :guid         => entry.id,
-              :published    => (Time.now.hour+12)>12? Date.today+12.hours : Date.today-12.hours,
+              :published    => (Time.now.hour+12)>12? Date.today+24.hours : Date.today,
               :home         => 'Catchoftheday',
               :home_url     => 'http://www.catchoftheday.co.nz',
               :role         => 7
@@ -120,7 +120,7 @@ class FeedEntry < ActiveRecord::Base
               :price        => entry.summary[/\$\d+\.\d\d(?!.+Buy)/],
               :url          => entry.summary[/http:[\/\d\w.?=-]+/],
               :guid         => entry.id,
-              :published    => (Time.now.hour+12)>9? Date.today+9.hours : Date.today-15.hours,
+              :published    => (Time.now.hour+12)>9? Date.today+21.hours : Date.today-3.hours,
               :home         => 'TheDeal',
               :home_url     => 'http://www.thedeal.co.nz/DailyDeals.aspx',
               :role         =>  8
@@ -135,7 +135,7 @@ class FeedEntry < ActiveRecord::Base
               :fullprice    => entry.summary[/\$\d+\.\d\d(?!.+normal)/m],
               :url          => entry.summary[/http:[\/\d\w.=-]+/],
               :guid         => entry.id,
-              :published    => (Time.now.hour+12)>12? Date.today+12.hours : Date.today-12.hours,
+              :published    => (Time.now.hour+12)>12? Date.today+24.hours : Date.today,
               :home         => 'Daysale',
               :home_url     => 'http://daysale.co.nz',
               :role         =>  9
@@ -149,7 +149,7 @@ class FeedEntry < ActiveRecord::Base
               :price    => entry.summary[/\$\d+\.\d\d(?!.+Our)/],
               :url          => 'http://www.ziwi.co.nz/one_day_deals.php',
               :guid         => entry.id,
-              :published    => (Time.now.hour+12)>12? Date.today+12.hours : Date.today-12.hours,
+              :published    => (Time.now.hour+12)>12? Date.today+24.hours : Date.today,
               :home         => 'Ziwi',
               :home_url     => 'http://www.ziwi.co.nz/one_day_deals.php',
               :role         =>  10
@@ -163,7 +163,7 @@ class FeedEntry < ActiveRecord::Base
           :fullprice    => entry.summary[/\$\d+\.\d\d(?!.+RRP)/m],
           :url          => entry.summary[/http:[\/\d\w.=-]+/],
           :guid         => entry.id,
-          :published    => (Time.now.hour+12)>10? Date.today+10.hours : Date.today-14.hours,
+          :published    => (Time.now.hour+12)>10? Date.today+22.hours : Date.today-2.hours,
           :home         => 'MightyApe',
           :home_url     => 'http://www.mightyape.co.nz/daily-deals/',
           :role         =>  11
