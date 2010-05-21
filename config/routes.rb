@@ -1,8 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   map.feedback 'feedbacks', :controller => 'feedbacks', :action => 'create'
   map.new_feedback 'feedbacks/new', :controller => 'feedbacks', :action => 'new'
-  map.feedback 'feedbacks', :controller => 'feedbacks', :action => 'create'
-  map.new_feedback 'feedbacks/new', :controller => 'feedbacks', :action => 'new'
+
   map.resources :deals
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -44,8 +43,7 @@ ActionController::Routing::Routes.draw do |map|
  map.yesterday '/old/1', :controller => 'feeds', :action => 'yesterday'
  map.daybefore '/old/2', :controller => 'feeds', :action => 'daybefore'
  
- map.feedback '/feedbacks', :controller => 'feedbacks', :action => 'create'
- map.new_feedback '/feedbacks/new', :controller => 'feedbacks', :action => 'new'
+
   # See how all your routes lay out with "rake routes"
 
   # Install the default routes as the lowest priority.

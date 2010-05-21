@@ -1,4 +1,6 @@
-class Feedback
+class Feedback < ActiveRecord::Base
+  validates_presence_of :comment
+
   attr_accessor :subject, :email, :comment    
   
   def initialize(params = {})
