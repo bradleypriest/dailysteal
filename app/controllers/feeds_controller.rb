@@ -22,6 +22,7 @@ class FeedsController < ApplicationController
       format.xml  { render :xml => @feed_entries }
     end
   end
+  
   def daybefore
     @feeds = FeedEntry.all
 
