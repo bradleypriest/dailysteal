@@ -27,7 +27,10 @@
 				<div id="deal_site"> 
 							<%=h feed_entry.home%>
 				</div>
-			
+				
+				<div id="deal_date">
+					<%=h (feed_entry.published+12).strftime(fmt='%a %e %b')%>
+				</div>
 					
 				<div id="deal_name">
 					<h3> 

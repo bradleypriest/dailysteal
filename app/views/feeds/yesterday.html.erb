@@ -29,12 +29,16 @@
 										<%=h feed_entry.home%>
 							</div>
 
-
+							<div id="deal_date">
+								<%=h (feed_entry.published+12).strftime(fmt='%a %e %b')%>
+							</div>
+							
 							<div id="deal_name">
 								<h3> 
 									<%=h feed_entry.name.length >59? feed_entry.name[0..59]<<'...': feed_entry.name unless feed_entry.name.nil? %> 	
 								</h3>
 							</div>
+							
 
 					</a>
 			 	</div>
