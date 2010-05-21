@@ -120,7 +120,7 @@ class FeedEntry < ActiveRecord::Base
               :price        => entry.summary[/\$\d+\.\d\d(?!.+Buy)/],
               :url          => entry.summary[/http:[\/\d\w.?=-]+/],
               :guid         => entry.id,
-              :published    => (Time.now.hour)>12? Date.today+12.hours : Date.today-12.hours,
+              :published    => (Time.now.hour)>12? Date.today+36.hours : Date.today+12.hours,
               :home         => 'TheDeal',
               :home_url     => 'http://www.thedeal.co.nz/DailyDeals.aspx',
               :role         =>  8
