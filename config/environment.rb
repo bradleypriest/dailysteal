@@ -19,6 +19,12 @@ Rails::Initializer.run do |config|
   config.gem 'javan-whenever', :lib => false, :source => 'http://gems.github.com'
   config.gem 'mislav-will_paginate', :lib => 'will_paginate', :source => 'http://gems.github.com' 
   
+  
+  ActionMailer::Base.delivery_method = :sendmail  
+  ActionMailer::Base.perform_deliveries = true  
+  ActionMailer::Base.raise_delivery_errors = true  
+  ActionMailer::Base.default_charset = "utf-8"
+  
   # config.gem "scrapi"
   # config.gem "bj"
   # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
