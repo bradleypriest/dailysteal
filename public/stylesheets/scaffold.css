@@ -246,6 +246,13 @@ a img {
 	position:absolute;
 	color:black;
 }
+#deal_expires{
+	font-size:9pt;
+	margin-left:-3px;
+	margin-top:40px;
+	position:absolute;
+	color:black;
+}
 
 #deal_site{
 	background-color:#666;

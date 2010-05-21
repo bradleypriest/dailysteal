@@ -25,6 +25,9 @@
 							<%=h feed_entry.home%>
 				</div>
 			
+				<div id="deal_expires">
+					Expires <%=h (feed_entry.published+12).strftime(fmt='%l%p')%>
+				</div>
 					
 				<div id="deal_name">
 					<h3> 
