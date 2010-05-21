@@ -20,10 +20,8 @@ Rails::Initializer.run do |config|
   config.gem 'mislav-will_paginate', :lib => 'will_paginate', :source => 'http://gems.github.com' 
   
   
-  ActionMailer::Base.delivery_method = :sendmail  
-  ActionMailer::Base.perform_deliveries = true  
-  ActionMailer::Base.raise_delivery_errors = true  
-  ActionMailer::Base.default_charset = "utf-8"
+ 
+
   
   # config.gem "scrapi"
   # config.gem "bj"
@@ -49,4 +47,13 @@ Rails::Initializer.run do |config|
   # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
+
+    
+
+  
 end
+
+ActionMailer::Base.delivery_method = :sendmail  
+ActionMailer::Base.perform_deliveries = true  
+ActionMailer::Base.raise_delivery_errors = true  
+ActionMailer::Base.default_charset = "utf-8"
