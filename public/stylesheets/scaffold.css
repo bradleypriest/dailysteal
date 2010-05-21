@@ -128,8 +128,9 @@ a img {
 #deal-list {
   width: 1104px;
   margin:auto;
+  margin-top:2px;
   border:solid 1px #999;
-  background-color: #F2F2F2;
+  background-color: #FFFFF5;
   padding: 6px;
   -webkit-box-shadow: 0px 0px 2px #636363;
   -moz-box-shadow: 0px 0px 2px #636363;
