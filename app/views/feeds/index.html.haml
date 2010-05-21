@@ -1,0 +1,30 @@
+#deal-list
+	<% @feeds.sort_by { |feed_entry| feed_entry[:role]}.each do |feed_entry| %>
+
+	% if feed_entry.published>=Time.now-1.day %> 
+	#deal
+		%a{:href => %feed_entry.url :title => %feed_entry.name}
+				#deal_image
+					<img src= %feed_entry.picture.gsub(/\s/,'%20') alt =<%=h feed_entry.name %> height='160'>
+				#deal_price	
+					#price
+						%feed_entry.price
+				#fullprice
+					 %feed_entry.fullprice
+				#deal_site
+					%feed_entry.home
+				#deal_name
+					%h3
+						<%=h feed_entry.name.length >59? feed_entry.name[0..59]<<'...': feed_entry.name unless feed_entry.name.nil? %> 	
+				
+			
+		
+
+
+
+
+
+
+
+		
+	

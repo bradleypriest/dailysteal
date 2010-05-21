@@ -9,44 +9,35 @@
 
 				<div id ="deal">
 					<a href=<%=h feed_entry.url %> title="<%=h feed_entry.name %>">
-						<table>
-							<tbody>
-								<tr>
-									<td>
-									<img src= <%=h feed_entry.picture.gsub(/\s/,'%20')%> 
-										 alt =<%=h feed_entry.name %> height='160'>
-									</td>
-								</tr>
-								<tr class="deal_price">	
-									<td class="price">
-										<%=h feed_entry.price %>
-									</td>
-									<td class="fullprice">
-										 <%=h feed_entry.fullprice %>	
-									</td>
-								</tr>
+							<div id ="deal_image"> 
+								<img src= <%=h feed_entry.picture.gsub(/\s/,'%20')%> 
+							 	alt =<%=h feed_entry.name %> height='160'>
+							</div>
 
-								<tr>
-				 					<td class="deal_date">
-											<%=h (feed_entry.published+12).strftime(fmt='%a %e %b')%>
-									</td>
-									<td class="deal_site"> 
-											<%=h feed_entry.home%>
-									</td>
-								</tr>
+							<div id="deal_price">	
+								<div id="price">
+									<%=h feed_entry.price %>
+								</div>
+							</div>
 
-								<tr>
-									<td class="deal_name">
-										<h3> 
-											<%=h feed_entry.name.length >59? feed_entry.name[0..59]<<'...': feed_entry.name unless feed_entry.name.nil? %> 
+							<div id="fullprice">
+								 <%=h feed_entry.fullprice %>	
+							</div>
 
-										</h3>
-									</td>
-								</tr>
-							</tbody>
-						</table>
+
+							<div id="deal_site"> 
+										<%=h feed_entry.home%>
+							</div>
+
+
+							<div id="deal_name">
+								<h3> 
+									<%=h feed_entry.name.length >59? feed_entry.name[0..59]<<'...': feed_entry.name unless feed_entry.name.nil? %> 	
+								</h3>
+							</div>
+
 					</a>
-				</div>
+			 	</div>
 				
 				
 			<%end%>
