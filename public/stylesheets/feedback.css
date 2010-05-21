@@ -12,7 +12,7 @@ a#feedback_link {
   position: fixed;
   z-index: 99999;
   background-color: #CC0000;
-  width: 26px;
+  width: 25px;
   height: 96px;
   overflow: hidden;
   background: #C00 url(/images/feedback/feedback_tab.png);
@@ -26,8 +26,8 @@ a#feedback_link:hover {
 			
 a#feedback_link.left {
   left: 0;
-  top: 25%;
-  width: 26px;
+  top: 40%;
+  width: 25px;
   height: 96px;
   background-image: url(/images/feedback/feedback_tab.png);
   _background-image: url(/images/feedback/feedback_tab.png);
