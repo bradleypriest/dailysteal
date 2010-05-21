@@ -1,5 +1,4 @@
-class Feedback < ActiveRecord::Base
-  validates_presence_of :comment
+class Feedback
 
   attr_accessor :subject, :email, :comment    
   
