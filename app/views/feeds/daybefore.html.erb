@@ -1,6 +1,7 @@
+<%= render 'layouts/historynav' %>
 <div id="deal-list">
   
-<%= render 'layouts/historynav' %>
+
 	<% @feeds.each do |feed_entry| %>
 
 	<% if feed_entry.published.between? Time.now-3.day, Time.now-2.day %> 
