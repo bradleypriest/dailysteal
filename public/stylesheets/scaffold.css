@@ -138,15 +138,15 @@ a img {
 
 .logo {
 	text-align:left;
-	margin-top:3px;
-	margin-left:150px;
+	margin-top:15px;
+	margin-left:50px;
 }
 .logo img{
 }
 
 .logopic{
-	margin-left:0px;
-	margin-top:-15px;
+	margin-left:10px;
+	margin-top:-30px;
 	position:absolute;
 }
 .sub-logo {
