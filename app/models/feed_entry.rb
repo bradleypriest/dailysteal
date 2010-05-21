@@ -99,7 +99,7 @@ class FeedEntry < ActiveRecord::Base
           create!(
               :name         => entry.title,
               :description  => entry.summary,
-              :picture      => entry.summary[/http:[\w.\/][^38]+(jpg|gif)/],
+              :picture      => entry.summary[/http:[\w.\/]+(jpg|gif)(?="\sborder)/],
               :price        => entry.summary[/\$\d+\.\d\d/],
               :fullprice    => entry.summary[/\$\d+/],
               :url          => 'http://www.catchoftheday.co.nz',

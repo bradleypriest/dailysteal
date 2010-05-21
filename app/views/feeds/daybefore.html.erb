@@ -25,7 +25,10 @@
 					</tr>
 					
 					<tr>
-	 					<td class="deal_site"> 
+	 					<td class="deal_date">
+								<%=h (feed_entry.published+12).strftime(fmt='%a %e %b')%>
+						</td>
+						<td class="deal_site"> 
 								<%=h feed_entry.home%>
 						</td>
 					</tr>

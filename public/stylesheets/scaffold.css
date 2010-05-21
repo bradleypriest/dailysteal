@@ -233,7 +233,13 @@ td img{
 	position:absolute;
 	text-decoration:line-through;
 }
-
+.deal_date{
+	font-size:9pt;
+	margin-left:0;
+	margin-top:42px;
+	position:absolute;
+	color:black;
+}
 
 .deal_site{
 	background-color:#666;
