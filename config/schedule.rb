@@ -1,9 +1,9 @@
-every 1.day, :at => '12:01 am' do
+every 1.day, :at => '12:02 am' do
 #1-day
   runner 'FeedEntry.update_from_feed("http://feed.1-day.co.nz/1-day")'
 end
 
-every 1.day, :at => '12.02 am' do
+every 1.day, :at => '12.01 am' do
 #Ziwi   
   runner 'FeedEntry.update_from_feed("http://pipes.yahoo.com/pipes/pipe.run?_id=0038f307a5fc7bf87d5eb31d8bb7f462&_render=rss&urlinput1=http://www.ziwi.co.nz/one_day_deals.php")'
 #Daysale
