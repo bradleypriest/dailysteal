@@ -57,7 +57,7 @@ class FeedEntry < ActiveRecord::Base
               :picture      => entry.summary[/http:\/\/\S+\.jpg/],
               :price        => entry.summary[/\$\d+\.\d\d(?!(!| !))/],
               :fullprice    => entry.summary[/\$\d+\.\d\d(?=(!| !))/],
-              :url          => entry.summary[/http:[\/\d\w.-]+.html/],
+              :url          => entry.summary[/http:[\/\d\w.+-]+.html/],
               :guid         => entry.id,
               :home         => '3deals',
               :home_url     => 'http://www.3deals.co.nz/site/index.php',
@@ -99,7 +99,7 @@ class FeedEntry < ActiveRecord::Base
           create!(
               :name         => entry.title,
               :description  => entry.summary,
-              :picture      => entry.summary[/http:[\w.\/]+(jpg|gif)(?="\sborder)/],
+              :picture      => entry.summary[/http:[\w.\/-]+(jpg|gif)(?="\sborder)/],
               :price        => entry.summary[/\$\d+\.\d\d/],
               :fullprice    => entry.summary[/\$\d+/],
               :url          => 'http://www.catchoftheday.co.nz',
