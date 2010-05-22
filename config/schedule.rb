@@ -33,7 +33,7 @@ every 1.day, :at => '9:01 pm' do
   runner 'FeedEntry.update_from_feed("http://feeds.feedburner.com/offtheback")'
 end
 
-every 1.day, :at => '12.02 pm' do
+every 1.day, :at => '12.01pm' do
 #TheDeal
   runner 'FeedEntry.update_from_feed("http://pipes.yahoo.com/pipes/pipe.run?_id=a32754f374426e06785e6c1bec9b3124&_render=rss&urlinput2=http://www.thedeal.co.nz")'
 end
