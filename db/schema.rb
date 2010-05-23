@@ -9,17 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100521224622) do
-
-  create_table "deals", :force => true do |t|
-    t.string   "title"
-    t.string   "description"
-    t.string   "site"
-    t.string   "price"
-    t.string   "fullprice"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(:version => 20100523034111) do
 
   create_table "feed_entries", :force => true do |t|
     t.string   "name"
@@ -43,6 +33,22 @@ ActiveRecord::Schema.define(:version => 20100521224622) do
     t.text     "comment"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "product_entries", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "url"
+    t.string   "price"
+    t.string   "fullprice"
+    t.string   "guid"
+    t.datetime "published"
+    t.string   "picture"
+    t.string   "home"
+    t.string   "home_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "rank"
   end
 
 end
