@@ -26,4 +26,5 @@ unless ProductEntry.exists? :name => name
 
       )
     end
+  end
 end
