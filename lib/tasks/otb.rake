@@ -16,8 +16,8 @@ unless item.at_css("strike").nil?
 end
   
 
-unless ProductEntry.exists? :url => url 
-  ProductEntry.create!(
+unless FeedEntry.exists? :url => url 
+  FeedEntry.create!(
   :name       => name,
   :price      => price,
   :fullprice  => fullprice,

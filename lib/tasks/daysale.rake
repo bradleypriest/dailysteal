@@ -16,8 +16,8 @@ task :fetch_daysale => :environment do
        picture = item.at_xpath('//img[@title]')[:src]
 
             
-unless ProductEntry.exists? :name => name
-    ProductEntry.create!(
+unless FeedEntry.exists? :name => name
+    FeedEntry.create!(
     :name       => name,
     :price      => price,
     :fullprice  => fullprice,

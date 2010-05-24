@@ -13,8 +13,8 @@ task :fetch_mightyape => :environment do
       url = item.at_css(".title .title")[:href] 
       picture = item.at_css(".boxshot")[:src]
 
-  unless ProductEntry.exists? :name => name
-    ProductEntry.create!(
+  unless FeedEntry.exists? :name => name
+    FeedEntry.create!(
       :name       => name,
       :price      => price,
       :fullprice  => fullprice,

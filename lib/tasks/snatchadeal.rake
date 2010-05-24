@@ -12,8 +12,8 @@ task :fetch_snatchadeal => :environment do
       fullprice = item.at_css(".rrp").text[/\$[\d,]+\.\d\d/]
       url = item.at_css(".box-image a")[:href][/.+(?=&)/]
       picture = item.at_css(".box-image img")[:src].gsub(/\s/,'%20')
-unless ProductEntry.exists? :name => name    
-    ProductEntry.create!(
+unless FeedEntry.exists? :name => name    
+    FeedEntry.create!(
       :name       => name,
       :price      => price,
       :fullprice  => fullprice,

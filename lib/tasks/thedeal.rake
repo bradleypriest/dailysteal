@@ -12,8 +12,8 @@ task :fetch_thedeal => :environment do
       fullprice = item.at_css(".sbp").text[/\$[\d,]+\.\d\d/]
       url = item.at_css(".producttitle")[:href]
       picture = item.at_css(".productpic img")[:src] 
-unless ProductEntry.exists? :name => name    
-    ProductEntry.create!(
+unless FeedEntry.exists? :name => name    
+    FeedEntry.create!(
       :name       => name,
       :price      => price,
       :fullprice  => fullprice,

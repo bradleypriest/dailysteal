@@ -15,9 +15,9 @@ task :fetch_6shooter => :environment do
     fullprice = item.at_css(".s_prod_info h3").text[/\$[\d,]+\.\d\d/]
 
   
-unless ProductEntry.exists? :guid => url[/\d+/]
+unless FeedEntry.exists? :guid => url[/\d+/]
 
-  ProductEntry.create!(
+  FeedEntry.create!(
   :name       => name2+' '+name,
   :price      => price,
   :fullprice  => fullprice,

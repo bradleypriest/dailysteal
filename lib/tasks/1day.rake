@@ -11,8 +11,8 @@ task :fetch_1day => :environment do
       price = item.at_css(".pricing li:nth-child(2)").text
       fullprice = item.at_css(".why_pay li").text.gsub(/WHY\sPAY\s/,'')
       url = item.at_css(".home_top img")[:src][/\/products.+(?=_small)/]  
-unless ProductEntry.exists? :name => name    
-    ProductEntry.create!(
+unless FeedEntry.exists? :name => name    
+    FeedEntry.create!(
       :name       => name,
       :price      => price,
       :fullprice  => fullprice,
@@ -22,7 +22,7 @@ unless ProductEntry.exists? :name => name
       :home       => '1-day',
       :home_url   => 'http://www.1-day.co.nz/',
       :guid       =>  url.gsub(/\/products\//,''),
-      :rank       =>  1
+      :role       =>  1
 
       )
     end

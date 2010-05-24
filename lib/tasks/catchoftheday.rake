@@ -12,8 +12,8 @@ task :fetch_catchoftheday => :environment do
       price = item.at_css("#price").text[/\$[\d,]+\.\d\d/]
    #   fullprice = item.at_css("h3:nth-child(4)").text[/\$[\d,]+\.\d\d/]
       picture = item.at_css("#main_image")[:src] 
-unless ProductEntry.exists? :guid => name    
-    ProductEntry.create!(
+unless FeedEntry.exists? :guid => name    
+    FeedEntry.create!(
       :name       => name+' '+name2,
       :price      => price,
 #      :fullprice  => fullprice,

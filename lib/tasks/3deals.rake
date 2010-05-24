@@ -18,8 +18,8 @@ task :fetch_3deals => :environment do
        fullprice = item.at_css("#do-not-pay").text[/\$[\d,]+\.\d\d/]
        
        
-unless ProductEntry.exists? :url => href
-  ProductEntry.create!(
+unless FeedEntry.exists? :url => href
+  FeedEntry.create!(
   :name       => name+' '+name2,
   :price      => price,
   :fullprice  => fullprice,

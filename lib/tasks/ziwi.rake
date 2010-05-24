@@ -18,8 +18,8 @@ task :fetch_ziwi => :environment do
          fullprice = item.at_css(".strike").text[/\$[\d,]+\.\d\d/]
 
 
-  unless ProductEntry.exists? :guid => href
-    ProductEntry.create!(
+  unless FeedEntry.exists? :guid => href
+    FeedEntry.create!(
     :name       => name+' by'+author,
     :price      => price,
     :fullprice  => fullprice,

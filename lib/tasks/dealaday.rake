@@ -13,8 +13,8 @@ task :fetch_dealaday => :environment do
       fullprice = item.at_css("h3:nth-child(4)").text[/\$[\d,]+\.\d\d/]
       url = item.at_css("img:nth-child(3)")[:href]
       picture = item.at_css("img:nth-child(3)")[:src] 
-unless ProductEntry.exists? :name => name+' '+name2    
-    ProductEntry.create!(
+unless FeedEntry.exists? :name => name+' '+name2    
+    FeedEntry.create!(
       :name       => name+' '+name2,
       :price      => price,
       :fullprice  => fullprice,
