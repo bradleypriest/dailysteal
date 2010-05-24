@@ -22,7 +22,7 @@ unless FeedEntry.exists? :name => name
       :home       => '1-day',
       :home_url   => 'http://www.1-day.co.nz/',
       :guid       =>  url.gsub(/\/products\//,''),
-      :role       =>  1
+      :rank       =>  1
 
       )
     end
