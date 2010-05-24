@@ -5,7 +5,7 @@
 
 	
 		<% @feeds.each do |feed_entry| %>
-			<% if feed_entry.published.between? Time.now-2.day, Time.now-1.day %> 
+			<% if (feed_entry.published+12.hours).between? Time.now-2.day, Time.now-1.day %> 
 
 				<div id ="deal"	title="<%=h feed_entry.name %>">
 							<div id ="deal_image"> 
