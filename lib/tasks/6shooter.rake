@@ -11,7 +11,7 @@ task :fetch_6shooter => :environment do
     name2 = item.at_css("h1").text
     price = item.at_css("h2").text[/\$[\d,]+\.\d\d/]
     url = item.at_css("a")[:href]
-    picture = item.at_css(".s_prod_image img")[:src]
+    picture = item.at_css(".s_prod_image img")[:src].gsub(/\s/,'%20')
     fullprice = item.at_css(".s_prod_info h3").text[/\$[\d,]+\.\d\d/]
 
   
