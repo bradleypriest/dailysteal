@@ -95,18 +95,18 @@ input, select {
 li{
 	list-style-type: none;
 }
-h1{
+.sub-logo h1{
 	font-weight:bold;
 	display:inline;
 	font-size:14pt;
 }	
-h2{
+.sub-logo h2{
 	display:inline;
 	font-size:12pt;
 	font-weight:normal;
 	line-height:1.5;
 }
-h3{
+#deal_name h3{
 	font-weight:normal;
 	font-size:11pt;
 	display:inline;
@@ -278,7 +278,20 @@ body {
 	text-align:center;
 	padding-top:1px;
 }
-
+#FAQ{
+	line-height:1.4;
+	margin:2px 0 0 5px;
+	font-size:12pt;
+}
+#FAQ h1{
+	font-size:20pt;
+}
+#FAQ h2{
+	font-weight:bold;
+}
+#FAQ h3{
+	font-weight:normal;
+}
 .hidden{
 	display:none;
 }
