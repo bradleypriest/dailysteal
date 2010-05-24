@@ -2,7 +2,7 @@
   
 	<% @feeds.sort_by { |feed_entry| feed_entry[:rank]}.each do |feed_entry| %>
 
-	<% if feed_entry.published>=Time.now-1.day %> 
+	<% if feed_entry.published-12.hours>=Time.now-1.day %> 
 	<div id ="deal">
 		<a href=<%=h feed_entry.url %> title="<%=h feed_entry.name %>">
 				<div id ="deal_image"> 
@@ -26,7 +26,7 @@
 				</div>
 			
 				<div id="deal_expires">
-					Expires <%=h (feed_entry.published+12).strftime(fmt='%l%P')%>
+					Expires <%=h (feed_entry.published).strftime(fmt='%l%P')%>
 				</div>
 					
 				<div id="deal_name">
