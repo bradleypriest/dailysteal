@@ -24,8 +24,7 @@ ActiveRecord::Schema.define(:version => 20100524062730) do
     t.string   "home_url"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "role"
-    t.string   "rank"
+    t.integer  "rank"
   end
 
   create_table "feedbacks", :force => true do |t|
@@ -34,22 +33,6 @@ ActiveRecord::Schema.define(:version => 20100524062730) do
     t.text     "comment"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "product_entries", :force => true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.string   "url"
-    t.string   "price"
-    t.string   "fullprice"
-    t.string   "guid"
-    t.datetime "published"
-    t.string   "picture"
-    t.string   "home"
-    t.string   "home_url"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "rank"
   end
 
 end
