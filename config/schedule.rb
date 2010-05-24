@@ -2,7 +2,7 @@ every 1.day, :at => '12:02 am' do
   #Ziwi   
     rake "fetch_ziwi" 
 end
-every 1.day, :at => '7.13 am' do
+every 1.day, :at => '7.18 am' do
 #Daysale
   rake "fetch_daysale"
 #6Shooter
@@ -34,6 +34,6 @@ end
 
 
 #TheDeal
-every 1.day, :at => '12.01pm' do
+every 1.day, :at => '12.01 pm' do
   rake"fetch_thedeal"
 end
