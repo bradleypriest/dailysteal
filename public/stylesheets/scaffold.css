@@ -216,8 +216,8 @@ body {
 #deal_price{
 	background-color:red;
 	padding:14px 6px;
-	margin:-30px 0 0 160px;
-	min-width:78px;
+	margin:-30px 0 0 153px;
+	min-width:85px;
 	opacity:0.8;
 	position:absolute;
 	-webkit-box-shadow: 0px 0px 1px white;
@@ -230,7 +230,7 @@ body {
 	_color:black;
 	font-size:15pt;
 	font-weight:bold;
-	margin:-13px 0 0 -2px;
+	margin:-13px 0 0 -3px;
 	position:absolute;
 	text-shadow:1px 1px 4px #333;
 	
