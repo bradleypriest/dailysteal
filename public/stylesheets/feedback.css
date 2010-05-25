@@ -78,7 +78,8 @@ div#feedback_modal_window {
 }
 			
 div#feedback_modal_content {				
-  padding: 12px;				
+  padding: 12px;
+  line-height:1.3;
 }
 			
 div#feedback_loading {				
@@ -114,4 +115,10 @@ div#feedback_loading {
 form#feedback_form .error {
   color: red;
   font-weight: bold;
+}
+form#feedback_form {
+	padding-top:3px;
+}
+form#feedback_form p{
+	padding-top:4px;
 }
