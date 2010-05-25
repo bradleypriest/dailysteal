@@ -10,15 +10,16 @@ task :fetch_daysale => :environment do
   
   doc = Nokogiri::HTML(open(href))  
     doc.css("#mainWrapper").each do |item|  
-        name = item.at_css("h3").text
+        name = item.at_css(".prodinfo_manu").text
+        name2 = item.at_css("#productName").text
         price = item.at_css(".productSpecialPrice2").text[/\$[\d,]+\.\d\d/]
         fullprice = item.at_css(".normalprice2").text[/\$[\d,]+\.\d\d/]
        picture = item.at_xpath('//img[@title]')[:src]
 
             
-unless FeedEntry.exists? :name => name
+unless FeedEntry.exists? :url => href
     FeedEntry.create!(
-    :name       => name,
+    :name       => name+' '+name2,
     :price      => price,
     :fullprice  => fullprice,
     :url        => href,
