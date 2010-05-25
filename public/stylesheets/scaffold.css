@@ -261,14 +261,14 @@ body {
 }
 
 #deal_site{
-	background-color:#666;
+	background-color:#666666;
+	color:white;
 	font-size:9pt;
-	margin:39px 0 0 80px;
+	margin:37px 0 0 -11px;
 	opacity:0.5;
-	padding:2px;
+	padding:4px 2px 2px;
 	position:absolute;
-	width:80px;
-	color:white
+	width:257px;
 }
 #deal_name{
 	color:black;
