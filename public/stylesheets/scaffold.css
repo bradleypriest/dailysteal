@@ -269,10 +269,12 @@ body {
 	height:12px;
 }
 #deal_site{
-	position:absolute;
 	color:white;
 	font-size:9pt;
-	margin:41px 0 0 89px;
+	margin:41px 0 0 0;
+	position:absolute;
+	text-align:center;
+	width:240px;
 	
 	
 	
