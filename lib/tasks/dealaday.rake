@@ -19,12 +19,11 @@ unless FeedEntry.exists? :name => name+' '+name2
       :price      => price,
       :fullprice  => fullprice,
       :picture    => 'http://www.dealaday.co.nz/'+picture.gsub('large','medium'),
-      :published  => (Time.now.hour+12)>12? Date.today+24.hours : Date.today,
       :url        => 'http://www.dealaday.co.nz',
       :guid       => picture[/\d+/],
       :home       => 'Dealaday',
       :home_url   => 'http://www.dealaday.co.nz/',
-      :published  => (Time.now.hour+12)>10? Date.today+22.hours : Date.today-2.hours,
+      :published  => (Time.now.hour-12)>10? Date.today+22.hours : Date.today-2.hours,
       :rank       => 6
 
       )
