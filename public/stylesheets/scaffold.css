@@ -314,7 +314,16 @@ body {
 	width:400px;
 }
 #sidebar{
-	
+	-moz-box-shadow:0 0 2px #999999;
+	-webkit-box-shadow: 0 0 2px #999;
+	background-color:white;
+	border:1px solid #999999;
+	float:right;
+	height:451px;
+	margin:7px 6px 0 0;
+	padding:8px;
+	text-align:right;
+	width:243px;
 }
 #history{
 	margin:-21px 0 0 15px;
