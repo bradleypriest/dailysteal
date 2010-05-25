@@ -23,7 +23,7 @@ unless FeedEntry.exists? :name => name+' '+name2
       :guid       => picture[/\d+/],
       :home       => 'Dealaday',
       :home_url   => 'http://www.dealaday.co.nz/',
-      :published  => (Time.now.hour-12)>10? Date.today+22.hours : Date.today-2.hours,
+      :published  => (Time.now+12.hours).hour>10? Date.today+22.hours : Date.today-2.hours,
       :rank       => 6
 
       )

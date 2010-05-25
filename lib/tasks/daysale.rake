@@ -25,7 +25,7 @@ unless FeedEntry.exists? :url => href
     :url        => href,
     :guid       => href[/\d+(?=.html)/],
     :picture    => 'http://www.daysale.co.nz/'+picture,
-    :published  => (Time.now.hour+12)>12? Date.today+24.hours : Date.today,
+    :published  => (Time.now+12.hours).hour>12? Date.today+24.hours : Date.today,
     :home       => 'Daysale',
     :home_url   => 'http://daysale.co.nz',
     :rank       =>  9
