@@ -259,16 +259,23 @@ body {
 	position:absolute;
 	color:black;
 }
-
-#deal_site{
+#deal_bottom{
 	background-color:#666666;
-	color:white;
-	font-size:9pt;
 	margin:37px 0 0 -11px;
 	opacity:0.5;
 	padding:4px 2px 2px;
 	position:absolute;
 	width:257px;
+	height:12px;
+}
+#deal_site{
+	position:absolute;
+	color:white;
+	font-size:9pt;
+	margin:41px 0 0 89px;
+	
+	
+	
 }
 #deal_name{
 	color:black;
