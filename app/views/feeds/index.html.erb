@@ -26,7 +26,7 @@
 				</div>
 
 				<div id = "deal_bottom"></div>
-				<div id = "deal_stock" style="width:<%=h feed_entry.stock %>%"></div>
+
 				<div id="deal_site"> 
 							<%=h feed_entry.home%>
 				</div>
@@ -34,7 +34,9 @@
 				<div id="deal_expires">
 					Expires <%=h (feed_entry.published+12).strftime(fmt='%l%P')%>
 				</div>
-
+				
+<!--			<div id = "deal_stock" style="width:<%=h feed_entry.stock %>%"></div>
+-->
 				
 
 		</a>

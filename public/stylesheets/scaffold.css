@@ -256,6 +256,7 @@ body {
 	margin:38px 0 0 180px;
 	position:absolute;
 	text-decoration:line-through;
+	z-index:1;
 }
 #deal_date{
 	font-size:9pt;
@@ -267,9 +268,10 @@ body {
 #deal_expires{
 	font-size:9pt;
 	margin-left:-3px;
-	margin-top:-13px;
+	margin-top:41px;
 	position:absolute;
 	color:black;
+	z-index:1;
 }
 #deal_bottom{
 	background-color:#666666;
@@ -293,10 +295,11 @@ body {
 #deal_site{
 	color:white;
 	font-size:9pt;
-	margin:-13px 0 0 0;
+	margin:41px 0 0 0;
 	position:absolute;
 	text-align:center;
-	width:240px;	
+	width:240px;
+	z-index:1;	
 }
 #deal_name{
 	color:black;
