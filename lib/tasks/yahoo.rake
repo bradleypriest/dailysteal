@@ -22,11 +22,11 @@ task :fetch_yahoo => :environment do
        :fullprice  => fullprice,
        :url        => 'http://shopping.yahooxtra.co.nz'+url,
        :picture    => 'http:'+picture,
-       :published  => (Time.now).hour>10? Date.today+10.hours : Date.today-14.hours,
+       :published  => (Time.now).hour>=12? Date.today+12.hours : Date.today-12.hours,
        :home       => 'YahooXtra',
        :home_url   => 'http://shopping.yahooxtra.co.nz/DailyDeals.aspx/',
        :rank       => 17,
-       :stock     => 100
+       :stock      => 100
 
            )
 

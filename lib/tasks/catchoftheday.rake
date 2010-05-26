@@ -16,7 +16,7 @@ unless FeedEntry.exists? :guid => name
       :name       => name+' '+name2,
       :price      => price,
       :picture    => 'http://www.catchoftheday.co.nz/'+picture,
-      :published  => (Time.now+12.hours).hour>12? Date.today : Date.today-24.hours,
+      :published  => (Time.now+12.hours).hour>=12? Date.today : Date.today-24.hours,
       :url        => 'http://www.catchoftheday.co.nz',
       :guid       => name,
       :home       => 'Catchoftheday',

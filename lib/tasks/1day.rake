@@ -23,7 +23,7 @@ unless FeedEntry.exists? :name => name[/\w.+/]
       :fullprice  => fullprice,
       :url        => 'http://www.1-day.co.nz'+url,
       :picture    => 'http://www.1-day.co.nz/images'+url+'_small.jpg',
-      :published  => (Time.now+12.hours).hour>12? Date.today : Date.today-24.hours,
+      :published  => (Time.now+12.hours).hour>=12? Date.today : Date.today-24.hours,
       :home       => '1-day',
       :home_url   => 'http://www.1-day.co.nz/',
       :guid       =>  url.gsub(/\/products\//,''),

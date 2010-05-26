@@ -22,7 +22,7 @@ task :fetch_nzh => :environment do
        :fullprice  => fullprice,
        :url        => 'http://shopping.nzherald.co.nz'+url,
        :picture    => 'http:'+picture,
-       :published  => (Time.now).hour>10? Date.today+10.hours : Date.today-14.hours,
+       :published  => (Time.now).hour>=10? Date.today+10.hours : Date.today-14.hours,
        :home       => 'NZHerald',
        :home_url  => 'http://shopping.nzherald.co.nz/DailyDeals.aspx/',
        :rank      => 16,

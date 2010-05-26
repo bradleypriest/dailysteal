@@ -44,7 +44,31 @@ task :fetch_stock => :environment do
           feed_entry.update_attribute(:stock, stock)  
     end
    
+    FeedEntry.find_all_by_home('Snatchadeal').each do |feed_entry|  
+          doc = Nokogiri::HTML(open(feed_entry.url))  
+            stock = doc.at_css("#product-info-right img")[:title][/\d+/]
+          feed_entry.update_attribute(:stock, stock)  
+    end
     
+    doc = Nokogiri::HTML(open('http://www.mightyape.co.nz/daily-deals'))  
+      doc.css(".deal").each do |item|
+          name = item.at_css(".title .title").text
+          stock = item.at_xpath('div[@class="dealBox"]/div')[:class][/\d+/]
+            FeedEntry.find_all_by_name(name).each do |feed_entry|
+              feed_entry.update_attribute(:stock, stock)
+            end
+      end
+      doc = Nokogiri::HTML(open('http://www.ziwi.co.nz/one_day_deals.php'))  
+        doc.css(".box_").each do |item|
+            href = item.at_css("a")[:href]
+            stock =item.at_css("p img")[:src][/\d+/]+'0'
+              FeedEntry.find_all_by_guid(href).each do |feed_entry|
+                feed_entry.update_attribute(:stock, stock)
+              end
+        end
+      
+      
 end
+
 
 

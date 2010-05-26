@@ -28,11 +28,11 @@ task :fetch_ziwi => :environment do
     :guid       => href,
     :picture    => 'http://www.ziwi.co.nz/'+picture,
     :url        => 'http://www.ziwi.co.nz/one_day_deals.php',
-    :published  => (Time.now+12.hours).hour>12? Date.today : Date.today-24.hours,
+    :published  => (Time.now+12.hours).hour>=12? Date.today : Date.today-24.hours,
     :home       => 'Ziwi',
     :home_url   => 'http://www.ziwi.co.nz/one_day_deals.php',
-    :rank       =>  10,
-    :description => stock
+    :rank       => 10,
+    :stock      => stock
 
         )
         end  

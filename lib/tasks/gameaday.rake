@@ -24,7 +24,7 @@ unless FeedEntry.exists? :name => name
       :home       => 'Gameaday',
       :home_url   => 'http://www.gameaday.co.nz/',
 
-      :published  => (Time.now+12.hours).hour>10? Date.today+22.hours : Date.today-2.hours,
+      :published  => (Time.now+12.hours).hour>=10? Date.today+22.hours : Date.today-2.hours,
       :rank       => 12,      
       :stock      => 100
 

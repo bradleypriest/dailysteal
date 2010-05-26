@@ -20,7 +20,7 @@ unless FeedEntry.exists? :name => name
       :picture    => 'http:'+picture,
       :url        => 'http://www.thedeal.co.nz/'+url,
       :guid       => url[/\d+(?=&)/],
-      :published  => (Time.now.hour)>12? Date.today+12.hours : Date.today-12.hours,
+      :published  => (Time.now.hour)>=12? Date.today+12.hours : Date.today-12.hours,
       :home       => 'TheDeal',
       :home_url   => 'http://www.thedeal.co.nz/DailyDeals.aspx',
       :stock      =>  100,

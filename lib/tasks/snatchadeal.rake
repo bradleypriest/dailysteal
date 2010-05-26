@@ -25,7 +25,7 @@ unless FeedEntry.exists? :name => name
       :fullprice  => fullprice,
       :url        => url,
       :picture    => 'http://www.snatchadeal.co.nz/'+picture,
-      :published  => (Time.now+12.hours).hour>11? Date.today+23.hours : Date.today-1.hours,
+      :published  => (Time.now+12.hours).hour>=11? Date.today+23.hours : Date.today-1.hours,
       :home       => 'Snatchadeal',
       :home_url   => 'http://www.snatchadeal.co.nz/',
       :guid       =>  url[/\d+/],

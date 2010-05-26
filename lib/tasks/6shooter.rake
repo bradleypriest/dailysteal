@@ -23,7 +23,7 @@ unless FeedEntry.exists? :guid => url[/\d+/]
   :fullprice  => fullprice,
   :url        => 'http://www.6shooter.co.nz'+url,
   :picture    => picture,
-  :published  => (Time.now+12.hours).hour>12? Date.today : Date.today-24.hours,
+  :published  => (Time.now+12.hours).hour>=12? Date.today : Date.today-24.hours,
   :home       => '6Shooter',
   :home_url   => 'http://www.6Shooter.co.nz/',
   :guid       =>  url[/\d+/],
