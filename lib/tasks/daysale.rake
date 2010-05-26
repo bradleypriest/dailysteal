@@ -29,7 +29,7 @@ unless FeedEntry.exists? :url => href
     :fullprice  => fullprice,
     :url        => href,
     :guid       => href[/\d+(?=.html)/],
-    :picture    => 'http://www.daysale.co.nz/'+picture,
+    :picture    => 'http://daysale.co.nz/'+picture,
     :published  => (Time.now+12.hours).hour>=12? Date.today : Date.today+24.hours,
     :home       => 'Daysale',
     :home_url   => 'http://daysale.co.nz',
