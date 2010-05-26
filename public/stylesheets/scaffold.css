@@ -269,13 +269,14 @@ body {
 	height:12px;
 }
 #deal_stock{
+	#deal_stock  {
 	background-color:green;
-	opacity:0.5;
+	height:12px;
 	margin:37px 0 0 -10px;
 	opacity:0.5;
 	padding:4px 2px 2px;
-	position:absolute;
-	height:12px;
+	position:relative;
+	width:256px;
 }
 #deal_site{
 	color:white;
