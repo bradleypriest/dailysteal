@@ -12,6 +12,12 @@ task :fetch_snatchadeal => :environment do
       fullprice = item.at_css(".rrp").text[/\$[\d,]+\.\d\d/]
       url = item.at_css(".box-image a")[:href][/.+(?=&)/]
       picture = item.at_css(".box-image img")[:src].gsub(/\s/,'%20')
+      
+ 
+ #     doc = Nokogiri::HTML(open(url))
+#        stock = doc.at_css("#product-info-right img")[:title][/\d+/]
+        
+        
 unless FeedEntry.exists? :name => name    
     FeedEntry.create!(
       :name       => name,
@@ -23,9 +29,10 @@ unless FeedEntry.exists? :name => name
       :home       => 'Snatchadeal',
       :home_url   => 'http://www.snatchadeal.co.nz/',
       :guid       =>  url[/\d+/],
-      :rank       =>  5
-
+      :rank       =>  5#,
+ #     :description => stock
       )
+    
     end
   end
 end
