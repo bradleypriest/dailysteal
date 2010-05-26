@@ -17,9 +17,9 @@ task :fetch_1day => :environment do
 #       stock = item.at_css(".stock_bar script").text[/\d+(?=',\s\/\/)/]
        
         
-unless FeedEntry.exists? :name => name+'1'    
+unless FeedEntry.exists? :name => name[/\w.+/]    
     FeedEntry.create!(
-      :name       => name,
+      :name       => name[/\w.+/],
       :price      => price,
       :fullprice  => fullprice,
       :url        => 'http://www.1-day.co.nz'+url,
@@ -34,5 +34,8 @@ unless FeedEntry.exists? :name => name+'1'
       )
 #    end
   end
+#    FeedEntry.update!(
+#      :stock => stock
+#)
   end
 end

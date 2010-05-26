@@ -12,9 +12,9 @@ task :fetch_mightyape => :environment do
       fullprice = item.at_css(".old").text
       url = item.at_css(".title .title")[:href] 
       picture = item.at_css(".boxshot")[:src]
-     # stock = item.at_css(".dealbox")
+    # stock = item.at_xpath('div[@class="dealBox"]/div')[:class][/\d+/]
 
-  unless FeedEntry.exists? :name => name
+  unless FeedEntry.exists? :name => name+'1'
     FeedEntry.create!(
       :name       => name,
       :price      => price,
@@ -25,7 +25,7 @@ task :fetch_mightyape => :environment do
       :home       => 'MightyApe',
       :home_url   => 'http://www.mightyape.co.nz/daily-deals/',
       :rank       =>  11#,
- #    :description => stock
+  #   :description => stock
 
       )
     end
