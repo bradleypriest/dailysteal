@@ -8,7 +8,7 @@ task :fetch_ziwi => :environment do
     
   doc.css(".box_").each do |item|  
     href = item.at_css("a")[:href]
- #   stock =item.at_css("p img")[:src][/\d+/]+'0'
+    stock =item.at_css("p img")[:src][/\d+/]+'0'
      doc = Nokogiri::HTML(open(href))  
 
        doc.css("#content form .box").each do |item|  
@@ -31,8 +31,8 @@ task :fetch_ziwi => :environment do
     :published  => (Time.now+12.hours).hour>12? Date.today : Date.today-24.hours,
     :home       => 'Ziwi',
     :home_url   => 'http://www.ziwi.co.nz/one_day_deals.php',
-    :rank       =>  10#,
-#    :description => stock
+    :rank       =>  10,
+    :description => stock
 
         )
         end  

@@ -10,20 +10,20 @@ task :fetch_catchoftheday => :environment do
       name = item.at_css("#catch_name").text
       name2 = item.at_css("h2").text 
       price = item.at_css("#price").text[/\$[\d,]+\.\d\d/]
-   #   fullprice = item.at_css("h3:nth-child(4)").text[/\$[\d,]+\.\d\d/]
       picture = item.at_css("#main_image")[:src] 
 unless FeedEntry.exists? :guid => name    
     FeedEntry.create!(
       :name       => name+' '+name2,
       :price      => price,
-#      :fullprice  => fullprice,
+      :stock      => 100
       :picture    => 'http://www.catchoftheday.co.nz/'+picture,
       :published  => (Time.now+12.hours).hour>12? Date.today : Date.today-24.hours,
-      :url          => 'http://www.catchoftheday.co.nz',
-      :guid         => name,
-      :home         => 'Catchoftheday',
-      :home_url     => 'http://www.catchoftheday.co.nz',
-      :rank         => 7
+      :url        => 'http://www.catchoftheday.co.nz',
+      :guid       => name,
+      :home       => 'Catchoftheday',
+      :home_url   => 'http://www.catchoftheday.co.nz',
+      :rank       => 7,
+      :stock      => 100
 
       )
     end

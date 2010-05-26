@@ -23,6 +23,7 @@ unless FeedEntry.exists? :name => name
       :published  => (Time.now.hour)>12? Date.today+12.hours : Date.today-12.hours,
       :home       => 'TheDeal',
       :home_url   => 'http://www.thedeal.co.nz/DailyDeals.aspx',
+      :stock      =>  100,
       :rank       =>  8
       )
     end

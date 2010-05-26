@@ -13,7 +13,7 @@ task :fetch_dealaday => :environment do
       fullprice = item.at_css("h3:nth-child(4)").text[/\$[\d,]+\.\d\d/]
       url = item.at_css("img:nth-child(3)")[:href]
       picture = item.at_css("img:nth-child(3)")[:src] 
-  #    stock = item.at_css(".orange")[:style][/\d\d/]
+      stock = item.at_css(".orange")[:style][/\d\d/]
       
       
 unless FeedEntry.exists? :name => name+' '+name2    
@@ -26,10 +26,9 @@ unless FeedEntry.exists? :name => name+' '+name2
       :guid       => picture[/\d+/],
       :home       => 'Dealaday',
       :home_url   => 'http://www.dealaday.co.nz/',
-
       :published  => (Time.now+12.hours).hour>10? Date.today+22.hours : Date.today-2.hours,
-      :rank       => 6#,      
- #     :description => stock
+      :rank       => 6,      
+      :stock      => stock
 
 
       )

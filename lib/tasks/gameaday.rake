@@ -21,13 +21,12 @@ unless FeedEntry.exists? :name => name
       :fullprice  => fullprice,
       :picture    => 'http://www.gameaday.co.nz/'+picture,
       :url        => 'http://www.gameaday.co.nz',
-
       :home       => 'Gameaday',
       :home_url   => 'http://www.gameaday.co.nz/',
 
       :published  => (Time.now+12.hours).hour>10? Date.today+22.hours : Date.today-2.hours,
-      :rank       => 12#,      
- #     :description => stock
+      :rank       => 12,      
+      :stock      => 100
 
 
       )

@@ -27,6 +27,7 @@ unless FeedEntry.exists? :guid => url[/\d+/]
   :home       => '6Shooter',
   :home_url   => 'http://www.6Shooter.co.nz/',
   :guid       =>  url[/\d+/],
+  :stock      =>  100,
   :rank       =>  3
       )
     end

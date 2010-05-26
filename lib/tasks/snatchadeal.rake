@@ -14,8 +14,8 @@ task :fetch_snatchadeal => :environment do
       picture = item.at_css(".box-image img")[:src].gsub(/\s/,'%20')
       
  
- #     doc = Nokogiri::HTML(open(url))
-#        stock = doc.at_css("#product-info-right img")[:title][/\d+/]
+    doc = Nokogiri::HTML(open(url))
+      stock = doc.at_css("#product-info-right img")[:title][/\d+/]
         
         
 unless FeedEntry.exists? :name => name    
@@ -29,8 +29,8 @@ unless FeedEntry.exists? :name => name
       :home       => 'Snatchadeal',
       :home_url   => 'http://www.snatchadeal.co.nz/',
       :guid       =>  url[/\d+/],
-      :rank       =>  5#,
- #     :description => stock
+      :rank       =>  5,
+      :stock      => stock
       )
     
     end

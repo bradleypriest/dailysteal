@@ -14,12 +14,12 @@ task :fetch_daysale => :environment do
         name2 = item.at_css("#productName").text
         price = item.at_css(".productSpecialPrice2").text[/\$[\d,]+\.\d\d/]
         fullprice = item.at_css(".normalprice2").text[/\$[\d,]+\.\d\d/]
-       picture = item.at_xpath('//img[@title]')[:src]
-   #   unless item.at_css(".stockdiv").nil? 
-    #    stock = item.at_css(".stockdiv img")[:src][/\d\d/]
-     # else
-      #  stock = 0
-    #  end
+        picture = item.at_xpath('//img[@title]')[:src]
+      unless item.at_css(".stockdiv").nil? 
+        stock = item.at_css(".stockdiv img")[:src][/\d\d/]
+      else
+        stock = 0
+      end
 
             
 unless FeedEntry.exists? :url => href
@@ -33,8 +33,8 @@ unless FeedEntry.exists? :url => href
     :published  => (Time.now+12.hours).hour>12? Date.today : Date.today+24.hours,
     :home       => 'Daysale',
     :home_url   => 'http://daysale.co.nz',
-    :rank       =>  9#,
-#    :description => stock
+    :rank       => 9,
+    :stock      => stock
 
         )
       end   

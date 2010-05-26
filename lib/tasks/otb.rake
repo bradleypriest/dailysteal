@@ -11,11 +11,11 @@ task :fetch_otb => :environment do
     price = item.at_css(".price").text[/\$[\d,]+\.\d\d/]
     url = item.at_css("h1 a")[:href]
     picture = item.at_css("#main_image")[:src]
-#    if item.at_css(".sold_out")[:style].nil?
- #     stock = 0
-  #  else
-  #    stock = 100
-   # end
+    if item.at_css(".sold_out")[:style].nil?
+      stock = 0
+    else
+     stock = 100
+    end
     unless item.at_css("strike").nil?
       fullprice = item.at_css("strike").text
     end
@@ -32,8 +32,8 @@ unless FeedEntry.exists? :url => url
   :home       => 'OffTheBack',
   :home_url   => 'http://www.offtheback.co.nz/',
   :guid       =>  url[/\d+/],
-  :rank       =>  2#,
- # :description => stock
+  :rank       =>  2,
+  :stock      => stock
       )
     end
   end

@@ -24,9 +24,9 @@ task :fetch_nzh => :environment do
        :picture    => 'http:'+picture,
        :published  => (Time.now).hour>10? Date.today+10.hours : Date.today-14.hours,
        :home       => 'NZHerald',
-       :home_url   => 'http://shopping.nzherald.co.nz/DailyDeals.aspx/',
-       :rank       => 16#,
-     # :stock => stock
+       :home_url  => 'http://shopping.nzherald.co.nz/DailyDeals.aspx/',
+       :rank      => 16,
+       :stock     => 100
 
            )
 

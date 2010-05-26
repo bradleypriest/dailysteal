@@ -25,7 +25,8 @@ task :fetch_yahoo => :environment do
        :published  => (Time.now).hour>10? Date.today+10.hours : Date.today-14.hours,
        :home       => 'YahooXtra',
        :home_url   => 'http://shopping.yahooxtra.co.nz/DailyDeals.aspx/',
-       :rank       => 17
+       :rank       => 17,
+       :stock     => 100
 
            )
 
