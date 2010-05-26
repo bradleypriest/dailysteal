@@ -12,9 +12,8 @@ task :fetch_1day => :environment do
       fullprice = item.at_css(".why_pay li").text.gsub(/WHY\sPAY\s/,'')
       url = item.at_css(".home_top img")[:src][/\/products.+(?=_small)/]
 #    href = 'http://www.1-day.co.nz'+url
- #    doc = Nokogiri::HTML(open(href)) 
-#     doc.css("#content_left").each do |item| 
-#       stock = item.at_css(".stock_bar script").text[/\d+(?=',\s\/\/)/]
+ #    doc = Nokogiri::HTML(open(href))  
+#       stock = doc.at_css(".stock_bar script").text[/\d+(?=',\s\/\/)/]
        
         
 unless FeedEntry.exists? :name => name[/\w.+/]    
