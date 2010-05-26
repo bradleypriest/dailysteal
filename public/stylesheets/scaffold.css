@@ -269,7 +269,7 @@ body {
 	height:12px;
 }
 #deal_stock{
-	#deal_stock  {
+
 	background-color:green;
 	height:12px;
 	margin:37px 0 0 -10px;
@@ -284,10 +284,7 @@ body {
 	margin:-13px 0 0 0;
 	position:absolute;
 	text-align:center;
-	width:240px;
-	
-	
-	
+	width:240px;	
 }
 #deal_name{
 	color:black;
