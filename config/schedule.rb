@@ -35,8 +35,9 @@ every 1.day, :at => '9:01 pm' do
 end
 
 
-#TheDeal
+
 every 1.day, :at => '12.01 pm' do
+#TheDeal
   rake "fetch_thedeal"
 #Yahoo
   rake "fetch_yahoo"
