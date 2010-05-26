@@ -31,7 +31,7 @@ unless FeedEntry.exists? :name => name[/\w.+/]
       :stock      => stock
 
       )
-   end
-  end
-  end
 end
+end
+end
+

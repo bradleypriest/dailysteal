@@ -29,13 +29,13 @@ task :fetch_stock => :environment do
                stock = doc.at_css(".stockdiv img")[:src][/\d+/]
             else
                stock = 0
-             end   
+            end   
           feed_entry.update_attribute(:stock, stock)  
     end
     FeedEntry.find_all_by_home('Dealaday').each do |feed_entry|  
           doc = Nokogiri::HTML(open(feed_entry.url))  
             stock = doc.at_css(".orange")[:style][/\d+/]    
-          feed_entry.update_attribute(:stock, stock)  
+              feed_entry.update_attribute(:stock, stock)  
     end
      
     FeedEntry.find_all_by_home('Snatchadeal').each do |feed_entry|  
