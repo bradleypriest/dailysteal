@@ -50,4 +50,5 @@ end
 every 20.minutes do
 #Stock levels
   rake "fetch_stock"
+end
 
