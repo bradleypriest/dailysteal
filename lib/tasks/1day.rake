@@ -10,8 +10,14 @@ task :fetch_1day => :environment do
       name = item.at_css(".productTitle").text.gsub(/\s+/,' ')
       price = item.at_css(".pricing li:nth-child(2)").text
       fullprice = item.at_css(".why_pay li").text.gsub(/WHY\sPAY\s/,'')
-      url = item.at_css(".home_top img")[:src][/\/products.+(?=_small)/]  
-unless FeedEntry.exists? :name => name    
+      url = item.at_css(".home_top img")[:src][/\/products.+(?=_small)/]
+#    href = 'http://www.1-day.co.nz'+url
+ #    doc = Nokogiri::HTML(open(href)) 
+#     doc.css("#content_left").each do |item| 
+#       stock = item.at_css(".stock_bar script").text[/\d+(?=',\s\/\/)/]
+       
+        
+unless FeedEntry.exists? :name => name+'1'    
     FeedEntry.create!(
       :name       => name,
       :price      => price,
@@ -22,9 +28,11 @@ unless FeedEntry.exists? :name => name
       :home       => '1-day',
       :home_url   => 'http://www.1-day.co.nz/',
       :guid       =>  url.gsub(/\/products\//,''),
-      :rank       =>  1
+      :rank       =>  1#,
+#      :stock => stock
 
       )
-    end
+#    end
+  end
   end
 end

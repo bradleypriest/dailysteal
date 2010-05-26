@@ -12,6 +12,7 @@ task :fetch_mightyape => :environment do
       fullprice = item.at_css(".old").text
       url = item.at_css(".title .title")[:href] 
       picture = item.at_css(".boxshot")[:src]
+     # stock = item.at_css(".dealbox")
 
   unless FeedEntry.exists? :name => name
     FeedEntry.create!(
@@ -23,7 +24,8 @@ task :fetch_mightyape => :environment do
       :published  => (Time.now.hour-12)>10? Date.today+22.hours : Date.today-2.hours,
       :home       => 'MightyApe',
       :home_url   => 'http://www.mightyape.co.nz/daily-deals/',
-      :rank       =>  11
+      :rank       =>  11,
+ #    :description => stock
 
       )
     end

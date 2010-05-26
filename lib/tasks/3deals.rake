@@ -16,6 +16,7 @@ task :fetch_3deals => :environment do
        price = item.at_css("#product-detail-price").text[/\$[\d,]+\.\d\d/]
        picture = item.at_css("#mainImage")[:src]
        fullprice = item.at_css("#do-not-pay").text[/\$[\d,]+\.\d\d/]
+ #      stock = item.at_xpath('//img[@width="40px"]')[:alt][/\d/]+'0'
        
        
 unless FeedEntry.exists? :url => href
@@ -29,7 +30,8 @@ unless FeedEntry.exists? :url => href
   :home       => '3Deals',
   :home_url   => 'http://www.3Deals.co.nz/',
   :guid       =>  href[/deal-\w+/],
-  :rank       =>  4
+  :rank       =>  4#,
+# :stock => stock
 
       )
     end   
