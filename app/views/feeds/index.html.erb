@@ -39,8 +39,9 @@
 						<img src="/images/soldout.png">
 					</div>
 				<%end%>
-<!--			<div id = "deal_stock" style="width:<%=h feed_entry.stock %>%"></div>
--->
+				<div id = "deal_stock_bar">
+				<div id = "deal_stock" style="width:<%=h feed_entry.stock %>% <% if feed_entry.stock == 0 %> ; display:none <%end%>"></div>
+				</div>
 				
 
 		</a>
