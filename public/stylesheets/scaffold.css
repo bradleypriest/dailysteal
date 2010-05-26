@@ -261,14 +261,14 @@ body {
 #deal_date{
 	font-size:9pt;
 	margin-left:0;
-	margin-top:40px;
+	margin-top:41px;
 	position:absolute;
 	color:black;
 }
 #deal_expires{
 	font-size:9pt;
 	margin-left:-3px;
-	margin-top:40px;
+	margin-top:41px;
 	position:absolute;
 	color:black;
 	z-index:1;
