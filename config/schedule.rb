@@ -1,6 +1,6 @@
 every 1.day, :at => '12:02 am' do
-  #Ziwi   
-    rake "fetch_ziwi" 
+#Ziwi   
+  rake "fetch_ziwi" 
 end
 every 1.day, :at => '12.01 am' do
 #Daysale
@@ -25,6 +25,8 @@ every 1.day, :at => '10:01 pm' do
   rake "fetch_mightyape"
 #Dealaday
   rake "fetch_dealaday"
+#Gameaday
+  rake "fetch_gameaday"
 end
 
 every 1.day, :at => '9:01 pm' do
@@ -35,5 +37,17 @@ end
 
 #TheDeal
 every 1.day, :at => '12.01 pm' do
-  rake"fetch_thedeal"
+  rake "fetch_thedeal"
+#Yahoo
+  rake "fetch_yahoo"
 end
+
+every 1.day, :at => '10.01 am' do
+#NZHerald
+  rake "fetch_nzh"
+end
+
+every 20.minutes do
+#Stock levels
+  rake "fetch_stock"
+
