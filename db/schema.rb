@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100524062730) do
+ActiveRecord::Schema.define(:version => 20100525233645) do
 
   create_table "feed_entries", :force => true do |t|
     t.string   "name"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20100524062730) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "rank"
+    t.integer  "stock"
   end
 
   create_table "feedbacks", :force => true do |t|
