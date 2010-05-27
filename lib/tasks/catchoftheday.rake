@@ -11,9 +11,9 @@ task :fetch_catchoftheday => :environment do
       name2 = item.at_css("h2").text 
       price = item.at_css("#price").text[/\$[\d,]+\.\d\d/]
       picture = item.at_css("#main_image")[:src]
-    if item.at_css(.cssnav a img)[:alt].include? "Almost"
+    if item.at_css(".cssnav a img")[:alt].include? "Almost"
           stock = 25
-    elsif item.at_css(.cssnav a img)[:alt].include? "Sold"
+    elsif item.at_css(".cssnav a img")[:alt].include? "Sold"
           stock = 0
     else
           stock = 100
@@ -29,7 +29,7 @@ unless FeedEntry.exists? :guid => name
       :home       => 'Catchoftheday',
       :home_url   => 'http://www.catchoftheday.co.nz',
       :rank       => 7,
-      :stock      => 100
+      :stock      => stock
 
       )
     end
