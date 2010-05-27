@@ -35,12 +35,13 @@
 				<div id="deal_expires">
 					Expires <%=h (feed_entry.published+12).strftime(fmt='%l%P')%>
 				</div>
-				<% if feed_entry.stock == 0 %>
-					<div id = "sold_out">
-						<img src="/images/soldout.png">
-					</div>
-				<%end%>
+				
 				<div id = "deal_stock_bar"></a>
+					<% if feed_entry.stock == 0 %>
+						<div id = "sold_out">
+							<img src="/images/soldout.png">
+						</div>
+					<%end%>
 				<div id = "deal_stock" style="width:<%=h feed_entry.stock %>% <% if feed_entry.stock == 0 %> ; display:none <%end%>"></div>
 				</div>
 				

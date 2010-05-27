@@ -112,7 +112,6 @@ li{
 	display:inline;
 }
 a{
-	color: #4B7399;
     text-decoration:none
 }
 a img {
@@ -274,6 +273,9 @@ body {
 	position:absolute;
 	color:black;
 }
+#deal_date a{
+	color:black;
+}
 #deal_expires{
 	font-size:9pt;
 	margin-left:-3px;
@@ -311,6 +313,9 @@ body {
 	text-align:center;
 	width:240px;
 	z-index:1;	
+}
+#deal_site a{
+	color:white;
 }
 #deal_name{
 	color:black;
