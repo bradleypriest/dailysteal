@@ -112,10 +112,10 @@ task :fetch_stock => :environment do
 
             doc.css(".s_prod_hold_1 , .s_prod_hold_2").each do |item|
               href = item.at_css("a")[:href]
-              if item.at_css(".s_prod_sold")?
-                stock = 0
-              else
+              if item.at_css(".s_prod_sold").nil?
                 stock = 100
+              else
+                stock = 0
               end
                 FeedEntry.find_all_by_url(href).each do |feed_entry|
                   if feed_entry.published>=Time.now-1.day
