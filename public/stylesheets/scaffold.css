@@ -319,13 +319,13 @@ body {
 	margin:2px 0 0 5px;
 	font-size:12pt;
 }
-#FAQ h1{
+h1{
 	font-size:20pt;
 }
-#FAQ h2{
+h2{
 	font-weight:bold;
 }
-#FAQ h3{
+h3{
 	font-weight:normal;
 }
 .hidden{
