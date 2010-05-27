@@ -13,8 +13,13 @@ task :fetch_6shooter => :environment do
     url = item.at_css("a")[:href]
     picture = item.at_css(".s_prod_image img")[:src].gsub(/\s/,'%20')
     fullprice = item.at_css(".s_prod_info h3").text[/\$[\d,]+\.\d\d/]
-
-  
+    if item.at_css(".s_prod_sold")?
+      stock = 0
+    else
+      stock = 100
+    end
+      
+      
 unless FeedEntry.exists? :guid => url[/\d+/]
 
   FeedEntry.create!(
@@ -27,7 +32,7 @@ unless FeedEntry.exists? :guid => url[/\d+/]
   :home       => '6Shooter',
   :home_url   => 'http://www.6Shooter.co.nz/',
   :guid       =>  url[/\d+/],
-  :stock      =>  100,
+  :stock      =>  stock,
   :rank       =>  3
       )
     end
