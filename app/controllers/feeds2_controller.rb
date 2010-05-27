@@ -1,4 +1,4 @@
-class FeedsController < ApplicationController
+class Feeds2Controller < ApplicationController
 
   def index
     @feeds = FeedEntry.all
