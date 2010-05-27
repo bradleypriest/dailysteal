@@ -68,6 +68,22 @@ task :fetch_stock => :environment do
       end
     end
     
+    FeedEntry.find_all_by_home('Catchoftheday').each do |feed_entry|
+      if feed_entry.published>=Time.now-1.day  
+          doc = Nokogiri::HTML(open(feed_entry.url))  
+            if item.at_css(.cssnav a img)[:alt].include? "Almost"
+                  stock = 25
+            elsif item.at_css(.cssnav a img)[:alt].include? "Sold"
+                  stock = 0
+            else
+                  stock = 100
+            end
+          feed_entry.update_attribute(:stock, stock)  
+      end
+    end
+    
+      
+      
     doc = Nokogiri::HTML(open('http://www.mightyape.co.nz/daily-deals'))
     
       doc.css(".deal").each do |item|
