@@ -13,10 +13,10 @@ task :fetch_6shooter => :environment do
     url = item.at_css("a")[:href]
     picture = item.at_css(".s_prod_image img")[:src].gsub(/\s/,'%20')
     fullprice = item.at_css(".s_prod_info h3").text[/\$[\d,]+\.\d\d/]
-    if item.at_css(".s_prod_sold")?
-      stock = 0
-    else
+    if item.at_css(".s_prod_sold").nil?
       stock = 100
+    else
+      stock = 0
     end
       
       
