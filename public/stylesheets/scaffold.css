@@ -284,6 +284,9 @@ body {
 	color:black;
 	z-index:1;
 }
+#deal_expires a{
+	color:black;
+}
 #deal_bottom{
 	background-color:#b3b3b3;
 	margin:37px 0 0 -10px;
