@@ -378,14 +378,9 @@ opacity:0.7;
 position:absolute;
 }
 #history{
-	margin:-21px 0 0 15px;
+	margin:-25px 0 0 10px;
 	padding:4px 0 2px 5px;
 	position:absolute;
-}
-#history ul{
-	text-align:right;
-	margin-right:9px;
-
 }
 #history li{
 	display:inline;
