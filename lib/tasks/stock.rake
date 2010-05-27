@@ -47,7 +47,7 @@ task :fetch_stock => :environment do
     FeedEntry.find_all_by_home('Dealaday').each do |feed_entry|  
           if feed_entry.published>=Time.now-1.day
             doc = Nokogiri::HTML(open(feed_entry.url))  
-            stock = doc.at_css(".orange")[:style][/\d+/]    
+            stock = 100-doc.at_css(".orange")[:style][/\d+/]    
               feed_entry.update_attribute(:stock, stock)  
           end
     end
