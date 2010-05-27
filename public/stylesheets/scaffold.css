@@ -283,9 +283,8 @@ body {
 	z-index:1;
 }
 #deal_bottom{
-	background-color:#666666;
+	background-color:#b3b3b3;
 	margin:37px 0 0 -10px;
-	opacity:0.5;
 	padding:4px 2px 2px;
 	position:absolute;
 	width:256px;
