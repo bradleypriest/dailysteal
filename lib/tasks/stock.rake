@@ -95,17 +95,18 @@ task :fetch_stock => :environment do
             end
         end
       end
-      doc = Nokogiri::HTML(open('http://www.ziwi.co.nz/one_day_deals.php'))  
+      
+  #    doc = Nokogiri::HTML(open('http://www.ziwi.co.nz/one_day_deals.php'))  
         
-          doc.css(".box_").each do |item|
-            href = item.at_css("a")[:href]
-            stock =item.at_css("p img")[:src][/\d+/]+'0'
-              FeedEntry.find_all_by_guid(href).each do |feed_entry|
-                if feed_entry.published>=Time.now-1.day
-                feed_entry.update_attribute(:stock, stock)
-              end
-          end
-        end
+  #        doc.css(".box_").each do |item|
+   #         href = item.at_css("a")[:href]
+    #        stock =item.at_css("p img")[:src][/\d+/]+'0'
+     #         FeedEntry.find_all_by_guid(href).each do |feed_entry|
+      #          if feed_entry.published>=Time.now-1.day
+       #         feed_entry.update_attribute(:stock, stock)
+#              end
+ #         end
+  #      end
         
         
         doc = Nokogiri::HTML(open('http://www.6shooter.co.nz'))  
