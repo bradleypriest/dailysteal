@@ -233,8 +233,14 @@ body {
 #deal a{
 	display:block;
 }
+#deal_image {
+	height:160px;
+	
+}
 #deal_image img{
-	margin:0;
+	margin-top:auto;
+	margin-bottom:auto;
+	max-height:160px;
 	max-width:240px;
 }
 #deal_price{
