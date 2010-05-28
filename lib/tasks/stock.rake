@@ -63,7 +63,7 @@ task :fetch_stock => :environment do
     FeedEntry.find_all_by_home('6Shooter').each do |feed_entry| 
       if feed_entry.published>=Time.now-1.day 
           doc = Nokogiri::HTML(open(feed_entry.url)) 
-        if doc.at_css("sg_selected").text.include? "SOLD"
+        if doc.at_css(".ss_info_full h3").text.include? "SOLD"
           stock = 0
         end
           feed_entry.update_attribute(:stock, stock)  
