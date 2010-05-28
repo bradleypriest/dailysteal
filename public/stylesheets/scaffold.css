@@ -206,6 +206,11 @@ body {
 #navigation li a:hover {
 		color: #c00;
 		 }
+
+}
+#facebook{
+	height:2px;
+}
 .toggle{
 	float:right;
 }
