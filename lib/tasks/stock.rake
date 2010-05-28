@@ -60,10 +60,12 @@ task :fetch_stock => :environment do
       end
     end
    
-    FeedEntry.find_all_by_home('Snatchadeal').each do |feed_entry|
-      if feed_entry.published>=Time.now-1.day  
-          doc = Nokogiri::HTML(open(feed_entry.url))  
-            stock = doc.at_css("#product-info-right img")[:title][/\d+/]
+    FeedEntry.find_all_by_home('6Shooter').each do |feed_entry| 
+      if feed_entry.published>=Time.now-1.day 
+          doc = Nokogiri::HTML(open(feed_entry.url)) 
+        if doc.at_css("sg_selected").text.include? "SOLD"
+          stock = 0
+        end
           feed_entry.update_attribute(:stock, stock)  
       end
     end
@@ -109,21 +111,7 @@ task :fetch_stock => :environment do
   #      end
         
         
-        doc = Nokogiri::HTML(open('http://www.6shooter.co.nz'))  
-
-            doc.css(".s_prod_hold_1 , .s_prod_hold_2").each do |item|
-              href = item.at_css("a")[:href]
-              if item.at_css(".s_prod_sold").nil?
-                stock = 100
-              else
-                stock = 0
-              end
-                FeedEntry.find_all_by_url(href).each do |feed_entry|
-                  if feed_entry.published>=Time.now-1.day
-                  feed_entry.update_attribute(:stock, stock)
-                end
-            end
-          end
+        
      
 end
 
