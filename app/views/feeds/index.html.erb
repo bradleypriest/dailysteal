@@ -1,9 +1,13 @@
 <div id="deal-list">
-  
+  	<% deal_id = 0%>
 	<% @feeds.sort_by { |feed_entry| feed_entry[:rank]}.each do |feed_entry| %>
 
-	<% if feed_entry.published>=Time.now-1.day %> 
-	<div id ="deal">
+	<% if feed_entry.published>=Time.now-1.day %>
+
+	<% deal_id += 1%>
+
+	
+	<div id ="deal" "deal-<%=((deal_id)%4)%>" >  
 		<a href=<%=h feed_entry.url %> title="<%=h feed_entry.name %>">
 				<div id ="deal_image"> 
 					<img src= <%=h feed_entry.picture%> 
