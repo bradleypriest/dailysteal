@@ -236,6 +236,7 @@ body {
 #deal_image {
 	height:160px;
 	
+	
 }
 #deal_image img{
 	margin-top:auto;
@@ -269,12 +270,14 @@ body {
 #price a{
 	color:white;
 }
-
+#deal_inner{
+	height:207px;
+}
 #fullprice {
 	font-family:Georgia;
 	font-weight:normal;
 	color:black;
-	margin:38px 0 0 180px;
+	margin:-3px 0 0 200px;
 	position:absolute;
 	text-decoration:line-through;
 	z-index:1;
@@ -291,8 +294,8 @@ body {
 }
 #deal_expires{
 	font-size:9pt;
-	margin-left:-3px;
-	margin-top:41px;
+	margin-left:3px;
+	margin-top:0px;
 	position:absolute;
 	color:black;
 	z-index:1;
@@ -302,17 +305,17 @@ body {
 }
 #deal_bottom{
 	background-color:#999;
-	margin:37px 0 0 -10px;
+	margin:-10px 0 0 -10px;
 	padding:4px 2px 2px;
-	position:absolute;
+	position:relative;
 	width:256px;
 	height:12px;
+	vertical-align:bottom;
 }
 #deal_stock{
-
 	background-color:#007FD9;
 	height:12px;
-	margin:37px 0 0 -10px;
+	margin:-3px 0 0 -2px;
 	opacity:0.5;
 	padding:4px 2px 2px;
 
@@ -324,7 +327,7 @@ body {
 #deal_site{
 	color:white;
 	font-size:9pt;
-	margin:41px 0 0 0;
+	margin:0px 0 0 0;
 	position:absolute;
 	text-align:center;
 	width:240px;
@@ -394,7 +397,7 @@ h3{
 }
 #sold_out{
 	display:block;
-	margin:-115px 0 0 0px;
+	margin:-175px 0 0 0px;
 	opacity:0.7;
 	
 }

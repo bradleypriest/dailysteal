@@ -9,6 +9,7 @@
 	
 	<div id ="deal" >  
 		<a href=<%=h feed_entry.url %> title="<%=h feed_entry.name %>">
+			<div id ="deal_inner">
 				<div id ="deal_image"> 
 					<img src= <%=h feed_entry.picture%> 
 				 	alt ="<%=h feed_entry.name %>">
@@ -24,35 +25,34 @@
 						<%=h feed_entry.price %>
 					</div>
 				</div>
-
-				<div id="fullprice">
-					 <%=h feed_entry.fullprice %>	
-				</div>
-			
+			</div>
 				
-				<div id = "deal_bottom"></div>
-
-				<div id="deal_site"> 
-							<%=h feed_entry.home%>
-				</div>
-
-				<div id="deal_expires">
-					Expires <%=h (feed_entry.published+12).strftime(fmt='%l%P')%>
-				</div>
-				
-				<div id = "deal_stock_bar">
+				<div id = "deal_bottom">
 					
-				<div id = "deal_stock" style="width:<%=h feed_entry.stock %>% <% if feed_entry.stock == 0 %> ; display:none <%end%>"></div></div></a>
-				
-				<% if feed_entry.stock == 0 %>
-					<div id = "sold_out">
-						<img src="/images/soldout.png">
+					<div id="fullprice">
+					 	<%=h feed_entry.fullprice %>	
 					</div>
-				<%end%>
-				
-				
-				
+			
+					<div id="deal_site"> 
+						<%=h feed_entry.home%>
+					</div>
 
+					<div id="deal_expires">
+						Expires <%=h (feed_entry.published+12).strftime(fmt='%l%P')%>
+					</div>
+				
+					<div id = "deal_stock_bar">
+						<div id = "deal_stock" style="width:<%=h feed_entry.stock %>% <% if feed_entry.stock == 0 %> ; display:none <%end%>">
+						</div>
+					</div>
+				</div>
+			</a>
+			
+				<% if feed_entry.stock == 0 %>
+				<div id = "sold_out">
+					<img src="/images/soldout.png">
+				</div>
+				<%end%>
 		
  	</div>
 
