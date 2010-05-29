@@ -392,11 +392,14 @@ h3{
 	width:239px;
 	line-height:1.2;
 }
-#sold_out {
-display:inline-block;
-margin:-115px 0 0 0px;
-opacity:0.7;
-position:absolute;
+#sold_out{
+	display:block;
+	margin:-115px 0 0 0px;
+	opacity:0.7;
+	
+}
+#sold_out img{
+
 }
 #history{
 	margin:-25px 0 0 10px;
