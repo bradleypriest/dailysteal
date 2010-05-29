@@ -65,6 +65,8 @@ task :fetch_stock => :environment do
           doc = Nokogiri::HTML(open(feed_entry.url)) 
         if doc.at_css(".ss_info_full h3").text.include? "SOLD"
           stock = 0
+        else 
+          stock = 100
         end
           feed_entry.update_attribute(:stock, stock)  
       end
