@@ -195,13 +195,14 @@ body {
 }
 
 #navigation li {
-		padding:8px 10px;	
+	
 		text-decoration: none;
 		font-weight:bold;
 		display:inline;
 		}
 #navigation li a{
 		color:#FFFFF9;
+		padding:8px 10px;
 }		
 #navigation li a:hover {
 		color: #c00;
