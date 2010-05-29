@@ -4,7 +4,6 @@
 
 	<% if feed_entry.published>=Time.now-1.day %> 
 	<div id ="deal">
-		<span id ="<%=h feed_entry.name.gsub(' ','_')%>">
 		<a href=<%=h feed_entry.url %> title="<%=h feed_entry.name %>">
 				<div id ="deal_image"> 
 					<img src= <%=h feed_entry.picture%> 
