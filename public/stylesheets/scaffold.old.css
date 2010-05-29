@@ -229,6 +229,9 @@ body {
 	-webkit-box-shadow: 0px 0px 2px #999;
 	-moz-box-shadow: 0px 0px 2px #999;
 }
+#deal a{
+	position:absolute;
+}
 
 #deal_image {
 	height:160px;
@@ -237,8 +240,8 @@ body {
 #deal_image img{
 	margin-top:auto;
 	margin-bottom:auto;
-	max-height:160px;
-	max-width:240px;
+	height:160px;
+	height: expression(this.height > 159 ? "160px": "auto");
 }
 #deal_price{
 	background-color:red;
@@ -281,9 +284,7 @@ body {
 	position:absolute;
 	color:black;
 }
-#deal_date a{
-	color:black;
-}
+
 #deal_expires{
 	font-size:9pt;
 	margin-left:-3px;
@@ -386,6 +387,7 @@ h3{
 	text-align:left;
 	width:239px;
 	line-height:1.2;
+	display:none;
 }
 #sold_out {
 display:inline-block;
