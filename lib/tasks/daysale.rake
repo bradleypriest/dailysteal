@@ -16,7 +16,7 @@ task :fetch_daysale => :environment do
         fullprice = item.at_css(".normalprice2").text[/\$[\d,]+\.\d\d/]
         picture = item.at_xpath('//img[@title]')[:src]
       unless item.at_css(".stockdiv").nil? 
-        stock = item.at_css(".stockdiv img")[:src][/\d\d/]
+        stock = item.at_css(".stockdiv img")[:src][/\d+/]
       else
         stock = 0
       end
