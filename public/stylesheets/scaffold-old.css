@@ -160,7 +160,7 @@ body {
 }
 .logo img{
 }
-
+img, div { behavior: url(iepngfix.htc) }
 .logopic{
 	margin-left:380px;
 	margin-top:-33px;
@@ -214,7 +214,9 @@ body {
 .toggle{
 	float:right;
 }
-
+#deal{
+	
+}
 .deal-1{
 	background-color:#ffffff;
 	margin:7px 3px 7px 7px;
