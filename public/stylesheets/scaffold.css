@@ -145,6 +145,7 @@ body {
   border:solid 1px #999;
   background-color: #FFFFF5;
   padding: 6px;
+  
   -webkit-box-shadow: 0px 0px 2px #636363;
   -moz-box-shadow: 0px 0px 2px #636363;
 }
@@ -220,13 +221,38 @@ body {
 	float:right;
 }
 
-#deal{
+ #deal{
 	background-color:#ffffff;
 	margin:7px 3px 7px 7px;
 	width:260px;
 	height:225px;
 	border:solid 1px #999;
-
+	list-style-type:none;	
+	display: inline-block;
+	text-align:center;
+	vertical-align:top;
+	-webkit-box-shadow: 0px 0px 2px #999;
+	-moz-box-shadow: 0px 0px 2px #999;
+} 
+/*.deal-1{
+		background-color:#ffffff;
+		margin:7px 3px 7px 7px;
+		width:260px;
+		height:225px;
+		border:solid 1px #999;
+		list-style-type:none;	
+		display: inline-block;
+		text-align:center;
+		vertical-align:top;
+		-webkit-box-shadow: 0px 0px 2px #999;
+		-moz-box-shadow: 0px 0px 2px #999;
+}
+.deal-2{
+	background-color:#ffffff;
+	margin:7px 3px 7px 284px;	
+	width:260px;
+	height:225px;
+	border:solid 1px #999;
 	list-style-type:none;	
 	display: inline-block;
 	text-align:center;
@@ -234,8 +260,32 @@ body {
 	-webkit-box-shadow: 0px 0px 2px #999;
 	-moz-box-shadow: 0px 0px 2px #999;
 }
-
-
+.deal-3{
+	background-color:#ffffff;
+	margin:7px 3px 7px 561px;	
+	width:260px;
+	height:225px;
+	border:solid 1px #999;
+	list-style-type:none;	
+	display: inline-block;
+	text-align:center;
+	vertical-align:top;
+	-webkit-box-shadow: 0px 0px 2px #999;
+	-moz-box-shadow: 0px 0px 2px #999;
+}
+.deal-4{
+	background-color:#ffffff;
+	margin:7px 3px 7px 837px;	
+	width:260px;
+	height:225px;
+	border:solid 1px #999;
+	list-style-type:none;	
+	display: inline-block;
+	text-align:center;
+	vertical-align:top;
+	-webkit-box-shadow: 0px 0px 2px #999;
+	-moz-box-shadow: 0px 0px 2px #999;
+} */
 #deal_image {
 	height:160px;
 	
