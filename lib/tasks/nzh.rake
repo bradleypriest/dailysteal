@@ -15,7 +15,7 @@ task :fetch_nzh => :environment do
       #      stock = item.at_xpath('//img[@width="40px"]')[:alt][/\d/]+'0'
 
 
-     unless FeedEntry.exists? :name => name+'1'
+     unless FeedEntry.exists? :name => name
        FeedEntry.create!(
        :name       => name,
        :price      => price,
