@@ -2,7 +2,7 @@
 	
 		<div id="deal-list">
 				
-		<% @feeds.each do |feed_entry| %>
+		<% @feeds.sort_by { |feed_entry| feed_entry[:rank]}.each do |feed_entry| %>
 			<% if feed_entry.published.between? Time.now-2.day, Time.now-1.day %> 
 			
 				<div id ="deal" >  
@@ -37,10 +37,7 @@
 								<div id="deal_date">
 									<%=h (feed_entry.published+12).strftime(fmt='%a %e %b')%>
 								</div>
-								<div id = "deal_stock_bar">
-									<div id = "deal_stock" style="width:<%=h feed_entry.stock %>% <% if feed_entry.stock == 0 %> ; display:none <%end%>">
-									</div>
-								</div>
+								
 							</div>
 				
 
