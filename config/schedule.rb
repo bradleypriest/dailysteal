@@ -63,7 +63,7 @@ every 1.day, :at => '10.01 am' do
   rake "fetch_nzh"
 end
 
-every 1.day, :at '12.10am' do
+every 1.day, :at => '12.10am' do
 #Stock levels
   rake "fetch_stock"
 end
