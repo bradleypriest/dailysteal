@@ -20,17 +20,18 @@
 					<img src= <%=h feed_entry.picture%> 
 				 	alt ="<%=h feed_entry.name %>">
 				</div>
+				<div id="deal_price">	
+					<div id="price">
+						<%=h feed_entry.price %>
+					</div>
+				</div>
+				
 				<div id="deal_name">
 						<h3> 
 							<%=h feed_entry.name.length >59? feed_entry.name[0..59]<<'...': feed_entry.name unless feed_entry.name.nil? %> 	
 						</h3>
 				</div>
 					
-				<div id="deal_price">	
-					<div id="price">
-						<%=h feed_entry.price %>
-					</div>
-				</div>
 			</div>
 				
 				<div id = "deal_bottom">
