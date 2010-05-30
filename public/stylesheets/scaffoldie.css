@@ -442,6 +442,7 @@ h3{
 	text-align:left;
 	width:239px;
 	line-height:1.2;
+	display:none;
 }
 #sold_out{
 	display:block;
