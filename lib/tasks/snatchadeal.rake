@@ -18,7 +18,7 @@ task :fetch_snatchadeal => :environment do
       stock = doc.at_css("#product-info-right img")[:title][/\d+/]
         
         
-unless FeedEntry.exists? :name => name    
+unless FeedEntry.exists? :guid => url[/\d+/]    
     FeedEntry.create!(
       :name       => name,
       :price      => price,
