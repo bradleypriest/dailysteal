@@ -118,6 +118,9 @@ a{
 a img {
   border: none;
 }
+* img, div { 
+	behavior: url(iepngfix.htc)
+}
 body {
   background:url("/images/header.png") repeat-x scroll 0 0 #F2F2F2;
   font-size: 14px;
@@ -243,6 +246,7 @@ body {
 	margin-bottom:auto;
 	max-height:160px;
 	max-width:240px;
+	* height: expression(this.height > 159 ? "160px": "auto");
 }
 #deal_price{
 	background-color:red;
@@ -318,11 +322,12 @@ body {
 	margin:-3px 0 0 -2px;
 	opacity:0.5;
 	padding:4px 2px 2px;
+	* display:none;
 
 }
 #deal_stock_bar {
 	width:256px;
-
+	
 }
 #deal_site{
 	color:white;
