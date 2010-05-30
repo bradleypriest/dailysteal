@@ -5,6 +5,7 @@
 <head>
 	<link rel="shortcut icon" href="/images/favicon.ico" >
 	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+	<%= display_meta(:keywords => "Daily Deals, 1-day deals, Daily Steal", :description => "The Daily Steal is New Zealand's home of best daily deals and 1 day sales. We put together a fresh collection of the NZ's best deals every day.") %>
 	<title>The Daily Steal | NZ's Best 1-Day and Daily Deals<%# controller.action_name.capitalize %></title>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" ></script>
   	
@@ -39,7 +40,7 @@
 			<%= render 'layouts/header' %>
 
 			<div id="content">
-			<%= render 'layouts/sidebar' %>	
+				
 				<%= yield %>
 				
 			</div>
