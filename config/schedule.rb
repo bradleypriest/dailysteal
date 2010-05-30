@@ -51,7 +51,7 @@ end
 
 
 
-every 1.day, :at => '12.01 pm' do
+every 1.day, :at => '12.03 pm' do
 #TheDeal
   rake "fetch_thedeal"
 #Yahoo
