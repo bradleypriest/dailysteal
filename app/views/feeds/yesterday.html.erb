@@ -7,7 +7,7 @@
 	<% deal_id += 1%>
 
 
-	<% dealid = (((deal_id)%4)) %>
+	<% dealid = (((deal_id-1)%4)+1) %>
 
 		
 			<div id ="deal" class="deal-<%= dealid %>" >  
