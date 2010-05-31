@@ -334,6 +334,7 @@ body {
 	margin-top:0px;
 	position:absolute;
 	color:black;
+	z-index:1;
 }
 #deal_date a{
 	color:black;
