@@ -13,7 +13,7 @@ task :fetch_dealaday => :environment do
       fullprice = item.at_css("h3:nth-child(4)").text[/\$[\d,]+\.\d\d/]
       url = item.at_css("img:nth-child(3)")[:href]
       picture = item.at_css("img:nth-child(3)")[:src] 
-      stock = 100-(item.at_css(".orange , .green, .red ")[:style][/\d+/].to_i)
+      stock = 100-(item.at_css(".orange , .green, .red")[:style][/\d+/].to_i)
       
       
 unless FeedEntry.exists? :name => name+' '+name2    
