@@ -6,59 +6,54 @@
 	
 	<% deal_id += 1%>
 
-
 	<% dealid = (((deal_id-1)%4)+1) %>
 
 		
-			<div id ="deal" class="deal-<%= dealid %>" >  
-						<div id ="deal_inner">
-							<div id ="deal_image"> 
-								<img src= <%=h feed_entry.picture%> 
-							 	alt ="<%=h feed_entry.name %>">
-							</div>
-							
-							<div id="deal_price">	
-								<div id="price">
-									<%=h feed_entry.price %>
-								</div>
-							</div>
-							
-							<div id="deal_name">
-								<h3> 
-									<%=h feed_entry.name.length >59? feed_entry.name[0..59]<<'...': feed_entry.name unless feed_entry.name.nil? %> 	
-								</h3>
-							</div>
-							
-						</div>
-
-							<div id = "deal_bottom">
-
-								<div id="fullprice">
-								 	<%=h feed_entry.fullprice %>	
-								</div>
-
-								<div id="deal_site"> 
-									<%=h feed_entry.home%>
-								</div>
-
-								<div id="deal_date">
-									<%=h (feed_entry.published+12).strftime(fmt='%a %e %b')%>
-								</div>
-								<div id ="stock_bar">
-									<div id = "deal_stock" style="display:none">
-									</div>
-								</div>
-							</div>
-				
-
-						
-
-			 	</div>
-
-
+		<div id ="deal" class="deal-<%= dealid %>" >  
 			
-			 	<%end%>
+			<div id ="deal_inner">
+				<div id ="deal_image"> 
+					<img src= <%=h feed_entry.picture%> 
+					alt ="<%=h feed_entry.name %>">
+				</div>
+							
+				<div id="deal_price">	
+					<div id="price">
+						<%=h feed_entry.price %>
+					</div>
+				</div>
+							
+				<div id="deal_name">
+					<h3> 
+						<%=h feed_entry.name.length >59? feed_entry.name[0..59]<<'...': feed_entry.name unless feed_entry.name.nil? %> 	
+					</h3>
+				</div>
+							
 			</div>
+
+			<div id = "deal_bottom">
+				<div id="fullprice">
+				 	<%=h feed_entry.fullprice %>	
+				</div>
+
+				<div id="deal_site"> 
+					<%=h feed_entry.home%>
+				</div>
+
+				<div id="deal_date">
+					<%=h (feed_entry.published+12).strftime(fmt='%a %e %b')%>
+				</div>
+				
+				<div id = "deal_stock_bar">
+					<div id = "deal_stock" style="display:none">
+					</div>
+				</div>
+						
+			</div>			
+				
+		</div>
+	<%end%>
+</div>
 
 
 

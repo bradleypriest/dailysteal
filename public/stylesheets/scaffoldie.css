@@ -365,7 +365,7 @@ body {
 	margin:-3px 0 0 -2px;
 	opacity:0.5;
 	padding:4px 2px 2px;
-	* display:none;
+	display:none;
 
 }
 #deal_stock_bar {
