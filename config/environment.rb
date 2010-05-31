@@ -17,7 +17,7 @@ Rails::Initializer.run do |config|
   # Specify gems that this application depends on and have them installed with rake gems:install
  # config.gem "pauldix-feedzirra", :lib => "feedzirra", :source => "http://gems.github.com"
   config.gem 'javan-whenever', :lib => false, :source => 'http://gems.github.com'
-  config.gem 'mislav-will_paginate', :lib => 'will_paginate', :source => 'http://gems.github.com' 
+  config.gem 'will_paginate', :source => 'http://gemcutter.org' 
 
   
  

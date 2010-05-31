@@ -402,6 +402,9 @@ body {
 	text-align:center;
 	width:250px;
 }
+.pagination{
+  	margin-left: 10px;
+}
 #FAQ{
 	line-height:1.4;
 	margin:2px 0 0 5px;

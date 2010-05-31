@@ -40,8 +40,7 @@ ActionController::Routing::Routes.draw do |map|
  map.help '/help', :controller => 'feeds', :action => 'help'
  map.about '/about', :controller => 'feeds', :action => 'about'
  map.faq '/faq', :controller => 'feeds', :action => 'faq'
- map.yesterday '/old/1', :controller => 'feeds', :action => 'yesterday'
- map.daybefore '/old/2', :controller => 'feeds', :action => 'daybefore'
+ map.yesterday '/old/', :controller => 'feeds', :action => 'yesterday'
  map.small '/small', :controller => 'feeds2', :action => 'small'
  
 

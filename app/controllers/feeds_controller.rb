@@ -10,13 +10,15 @@ class FeedsController < ApplicationController
   end
 
 
-  def show
-    @feed = Feed.find(params[:id])
-  end
+
   
   def yesterday
-    @feeds = FeedEntry.all
-
+    @feeds = FeedEntry.paginate(
+     :page => params[:page],
+     :conditions => ['published < ?', (Time.now-1.day)],
+     :order => 'published DESC',
+     :per_page => 50
+     )
     respond_to do |format|
       format.html # yesterday.html.erb
       format.xml  { render :xml => @feed_entries }
