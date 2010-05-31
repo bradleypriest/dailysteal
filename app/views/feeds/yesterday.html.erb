@@ -1,11 +1,16 @@
-	<div id="deal-list">
+<div id="deal-list">
+	<% deal_id = 0%>
 	
-		<%= will_paginate(@feeds) %>		
-		<% @feeds.each do |feed_entry| %>
+	<%= will_paginate(@feeds) %>		
+	<% @feeds.each do |feed_entry| %>
+	
+	<% deal_id += 1%>
+
+
+	<% dealid = (((deal_id)%4)+1) %>
+
 		
-		
-			
-				<div id ="deal" >  
+			<div id ="deal" class="deal-<%= dealid %>" >  
 						<div id ="deal_inner">
 							<div id ="deal_image"> 
 								<img src= <%=h feed_entry.picture%> 
