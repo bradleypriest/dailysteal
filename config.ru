@@ -33,7 +33,7 @@ set :root, '/blog'
 if RAILS_ENV != 'production'
 set :url, "http://localhost:3000/blog"
 else
-set :url, "http://www.dailysteal.co.nz/blog/"
+set :url, "http://gentle-day-77.heroku.com/blog/"
 end
 end
 
