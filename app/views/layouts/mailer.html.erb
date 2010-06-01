@@ -5,24 +5,25 @@
 <head>
 
 <title>The Daily Steal Mailer | NZ's Best 1-Day and Daily Deals</title>
-	<link rel="stylesheet" type="text/css" href="http://www.dailysteal.co.nz/stylesheets/scaffoldmailer.css" />
 
 
 </head>
-	<body style= "background:url("http://www.dailysteal.co.nz/images/header.png") repeat-x scroll 0 0 #F2F2F2">
+	<body style="background:url('http://www.dailysteal.co.nz/images/header.png') repeat-x scroll 0 0 #F2F2F2">
+		
 
 	
-		<div id="container">
+		<div id="container" style="margin-left:auto;margin-right:auto;width:620px;">
 			<br>
 			<%= render 'mailer/header' %>
 
-			<div id="content">
+			<div id="content" style="border:1px solid #999999;font-size:100%;outline:0 none;vertical-align:baseline;-moz-box-shadow:0 0 2px #636363;-webkit-box-shadow:0 0 2px #636363;background-color:#FFFFF5;margin:2px auto auto;padding:6px;width:600px;">
 				
 				<%= yield %>
 				
 			</div>
 		
 		</div>
-		<%= render 'layouts/footer' %>	
+		
+	
 	</body>
 </html>
