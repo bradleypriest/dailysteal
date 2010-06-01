@@ -19,9 +19,9 @@ toto = Toto::Server.new do
   #override the default location for the toto directories
 
   Toto::URLMap = {
-    :templates => "/blog/templates",
-    :pages => "/blog/templates/pages",
-    :articles => "/blog/articles"
+    :templates => "/templates",
+    :pages => "/templates/pages",
+    :articles => "/articles"
   }
 
 
@@ -33,7 +33,7 @@ set :root, '/blog'
 if RAILS_ENV != 'production'
 set :url, "http://localhost:3000/blog"
 else
-set :url, "http://www.dailysteal.co.nz/blog/"
+set :url, "http://www.dailysteal.co.nz/blog"
 end
 end
 
