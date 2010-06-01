@@ -3,3 +3,4 @@ javan-whenever -s gems.github.com
 builder
 rdiscount
 toto -s gems.github.com
+will_paginate
