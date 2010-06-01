@@ -12,18 +12,18 @@
 		<a href=<%=h feed_entry.url %> title="<%=h feed_entry.name %>">
 			<div id ="deal_inner" style="height:187px;padding-top:4px;">
 				<div id ="deal_image" style="height:150px;"> 
-					<img style="border:none;margin-bottom:auto;	margin-top:auto; max-height:150px;max-width:194px;" src= <%=h feed_entry.picture%> 
+					<img style="border:none;margin-bottom:auto;	margin-top:auto; max-height:140px;max-width:194px;" src= <%=h feed_entry.picture%> 
 				 	alt ="<%=h feed_entry.name %>">
 				</div>
 				
-				<div id="deal_price" style="background:none repeat scroll 0 0 transparent;border:0 none;font-size:100%;outline:0 none;vertical-align:baseline;-moz-box-shadow:0 0 1px white;-webkit-box-shadow:0 0 1px white;background-color:red;margin:-49px 0 0 96px;min-width:94px;opacity:0.8;padding:3px;position:absolute;">	
-					<div id="price" style="background:none repeat scroll 0 0 transparent;border:0 none;font-size:13pt;outline:0 none;vertical-align:baseline;color:white;font-family:verdana;font-weight:bold;margin:0 0 0 0;opacity:1;position:relative;text-shadow:1px 1px 4px #333333;">
+				<div id="deal_price" style="moz-box-shadow:0 0 1px white;-webkit-box-shadow:0 0 1px white;background-color:red;margin:-49px 0 0 96px;min-width:94px;opacity:0.8;padding:3px;position:absolute;">	
+					<div id="price" style="font-size:13pt;outline:0 none;vertical-align:baseline;color:white;font-family:verdana;font-weight:bold;margin:0 0 0 0;opacity:1;position:relative;text-shadow:1px 1px 4px #333333;">
 						<%=h feed_entry.price %>
 					</div>
 				</div>
 				
-				<div id="deal_name" style="margin-top:-8px;color:black;font-weight:normal;line-height:1.1;padding-top:1px;position:relative;text-align:center;width:195px;">
-						<h3 style="display:inline; font-size:10pt;font-weight:normal;"> 
+				<div id="deal_name" style="font-family:helvetica, arial;margin-top:-8px;color:black;font-weight:normal;line-height:1.1;padding-top:1px;position:relative;text-align:center;width:195px;">
+						<h3 style="display:inline; color:black; font-size:10pt;font-weight:normal;"> 
 							<%=h feed_entry.name.length >59? feed_entry.name[0..59]<<'...': feed_entry.name unless feed_entry.name.nil? %> 	
 						</h3>
 				</div>
@@ -36,11 +36,11 @@
 					 	<%=h feed_entry.fullprice %>	
 					</div>
 			
-					<div id="deal_site" style="background:none repeat scroll 0 0 transparent;border:0 none;font-size:8pt;outline:0 none;vertical-align:baseline;color:white;margin:1px 0 0;position:absolute;text-align:center;width:195px;z-index:1;"> 
+					<div id="deal_site" style="font-family:helvetica, arial;background:none repeat scroll 0 0 transparent;border:0 none;font-size:8pt;outline:0 none;vertical-align:baseline;color:white;margin:1px 0 0;position:absolute;text-align:center;width:195px;z-index:1;"> 
 						<%=h feed_entry.home%>
 					</div>
 
-					<div id="deal_expires" style="background:none repeat scroll 0 0 transparent;border:0 none;font-size:8pt;outline:0 none;vertical-align:baseline;color:black;margin-left:1px;margin-top:1px;position:absolute;z-index:1;">
+					<div id="deal_expires" style="font-family:helvetica, arial; background:none repeat scroll 0 0 transparent;border:0 none;font-size:8pt;outline:0 none;vertical-align:baseline;color:black;margin-left:1px;margin-top:1px;position:absolute;z-index:1;">
 						Expires <%=h (feed_entry.published+12).strftime(fmt='%l%P')%>
 					</div>
 				
