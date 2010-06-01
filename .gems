@@ -1,2 +1,5 @@
 pauldix-feedzirra -s gems.github.com
 javan-whenever -s gems.github.com
+builder
+rdiscount
+toto -s gems.github.com
