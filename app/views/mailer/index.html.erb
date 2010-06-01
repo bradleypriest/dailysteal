@@ -1,5 +1,4 @@
-<%= render 'layouts/sidebar' %>
-<% render_component :controller=> 'signups', :action => 'index', :params => params %>
+
 <div id="deal-list">
   	<% deal_id = 0%>
 	<% @feeds.sort_by { |feed_entry| feed_entry[:rank]}.each do |feed_entry| %>
