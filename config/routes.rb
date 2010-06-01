@@ -42,6 +42,7 @@ ActionController::Routing::Routes.draw do |map|
  map.faq '/faq', :controller => 'feeds', :action => 'faq'
  map.yesterday '/old/', :controller => 'feeds', :action => 'yesterday'
  map.small '/small/', :controller => 'feeds2', :action => 'small'
+map.signup '/signup/', :controller => 'signups', :action => 'index'
  
 
   # See how all your routes lay out with "rake routes"
