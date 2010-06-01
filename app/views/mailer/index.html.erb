@@ -1,22 +1,14 @@
 
 <div id="deal-list">
-  	<% deal_id = 0%>
+
 	<% @feeds.sort_by { |feed_entry| feed_entry[:rank]}.each do |feed_entry| %>
 
 	<% if feed_entry.published>=Time.now-1.day %>
 
-	<% deal_id += 1%>
 	
-	<% if deal_id<=6 %>
-	<% dealid = (((deal_id+2)%3)+1) %>
-	<% else %>
-	<% dealid = (((deal_id+1)%4)+1) %>
-	<%end%>
-
-	
-	<div id ="deal" class="deal-<%= dealid %>" > 
+	<div id ="deal"> 
 		<a href=<%=h feed_entry.url %> title="<%=h feed_entry.name %>">
-			<div id ="deal_inner">
+			
 				<div id ="deal_image"> 
 					<img src= <%=h feed_entry.picture%> 
 				 	alt ="<%=h feed_entry.name %>">
@@ -33,36 +25,11 @@
 							<%=h feed_entry.name.length >59? feed_entry.name[0..59]<<'...': feed_entry.name unless feed_entry.name.nil? %> 	
 						</h3>
 				</div>
-					
-			</div>
-				
-				<div id = "deal_bottom">
-					
-					<div id="fullprice">
-					 	<%=h feed_entry.fullprice %>	
-					</div>
-			
-					<div id="deal_site"> 
-						<%=h feed_entry.home%>
-					</div>
-
-					<div id="deal_expires">
-						Expires <%=h (feed_entry.published+12).strftime(fmt='%l%P')%>
-					</div>
-				
-					<div id = "deal_stock_bar">
-						<div id = "deal_stock" style="width:<%=h feed_entry.stock%>% <% if feed_entry.stock == 0 %> ; display:none <%end%>">
-						</div>
-					</div>
-				</div>
-			</a>
-			
-				<% if feed_entry.stock == 0 %>
-				<div id = "sold_out">
-					<img src="/images/soldout.png" alt="Sold Out">
-				</div>
-				<%end%>
 		
+				<div id="fullprice">
+				 	<%=h feed_entry.fullprice %>	
+				</div		
+			
  	</div>
 
 

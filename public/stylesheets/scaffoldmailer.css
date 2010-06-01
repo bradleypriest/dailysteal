@@ -211,8 +211,8 @@ body {
  #deal{
 	background-color:#ffffff;
 	margin:7px 3px 7px 7px;
-	width:260px;
-	height:225px;
+	width:190px;
+	height:200px;
 	border:solid 1px #999;
 	list-style-type:none;	
 	display: inline-block;
@@ -220,6 +220,7 @@ body {
 	vertical-align:top;
 	-webkit-box-shadow: 0px 0px 2px #999;
 	-moz-box-shadow: 0px 0px 2px #999;
+
 } 
 /*.deal-1{
 		background-color:#ffffff;
@@ -312,10 +313,7 @@ body {
 #price a{
 	color:white;
 }
-#deal_inner{
-	height:212px;
-	padding-top:5px;
-}
+
 #fullprice {
 	font-family:Georgia;
 	font-weight:normal;
