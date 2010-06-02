@@ -2,7 +2,7 @@
 	<% deal_id = 0%>
 	
 	<%= will_paginate(@feeds) %>		
-	<% @feeds.sort_by { |feed_entry| feed_entry[:rank]}.each do |feed_entry| %>
+	<% @feeds.each do |feed_entry| %>
 	
 	<% deal_id += 1%>
 

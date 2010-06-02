@@ -3,7 +3,8 @@ class FeedsController < ApplicationController
   def index
     @feeds = FeedEntry.find(
     :all,
-    :conditions => ['published > ?', (Time.now-1.day)]
+    :conditions => ['published > ?', (Time.now-1.day)],
+    :order => 'rank'
     )
 
     respond_to do |format|
@@ -20,8 +21,11 @@ class FeedsController < ApplicationController
      :page => params[:page],
      :conditions => ['published < ?', (Time.now-1.day)],
      :order => 'published DESC',
-     :per_page => 50
+     :per_page => '40'
      )
+     
+
+     
     respond_to do |format|
       format.html # yesterday.html.erb
       format.xml  { render :xml => @feed_entries }
