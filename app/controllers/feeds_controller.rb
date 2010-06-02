@@ -25,14 +25,6 @@ class FeedsController < ApplicationController
     end
   end
   
-  def daybefore
-    @feeds = FeedEntry.all
-
-    respond_to do |format|
-      format.html # yesterday.html.erb
-      format.xml  { render :xml => @feed_entries }
-    end
-  end
   
   def small
     @feeds = FeedEntry.all
@@ -55,10 +47,5 @@ class FeedsController < ApplicationController
   def faq
   end
   
-  def help
-  end
-
-  def about
-  end
   
 end

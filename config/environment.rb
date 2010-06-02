@@ -18,10 +18,8 @@ Rails::Initializer.run do |config|
  # config.gem "pauldix-feedzirra", :lib => "feedzirra", :source => "http://gems.github.com"
   config.gem 'javan-whenever', :lib => false, :source => 'http://gems.github.com'
   config.gem 'will_paginate', :source => 'http://gemcutter.org' 
-
+  config.gem 'nokogiri', :source => 'http://gemcutter.org'
   
- 
-
   
   # config.gem "scrapi"
   # config.gem "bj"

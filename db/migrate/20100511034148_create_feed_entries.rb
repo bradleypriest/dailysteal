@@ -11,6 +11,8 @@ class CreateFeedEntries < ActiveRecord::Migration
       t.string :picture
       t.string :home
       t.string :home_url
+      t.int    :stock
+      t.int    :rank
 
       t.timestamps
     end
