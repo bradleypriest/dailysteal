@@ -4,7 +4,7 @@
   	<% deal_id = 0%>
 	<% @feeds.sort_by { |feed_entry| feed_entry[:rank]}.each do |feed_entry| %>
 
-	<% if feed_entry.published>=Time.now-1.day %>
+
 
 	<% deal_id += 1%>
 	
@@ -67,6 +67,6 @@
  	</div>
 
 
-	<%end%>
+	
  	<%end%>
 </div>

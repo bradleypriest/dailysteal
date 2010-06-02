@@ -1,7 +1,10 @@
 class FeedsController < ApplicationController
 
   def index
-    @feeds = FeedEntry.all
+    @feeds = FeedEntry.find(
+    :all,
+    :conditions => ['published > ?', (Time.now-1.day)]
+    )
 
     respond_to do |format|
       format.html # index.html.erb
