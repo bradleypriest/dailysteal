@@ -25,7 +25,7 @@ task :fetch_ziwi => :environment do
     :name       => name+' by'+author,
     :price      => price,
     :fullprice  => fullprice,
-    :guid       => href,
+    :guid       => href[/\d\d+/],
     :picture    => 'http://www.ziwi.co.nz/'+picture,
     :url        => 'http://www.ziwi.co.nz/one_day_deals.php',
     :published  => (Time.now+12.hours).hour>=12? Date.today : Date.today-24.hours,
