@@ -20,6 +20,11 @@
 
 	<%= feedback_includes %>
 	<%= feedback_tab(:position => 'right') %>
+	<script type="text/javascript" src="http://konami-js.googlecode.com/svn/trunk/konami.js"></script>
+	<script type="text/javascript">
+		konami = new Konami()
+		konami.load("/konamicode.html");
+	</script>
 </head>
 	<body>
 	<script type="text/javascript">
