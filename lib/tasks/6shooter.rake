@@ -20,8 +20,8 @@ task :fetch_6shooter => :environment do
     end
       
       
-unless FeedEntry.exists? :guid => url[/\d+/]
-
+unless FeedEntry.exists? :published => Date.today-48.hours,  :guid => url[/\d+/]
+  
   FeedEntry.create!(
   :name       => name2+' '+name,
   :price      => price,

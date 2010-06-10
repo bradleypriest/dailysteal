@@ -25,6 +25,7 @@ task :fetch_nzh => :environment do
        :published  => (Time.now).hour>=10? Date.today+10.hours : Date.today-14.hours,
        :home       => 'NZHerald',
        :home_url  => 'http://shopping.nzherald.co.nz/DailyDeals.aspx/',
+       :guid      => url[/\d\d\d+/],
        :rank      => 16,
        :stock     => 100
 

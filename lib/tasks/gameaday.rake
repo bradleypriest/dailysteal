@@ -10,6 +10,7 @@ task :fetch_gameaday => :environment do
       price = doc.at_css(".ablue-18-bold").text[/\$[\d,]+\.\d\d/]
       fullprice = doc.at_css(".black-14-bold:nth-child(5)").text[/\$[\d,]+\.\d\d/]
       picture = doc.at_css(".dealimage")[:src] 
+
  #     description = doc.at_css("#content").text
 
       
