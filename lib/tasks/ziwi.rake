@@ -22,7 +22,7 @@ task :fetch_ziwi => :environment do
 
   unless FeedEntry.exists? :guid => href[/\d\d+/]
     FeedEntry.create!(
-    :name       => name+' by'+author,
+    :name       => name+' -'+author,
     :price      => price,
     :fullprice  => fullprice,
     :guid       => href[/\d\d+/],
