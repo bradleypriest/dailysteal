@@ -4,10 +4,8 @@ task :fetch_stock => :environment do
   require 'nokogiri'  
   require 'open-uri'
   
-  
-
 	  
-    FeedEntry.find_all_by_home('1-day').each do |feed_entry|
+    FeedEntry.find_all_by_home('1-day', :conditions => ['published > ?', (Time.now-1.day)]).each do |feed_entry|
       if feed_entry.published>=Time.now-1.day  
           doc = Nokogiri::HTML(open(feed_entry.url))  
             stock = doc.at_css(".stock_bar script").text[/\d+(?=',\s\/\/)/]    
