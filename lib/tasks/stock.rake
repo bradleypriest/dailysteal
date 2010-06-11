@@ -4,6 +4,8 @@ task :fetch_stock => :environment do
   require 'nokogiri'  
   require 'open-uri'
   
+  
+
 	  
     FeedEntry.find_all_by_home('1-day', :conditions => ['published > ?', (Time.now-1.day)]).each do |feed_entry|
       if feed_entry.published>=Time.now-1.day  
@@ -12,7 +14,7 @@ task :fetch_stock => :environment do
           feed_entry.update_attribute(:stock, stock)  
       end
     end
-    FeedEntry.find_all_by_home('OffTheBack').each do |feed_entry|
+    FeedEntry.find_all_by_home('OffTheBack', :conditions => ['published > ?', (Time.now-1.day)]).each do |feed_entry|
       if feed_entry.published>=Time.now-1.day  
           doc = Nokogiri::HTML(open(feed_entry.url)) 
               if doc.at_css(".sold_out")[:style].nil?
@@ -23,7 +25,7 @@ task :fetch_stock => :environment do
           feed_entry.update_attribute(:stock, stock)  
       end
     end
-    FeedEntry.find_all_by_home('3Deals').each do |feed_entry|  
+    FeedEntry.find_all_by_home('3Deals', :conditions => ['published > ?', (Time.now-1.day)]).each do |feed_entry|  
           if feed_entry.published>=Time.now-1.day
             doc = Nokogiri::HTML(open(feed_entry.url))  
             stock = doc.at_xpath('//div[@style="margin-bottom: 5px; font-weight: bold;"]/img')[:alt][/\d+/]+'0'    
@@ -31,7 +33,7 @@ task :fetch_stock => :environment do
     
           end
     end
-    FeedEntry.find_all_by_home('Daysale').each do |feed_entry|  
+    FeedEntry.find_all_by_home('Daysale', :conditions => ['published > ?', (Time.now-1.day)]).each do |feed_entry|  
           if feed_entry.published>=Time.now-1.day
             doc = Nokogiri::HTML(open(feed_entry.url))  
             unless doc.at_css(".stockdiv").nil? 
@@ -42,7 +44,7 @@ task :fetch_stock => :environment do
           feed_entry.update_attribute(:stock, stock)  
           end
     end
-    FeedEntry.find_all_by_home('Dealaday').each do |feed_entry|  
+    FeedEntry.find_all_by_home('Dealaday', :conditions => ['published > ?', (Time.now-1.day)]).each do |feed_entry|  
           if feed_entry.published>=Time.now-1.day
             doc = Nokogiri::HTML(open(feed_entry.url))  
             stock = 100-(doc.at_css(".orange, .green, .red")[:style][/\d+/].to_i)    
@@ -50,7 +52,7 @@ task :fetch_stock => :environment do
           end
     end
      
-    FeedEntry.find_all_by_home('Snatchadeal').each do |feed_entry| 
+    FeedEntry.find_all_by_home('Snatchadeal', :conditions => ['published > ?', (Time.now-1.day)]).each do |feed_entry| 
       if feed_entry.published>=Time.now-1.day 
           doc = Nokogiri::HTML(open(feed_entry.url))  
             stock = doc.at_css("#product-info-right img")[:title][/\d+/]
@@ -58,7 +60,7 @@ task :fetch_stock => :environment do
       end
     end
    
-    FeedEntry.find_all_by_home('6Shooter').each do |feed_entry| 
+    FeedEntry.find_all_by_home('6Shooter', :conditions => ['published > ?', (Time.now-1.day)]).each do |feed_entry| 
       if feed_entry.published>=Time.now-1.day 
           doc = Nokogiri::HTML(open(feed_entry.url)) 
         if doc.at_css(".ss_info_full h3").text.include? "SOLD"
@@ -70,7 +72,7 @@ task :fetch_stock => :environment do
       end
     end
     
-    FeedEntry.find_all_by_home('Catchoftheday').each do |feed_entry|
+    FeedEntry.find_all_by_home('Catchoftheday', :conditions => ['published > ?', (Time.now-1.day)]).each do |feed_entry|
       if feed_entry.published>=Time.now-1.day  
           doc = Nokogiri::HTML(open(feed_entry.url))  
             if doc.at_css(".cssnav a img")[:alt].include? "Almost"
