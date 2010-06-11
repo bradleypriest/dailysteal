@@ -18,8 +18,12 @@ unless FeedEntry.exists? :guid => guid
       fullprice = item.at_css(".s").text[/\$[\d,]+\.\d\d/]
       url = item.at_css("a")[:href]
       href = 'http://www.crazysales.co.nz'+url
-    doc = Nokogiri::HTML(open(href))  
+    doc = Nokogiri::HTML(open(href)) 
+    unless doc.at_css("#prdt_infos .l").nil? 
       stock = doc.at_css("#prdt_infos .l")[:width][/\d+/]
+    else
+      stock = 0 
+    end
           
     FeedEntry.create!(
       :name       => name,
