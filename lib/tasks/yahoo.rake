@@ -15,14 +15,20 @@ unless FeedEntry.exists? :guid => guid
 
       name = item.at_css(".deal-title").text
       price = item.at_css(".deal-price a strong").text[/\$[\d,]+\.\d\d/]
-      picture = item.at_css(".deal-image")[:style][/\/\/.+JPG/i]
       fullprice = item.at_css(".deal-price a em").text[/\$[\d,]+\.\d\d/]
+      
+      
+      href = 'http://shopping.yahooxtra.co.nz'+url
+      doc = Nokogiri::HTML(open(href))
+      picture = doc.at_css(".product-image img")[:src] 
+      
+         
      
        FeedEntry.create!(
        :name       => name,
        :price      => price,
        :fullprice  => fullprice,
-       :url        => 'http://shopping.yahooxtra.co.nz'+url,
+       :url        => href,
        :picture    => 'http:'+picture,
        :published  => published,
        :home       => 'YahooXtra',
