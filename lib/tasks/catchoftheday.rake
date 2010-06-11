@@ -6,12 +6,15 @@ task :fetch_catchoftheday => :environment do
   url = "http://www.catchoftheday.co.nz"
   doc = Nokogiri::HTML(open(url))  
     
-    doc.css("#rightcol").each do |item|  
+    doc.css("#rightcol").each do |item|
+      published  = (Time.now+12.hours).hour>=12? Date.today : Date.today-24.hours
+      guid = item.at_css(".cssnav form input")[:value]+(published.strftime(fmt='%d%m%g'))
+
+unless FeedEntry.exists? :guid => guid 
       name = item.at_css("#catch_name").text
       name2 = item.at_css("h2").text 
       price = item.at_css("#price").text[/\$[\d,]+\.\d\d/]
-      picture = item.at_css("#main_image")[:src]
-      guid = item.at_css(".cssnav form input")[:value]
+      picture = item.at_css("#main_image")[:src]    
     if item.at_css(".cssnav a img")[:alt].include? "Almost"
           stock = 25
     elsif item.at_css(".cssnav a img")[:alt].include? "Sold"
@@ -19,12 +22,12 @@ task :fetch_catchoftheday => :environment do
     else
           stock = 100
     end
-unless FeedEntry.exists? :guid => guid    
+   
     FeedEntry.create!(
       :name       => name+' '+name2,
       :price      => price,
       :picture    => 'http://www.catchoftheday.co.nz/'+picture,
-      :published  => (Time.now+12.hours).hour>=12? Date.today : Date.today-24.hours,
+      :published  => published,
       :url        => 'http://www.catchoftheday.co.nz',
       :home       => 'Catchoftheday',
       :home_url   => 'http://www.catchoftheday.co.nz',

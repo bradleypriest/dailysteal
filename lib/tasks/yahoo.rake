@@ -7,25 +7,27 @@ task :fetch_yahoo => :environment do
   doc = Nokogiri::HTML(open(url))  
     
   doc.css("#dailyDealItems li").each do |item|  
+    
+    url = item.at_css(".deal-item a")[:href][/\/.+/]
+    published  = (Time.now).hour>=12? Date.today+12.hours : Date.today-12.hours
+    guid = url[/\d\d\d\d\d+/]+(published.strftime(fmt='%d%m%g'))
+unless FeedEntry.exists? :guid => guid
+
       name = item.at_css(".deal-title").text
       price = item.at_css(".deal-price a strong").text[/\$[\d,]+\.\d\d/]
       picture = item.at_css(".deal-image")[:style][/\/\/.+JPG/i]
       fullprice = item.at_css(".deal-price a em").text[/\$[\d,]+\.\d\d/]
-      url = item.at_css(".deal-item a")[:href][/\/.+/]
-
-
-
-     unless FeedEntry.exists? :name => name
+     
        FeedEntry.create!(
        :name       => name,
        :price      => price,
        :fullprice  => fullprice,
        :url        => 'http://shopping.yahooxtra.co.nz'+url,
        :picture    => 'http:'+picture,
-       :published  => (Time.now).hour>=12? Date.today+12.hours : Date.today-12.hours,
+       :published  => published,
        :home       => 'YahooXtra',
        :home_url   => 'http://shopping.yahooxtra.co.nz/DailyDeals.aspx/',
-       :guid      => url[/\d\d\d+/],
+       :guid      => guid,
        :rank       => 17,
        :stock      => 100
 

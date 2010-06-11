@@ -7,7 +7,9 @@ task :fetch_daysale => :environment do
   doc = Nokogiri::HTML(open(url))   
   doc.css(".smallprod_table , .mainprod_content").each do |item|  
     href = item.at_css(".mainprod_manu a, .smallprod_manu a")[:href][/.+html/]
-  
+    published  = (Time.now+12.hours).hour>=12? Date.today : Date.today-24.hours
+    guid = href[/\d+(?=.html)/]+(published.strftime(fmt='%d%m%g'))
+unless FeedEntry.exists? :guid => guid
   doc = Nokogiri::HTML(open(href))  
     doc.css("#mainWrapper").each do |item|  
         name = item.at_css(".prodinfo_manu").text
@@ -21,16 +23,14 @@ task :fetch_daysale => :environment do
         stock = 0
       end
 
-            
-unless FeedEntry.exists? :url => href
     FeedEntry.create!(
     :name       => name+' '+name2,
     :price      => price,
     :fullprice  => fullprice,
     :url        => href,
-    :guid       => href[/\d+(?=.html)/],
+    :guid       => guid,
     :picture    => 'http://daysale.co.nz/'+picture,
-    :published  => (Time.now+12.hours).hour>=12? Date.today : Date.today+24.hours,
+    :published  => published,
     :home       => 'Daysale',
     :home_url   => 'http://daysale.co.nz',
     :rank       => 9,

@@ -7,9 +7,12 @@ task :fetch_otb => :environment do
   doc = Nokogiri::HTML(open(url))  
     
   doc.css("#daily_deals .product_item").each do |item|  
-    name = item.at_css("h1").text
-    price = item.at_css(".price").text[/\$[\d,]+\.\d\d/]
     url = item.at_css("h1 a")[:href]
+    published  = (Time.now+12.hours).hour>=9? Date.today+21.hours : Date.today-3.hours
+    guid = url[/\d+/]+(published.strftime(fmt='%d%m%g'))
+unless FeedEntry.exists? :guid => guid 
+    name = item.at_css("h1").text
+    price = item.at_css(".price").text[/\$[\d,]+\.\d\d/]    
     picture = item.at_css("#main_image")[:src]
     if item.at_css(".sold_out")[:style].nil?
       stock = 0
@@ -21,17 +24,17 @@ task :fetch_otb => :environment do
     end
   
 
-unless FeedEntry.exists? :url => url 
+
   FeedEntry.create!(
   :name       => name,
   :price      => price,
   :fullprice  => fullprice,
   :url        => url,
   :picture    => picture,
-  :published  => (Time.now+12.hours).hour>=9? Date.today+21.hours : Date.today-3.hours,
+  :published  => published,
   :home       => 'OffTheBack',
   :home_url   => 'http://www.offtheback.co.nz/',
-  :guid       =>  url[/\d+/],
+  :guid       =>  guid,
   :rank       =>  2,
   :stock      => stock
       )
