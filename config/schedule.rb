@@ -13,6 +13,10 @@ every 1.day, :at => '12.01 am' do
   rake "fetch_3deals"  
 #1-day
   rake "fetch_1day"
+#1-daytee
+  rake "fetch_1daytee"
+#Crazysales
+  rake "fetch_crazysales"
 end
 
 every 1.day, :at => '12:15 am' do
