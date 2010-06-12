@@ -9,7 +9,7 @@ task :fetch_thedeal => :environment do
     doc.css("#ctl00_ctl00_MainContent_uxHome_DealOfTheDay_pnlProductList .quickproductinfo").each do |item|
       
       url = item.at_css(".producttitle")[:href]
-      published  = (Time.now+12.hours).hour>=12? Date.today : Date.today-24.hours
+      published  = (Time.now).hour>=12? Date.today+12.hours : Date.today-12.hours
       guid = url[/\d+(?=&)/]+(published.strftime(fmt='%d%m%g'))
 unless FeedEntry.exists? :guid => guid  
       name = item.at_css(".producttitle").text
