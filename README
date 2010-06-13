@@ -8,4 +8,4 @@ Also supports screen-scraping through Nokogiri
 
 Scheduling handled through the whenever gem.
 
-Requires sendmail
+Requires sendmail for feedback
