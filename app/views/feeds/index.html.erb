@@ -16,7 +16,7 @@
 
 	
 	<div id ="deal" class="deal-<%= dealid %>" > 
-		<a href=<%=h feed_entry.url %> onMouseup="recordOutboundLink(this, 'Outbound Links', '<%=h feed_entry.home%>');return false;" target="_blank" title="<%=h feed_entry.name %>">
+		<a href=<%=h feed_entry.url %> onMouseup="recordOutboundLink(this, 'Outbound Links', '<%=h feed_entry.home%>');" title="<%=h feed_entry.name %>">
 			<div id ="deal_inner">
 				<div id ="deal_image"> 
 					<img src= <%=h feed_entry.picture%> 
