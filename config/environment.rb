@@ -19,7 +19,7 @@ Rails::Initializer.run do |config|
   config.gem 'javan-whenever', :lib => false, :source => 'http://gems.github.com'
   config.gem 'will_paginate', :source => 'http://gemcutter.org' 
   config.gem 'nokogiri', :source => 'http://gemcutter.org'
-  
+  config.gem 'sqlite3-ruby', :lib => 'sqlite3', :version => '!= 1.3.0'
   
   # config.gem "scrapi"
   # config.gem "bj"
