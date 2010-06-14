@@ -16,7 +16,7 @@ unless FeedEntry.exists? :guid => guid
         name2 = item.at_css("#productName").text
         price = item.at_css(".productSpecialPrice2").text[/\$[\d,]+\.\d\d/]
         fullprice = item.at_css(".normalprice2").text[/\$[\d,]+\.\d\d/]
-        picture = item.at_xpath('//img[@title]')[:src]
+        picture = item.at_xpath('//img[@title]')[:src].gsub(/\s/,'%20')
       unless item.at_css(".stockdiv").nil? 
         stock = item.at_css(".stockdiv img")[:src][/\d+/]
       else
