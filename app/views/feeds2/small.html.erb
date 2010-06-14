@@ -1,9 +1,10 @@
+<%= render 'layouts/sidebar' %>
 <div id="deal-list">
 
 	<% deal_id = 0%>
 	<% @feeds.sort_by { |feed_entry| feed_entry[:rank]}.each do |feed_entry| %>
 
-	<% if feed_entry.published>=Time.now-1.day %>
+	
 
 	<% deal_id += 1%>
 	
@@ -14,57 +15,58 @@
 	<%end%>
 	
 	
-	<div id ="deal" class="deal-<%= dealid %>"> 
-		<a href=<%=h feed_entry.url %> title="<%=h feed_entry.name %>">
-			<div id ="deal_inner">
-				<div id ="deal_image"> 
-					<img src= <%=h feed_entry.picture%> 
-				 	alt ="<%=h feed_entry.name %>">
-				</div>
-				<div id="deal_price">	
-					<div id="price">
-						<%=h feed_entry.price %>
-					</div>
-				</div>
+	<div class ="deal deal-<%= dealid %>" > 
+		<a href="<%=h feed_entry.url %>" title="<%=h feed_entry.name %>" style="display:box">
+			<span class ="deal_inner">
+				<span class ="deal_image"> 
+					<img src= "<%=h feed_entry.picture %>"
+				 	alt ="<%=h feed_entry.name %>" />
+				</span>
 				
-				<div id="deal_name">
+				<span class="deal_price">	
+					<span class="price">
+						<%=h feed_entry.price %>
+					</span>
+				</span>
+				
+				<span class="deal_name">
 						<h3> 
 							<%=h feed_entry.name.length >59? feed_entry.name[0..59]<<'...': feed_entry.name unless feed_entry.name.nil? %> 	
 						</h3>
-				</div>
+				</span>
 					
-			</div>
+			</span>
 				
-				<div id = "deal_bottom">
+				<span class = "deal_bottom">
 					
-					<div id="fullprice">
+					<span class="fullprice">
 					 	<%=h feed_entry.fullprice %>	
-					</div>
+					</span>
 			
-					<div id="deal_site"> 
+					<span class="deal_site"> 
 						<%=h feed_entry.home%>
-					</div>
+					</span>
 
-					<div id="deal_expires">
+					<span class="deal_expires">
 						Expires <%=h (feed_entry.published+12).strftime(fmt='%l%P')%>
-					</div>
+					</span>
 				
-					<div id = "deal_stock_bar">
-						<div id = "deal_stock" style="width:<%=h feed_entry.stock %>% <% if feed_entry.stock == 0 %> ; display:none <%end%>">
-						</div>
-					</div>
-				</div>
+					<span class = "deal_stock_bar">
+						<span class = "deal_stock" style="width:<%=h feed_entry.stock%>% <% if feed_entry.stock == 0 %> ; display:none <%end%>">
+						</span>
+					</span>
+				</span>
 			</a>
 			
 				<% if feed_entry.stock == 0 %>
-				<div id = "sold_out">
-					<img src="/images/soldout.png">
-				</div>
+				<span class = "sold_out">
+					<img src="/images/soldout.png" alt="Sold Out" />
+				</span>
 				<%end%>
 		
  	</div>
 
 
-	<%end%>
+
  	<%end%>
 </div>

@@ -33,10 +33,14 @@ class Feeds2Controller < ApplicationController
   end
   
   def small
-    @feeds = FeedEntry.all
+    @feeds = FeedEntry.find(
+    :all,
+    :conditions => ['published > ?', (Time.now-1.day)],
+    :order => 'rank'
+    )
 
     respond_to do |format|
-      format.html # yesterday.html.erb
+      format.html # index.html.erb
       format.xml  { render :xml => @feed_entries }
     end
   end
