@@ -54,7 +54,7 @@
 						Expires <%=h (feed_entry.published+12).strftime(fmt='%l%P')%>
 					</span>
 				
-					<span class = "deal_stock_bar">
+					<span class ="deal_stock_bar">
 						<span class = "deal_stock" style="width:<%=h feed_entry.stock%>% <% if feed_entry.stock == 0 %> ; display:none <%end%>">
 						</span>
 					</span>
