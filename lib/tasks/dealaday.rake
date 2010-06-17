@@ -15,7 +15,9 @@ task :fetch_dealaday => :environment do
       name2 = item.at_css("h2:nth-child(2)").text 
       price = item.at_css("h2.di").text[/\$[\d,]+\.\d\d/]
       fullprice = item.at_css("h3:nth-child(4)").text[/\$[\d,]+\.\d\d/]
-      url = item.at_css("img:nth-child(3)")[:href]
+      unless item.at_css("img:nth-child(3)").nil?
+        url = item.at_css("img:nth-child(3)")[:href]
+      end
       stock = 100-(item.at_css(".orange , .green, .red")[:style][/\d+/].to_i)
           
     FeedEntry.create!(
