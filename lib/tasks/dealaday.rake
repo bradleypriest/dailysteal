@@ -7,7 +7,7 @@ task :fetch_dealaday => :environment do
   doc = Nokogiri::HTML(open(url))  
     
     doc.css("#product_main").each do |item| 
-      picture = item.at_css("#product_main img")[:src] 
+      picture = item.at_css("img")[:src] 
       published  = (Time.now+12.hours).hour>=10? Date.today+22.hours : Date.today-2.hours
       guid = picture[/\d+/]+(published.strftime(fmt='%d%m%g'))
   unless FeedEntry.exists? :guid => guid
