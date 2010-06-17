@@ -18,7 +18,7 @@ unless FeedEntry.exists? :guid => guid
        name2 = item.at_css("h1").text
        price = item.at_css("#product-detail-price").text[/\$[\d,]+\.\d\d/]
        picture = item.at_css("#mainImage")[:src]
-       unless item.at_css(("#do-not-pay").nil?
+       unless item.at_css("#do-not-pay").nil?
          fullprice = item.at_css("#do-not-pay").text[/\$[\d,]+\.\d\d/]
        end
 
@@ -38,7 +38,7 @@ unless FeedEntry.exists? :guid => guid
   :stock      => stock
 
       )
-    end   
+  end   
   end
 end
 end
