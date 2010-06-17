@@ -197,6 +197,7 @@ width:260px;
 }
 .deal_image{
 height:160px;
+display:block;
 }
 .deal_image img {
 margin-bottom:auto;
