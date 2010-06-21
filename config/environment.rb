@@ -17,7 +17,7 @@ Rails::Initializer.run do |config|
   # Specify gems that this application depends on and have them installed with rake gems:install
  # config.gem "pauldix-feedzirra", :lib => "feedzirra", :source => "http://gems.github.com"
   config.gem 'whenever'
-  config.gem 'will_paginate', :source => 'http://gemcutter.org' 
+  config.gem 'will_paginate', :source => 'http://gemcutter.org', :version => '2.3.12' 
   config.gem 'nokogiri', :source => 'http://gemcutter.org'
   config.gem 'sqlite3-ruby', :lib => 'sqlite3', :version => '!= 1.3.0'
   
