@@ -1,4 +1,5 @@
 log/*.log
+config/database.yml
 tmp/*
 tmp/**/*
 doc/api
@@ -6,6 +7,6 @@ doc/app
 db/*.sqlite3
 *.swp
 *~
-config/database.yml
+
 .DS_Store
 Feeds (Autosaved).txt
