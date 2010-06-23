@@ -88,17 +88,17 @@ task :fetch_stock => :environment do
     
       
       
-    doc = Nokogiri::HTML(open('http://www.mightyape.co.nz/daily-deals'))
+  #  doc = Nokogiri::HTML(open('http://www.mightyape.co.nz/daily-deals'))
     
-      doc.css(".deal").each do |item|
-          name = item.at_css(".title .title").text
-          stock = item.at_xpath('div[@class="dealBox"]/div')[:class][/\d+/]
-            FeedEntry.find_all_by_name(name).each do |feed_entry|
-               if feed_entry.published>=Time.now-1.day 
-              feed_entry.update_attribute(:stock, stock)
-            end
-        end
-      end
+  #    doc.css(".deal").each do |item|
+  #        name = item.at_css(".title .title").text
+  #        stock = item.at_xpath('div[@class="dealBox"]/div')[:class][/\d+/]
+  #          FeedEntry.find_all_by_name(name).each do |feed_entry|
+  #             if feed_entry.published>=Time.now-1.day 
+  #            feed_entry.update_attribute(:stock, stock)
+  #          end
+  #      end
+  #    end
       
   #    doc = Nokogiri::HTML(open('http://www.ziwi.co.nz/one_day_deals.php'))  
         
