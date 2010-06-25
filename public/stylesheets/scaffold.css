@@ -104,11 +104,7 @@ margin-left:auto;
 margin-right:auto;
 width:1104px;
 }
-#container2 {
-margin-left:auto;
-margin-right:auto;
-width:827px;
-}
+
 #content {
 -moz-box-shadow:0 0 2px #636363;
 -webkit-box-shadow:0 0 2px #636363;
@@ -118,15 +114,7 @@ margin:2px auto auto;
 padding:6px;
 width:1104px;
 }
-#content2 {
--moz-box-shadow:0 0 2px #636363;
--webkit-box-shadow:0 0 2px #636363;
-background-color:#FFFFF5;
-border:1px solid #999999;
-margin:2px auto auto;
-padding:6px;
-width:827px;
-}
+
 .logo {
 margin-top:15px;
 text-align:left;
@@ -138,12 +126,7 @@ margin-left:380px;
 margin-top:-33px;
 position:absolute;
 }
-.logopic2 {
-margin-left:65px;
-margin-top:-24px;
-position:absolute;
-width:150px;
-}
+
 .sub-logo {
 font-family:Georgia;
 font-size:130%;
@@ -153,6 +136,7 @@ margin-right:130px;
 margin-top:-75px;
 text-align:right;
 }
+
 #navigation {
 height:30px;
 }
@@ -206,7 +190,6 @@ max-height:160px;
 max-width:240px;
 }
 .deal_price {
-
 -moz-box-shadow:0 0 1px white;
 -webkit-box-shadow:0 0 1px white;
 background-color:red;
@@ -378,7 +361,6 @@ margin:-175px 0 0 0;
 opacity:0.7;
 position:absolute;
 width:260px;
-
 }
 .sold_out img {
 text-align:center
