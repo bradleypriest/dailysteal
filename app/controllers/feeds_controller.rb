@@ -12,7 +12,14 @@ class FeedsController < ApplicationController
       format.xml  { render :xml => @feed_entries }
     end
   end
+  def show
+    @feeds = FeedEntry.all
 
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @feed_entries }
+    end
+  end
 
 
   
@@ -55,6 +62,10 @@ class FeedsController < ApplicationController
       format.html # yesterday.html.erb
       format.xml  { render :xml => @feed_entries }
     end
+  end
+  
+  def edit
+    redirect_to root_url
   end
   
   def faq

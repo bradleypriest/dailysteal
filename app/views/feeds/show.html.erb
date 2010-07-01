@@ -1,31 +1,61 @@
-<h1>Deals</h1>
 
-<% form_for(@feed_entry) do |f| %>
-  <%= f.error_messages %>
+<% @feeds.find(params[:id]) do |feed_entry| %>
 
-  <p>
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </p>
-  <p>
-    <%= f.label :price %><br />
-    <%= f.text_field :price %>
-  </p>
-  <p>
-    <%= f.label :fullprice %><br />
-    <%= f.text_field :fullprice %>
-  </p>
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_field :description %>
-  </p>
-  <p>
-    <%= f.label :site %><br />
-    <%= f.text_field :site %>
-  </p>
-  <p>
-    <%= f.submit 'Create' %>
-  </p>
-<% end %>
+<div class ="deal" > 
+		<a href="<%=h feed_entry.url %>" title="<%=h feed_entry.name %>" style="display:box">
+			
+			
+	
+		<span class ="deal_inner">
+			<span class ="deal_image"> 
+				<img src= "<%=h feed_entry.picture %>"
+			 	alt ="<%=h feed_entry.name %>" />
+			</span>
+			
+			<span class="deal_price">	
+				<span class="price">
+					<%=h feed_entry.price %>
+				</span>
+			</span>
+			
+			<span class="deal_name">
+					 
+						<%=h feed_entry.name.length >59? feed_entry.name[0..59]<<'...': feed_entry.name unless feed_entry.name.nil? %> 	
+					
+			</span>
+				
+		</span>
+			
+			<span class = "deal_bottom">
+				
+				<span class="fullprice">
+				 	<%=h feed_entry.fullprice %>	
+				</span>
+		
+				<span class="deal_site"> 
+					<%=h feed_entry.home%>
+				</span>
 
-<%= link_to 'Back', feeds_path %>
+				<span class="deal_expires">
+					Expires <%=h (feed_entry.published+12).strftime(fmt='%l%P')%>
+				</span>
+			
+				<span class ="deal_stock_bar">
+					<span class = "deal_stock" style="width:<%=h feed_entry.stock%>% <% if feed_entry.stock == 0 %> ; display:none <%end%>">
+					</span>
+				</span>
+			</span>
+		</a>
+		
+			<% if feed_entry.stock == 0 %>
+			<span class = "sold_out">
+				<img src="/images/soldout.png" alt="Sold Out" />
+			</span>
+			<%end%>
+	
+</div>
+
+
+
+<%end%>
+</div>
