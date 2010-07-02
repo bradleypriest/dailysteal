@@ -20,7 +20,7 @@ unless FeedEntry.exists? :guid => guid
       
       href = 'http://shopping.yahooxtra.co.nz'+url
       doc = Nokogiri::HTML(open(href))
-      picture = doc.at_css(".product-image img")[:src] 
+      picture = doc.at_css(".mainImageContainer a")[:href]
       
          
      

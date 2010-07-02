@@ -33,6 +33,16 @@ task :fetch_stock => :environment do
     
           end
     end
+    
+    FeedEntry.find_all_by_home('Trademe', :conditions => ['published > ?', (Time.now-1.day)]).each do |feed_entry|  
+          if feed_entry.published>=Time.now-1.day
+            doc = Nokogiri::HTML(open(feed_entry.url))  
+            stock = doc.at_css("#DailyDealsStockMeter div")[:class][/\d+/]    
+          feed_entry.update_attribute(:stock, stock)  
+    
+          end
+    end
+    
     FeedEntry.find_all_by_home('Daysale', :conditions => ['published > ?', (Time.now-1.day)]).each do |feed_entry|  
           if feed_entry.published>=Time.now-1.day
             doc = Nokogiri::HTML(open(feed_entry.url))  
@@ -59,7 +69,20 @@ task :fetch_stock => :environment do
           feed_entry.update_attribute(:stock, stock)  
       end
     end
-   
+    
+    FeedEntry.find_all_by_home('Crazysales', :conditions => ['published > ?', (Time.now-1.day)]).each do |feed_entry| 
+      if feed_entry.published>=Time.now-1.day   
+        doc = Nokogiri::HTML(open(feed_entry.url)) 
+          unless doc.at_css("#prdt_infos .l").nil? 
+            stock = doc.at_css("#prdt_infos .l")[:width][/\d+/]
+          else
+            stock = 0 
+          end
+          feed_entry.update_attribute(:stock, stock)
+      end
+    end 
+    
+     
     FeedEntry.find_all_by_home('6Shooter', :conditions => ['published > ?', (Time.now-1.day)]).each do |feed_entry| 
       if feed_entry.published>=Time.now-1.day 
           doc = Nokogiri::HTML(open(feed_entry.url)) 

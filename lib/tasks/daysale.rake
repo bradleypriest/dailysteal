@@ -14,7 +14,7 @@ unless FeedEntry.exists? :guid => guid
     doc.css("#mainWrapper").each do |item|  
         name = item.at_css(".prodinfo_manu").text
         name2 = item.at_css("#productName").text
-        price = item.at_css(".productSpecialPrice2").text[/\$[\d,]+\.\d\d/]
+        price = item.at_css(".productSpecialPrice2, .prodinfotoday_pay").text[/\$[\d,]+\.\d\d/]
       unless item.at_css(".normalprice2").nil?
         fullprice = item.at_css(".normalprice2").text[/\$[\d,]+\.\d\d/]
       end

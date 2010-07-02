@@ -15,8 +15,7 @@ unless FeedEntry.exists? :guid => guid
       price = item.at_css(".deal-price").text[/\$[\d,]+\.\d\d/]
       fullprice = item.at_css(".deal-meta").text[/\$[\d,]+\.\d\d/]
       picture = item.at_css(".deal-image img")[:src]
-      stock = 100
-    #  stock = item.at_css(".DailyDealsStockMeter div")
+      stock = item.at_css("#DailyDealsStockMeter div")[:class][/\d+/]
 
 
     FeedEntry.create!(
