@@ -28,7 +28,7 @@ unless FeedEntry.exists? :guid => guid
       :home       => 'TheDeal',
       :home_url   => 'http://www.thedeal.co.nz/DailyDeals.aspx',
       :stock      =>  100,
-      :rank       =>  8
+      :rank       =>  12
       )
     end
   end
