@@ -1,7 +1,9 @@
 <div id='signup'>
-<%= content_tag "div", "Thank you for registering for our newsletter", :class => "success" unless @signup.new_record? %>
+<%#= content_tag "div", "Thank you for registering for our newsletter", :class => "success" unless @signup.new_record? %>
 <%= error_messages_for :signup %>
-<% form_for :signup, @signup do |f| %>
+
+<%form_for :signup, :url => feed_signups_path(1, :id => 1) do |f| %>
+<%# form_for :signup, @signup do |f| %>
 Full name:
 <%= f.text_field :name %><br />
 
@@ -14,5 +16,5 @@ Confirm E-mail:
 
 
 <%= submit_tag "Signup", :style => "margin-left: 26ex;" %>
-<% end if @signup.new_record? %>
+<% end #if @signup.new_record? %>
 <div>

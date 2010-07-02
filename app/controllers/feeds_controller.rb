@@ -68,7 +68,8 @@ class FeedsController < ApplicationController
     redirect_to root_url
   end
   
-  def faq
+  def new
+    redirect_to root_url
   end
   
   

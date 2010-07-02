@@ -1,7 +1,7 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
   def logo
-    logo = image_tag("logo.png", :alt => "The Daily Steal", :class => "round")
+    logo = image_tag("logo.png", :alt => "The Daily Steal")
   end
   
 end
