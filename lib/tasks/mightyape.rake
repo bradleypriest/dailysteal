@@ -8,7 +8,7 @@ task :fetch_mightyape => :environment do
     
     doc.css(".deal").each do |item|  
       url = item.at_css(".title .title")[:href]
-      published  = (Time.now+12.hours).hour>=10? Date.today+22.hours : Date.today-2.hours
+      published  = (Time.now+12.hours).hour>=12? Date.today : Date.today-24.hours
       guid = url[/\d\d\d\d\d+/]+(published.strftime(fmt='%d%m%g'))
 unless FeedEntry.exists? :guid => guid
       name = item.at_css(".title .title").text

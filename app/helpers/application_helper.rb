@@ -3,5 +3,5 @@ module ApplicationHelper
   def logo
     logo = image_tag("logo.png", :alt => "The Daily Steal")
   end
-  
+
 end
