@@ -62,8 +62,6 @@ every 1.day, :at => '9:01 pm' do
   rake "fetch_otb"
 end
 
-
-
 every 1.day, :at => '12.03 pm' do
 #TheDeal
   rake "fetch_thedeal"
