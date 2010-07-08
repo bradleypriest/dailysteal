@@ -2,6 +2,7 @@ every 1.day, :at => '12:04 am' do
 #Ziwi   
   rake "fetch_ziwi" 
 end
+
 every 1.day, :at => '12.01 am' do
 #Daysale
   rake "fetch_daysale"
