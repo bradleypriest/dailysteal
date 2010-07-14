@@ -49,6 +49,7 @@ ActionController::Routing::Routes.draw do |map|
  map.mailer '/mailer/', :controller => 'mailer', :action => 'index'
  map.signup '/signup/', :controller => 'signups', :action => 'index'
  map.advertisers '/advertisers/', :controller => 'feeds', :action => 'advertisers'
+ map.success '/jobs/success', :controller => 'feeds', :action => 'success'
 
   # See how all your routes lay out with "rake routes"
 

@@ -30,7 +30,7 @@ class FeedsController < ApplicationController
      :order => 'published DESC',
      :per_page => '40'
      )
-     
+    
 
      
     respond_to do |format|
@@ -72,5 +72,9 @@ class FeedsController < ApplicationController
     redirect_to root_url
   end
   
+  def success
+    require 'rest_client'
+    @success = RestClient.post 'http://www.dailtsteal.co.nz/jobs/success'  
+  end
   
 end
