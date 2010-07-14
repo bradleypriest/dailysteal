@@ -23,7 +23,7 @@ Rails::Initializer.run do |config|
   
   # config.gem 'sqlite3-ruby', :lib => 'sqlite3', :version => '!= 1.3.0'
   
-  config.gem "rest_client"
+  config.gem "rest-client"
   # config.gem "bj"
   # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
