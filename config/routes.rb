@@ -2,7 +2,7 @@ ActionController::Routing::Routes.draw do |map|
   map.feedback 'feedbacks', :controller => 'feedbacks', :action => 'create'
   map.new_feedback 'feedbacks/new', :controller => 'feedbacks', :action => 'new'
 
-  map.resources :feeds, :as => 'deals' #,do |feeds|
+  map.resources :feeds, :as => 'deals', :only => [:index, :show] #,do |feeds|
   #  feeds.resources :signups
  # end
   
@@ -41,15 +41,14 @@ ActionController::Routing::Routes.draw do |map|
 
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
  map.root :controller => "feeds"
- map.help '/help', :controller => 'feeds', :action => 'help'
+ #map.help '/help', :controller => 'feeds', :action => 'help'
  map.about '/about', :controller => 'feeds', :action => 'about'
  map.faq '/faq', :controller => 'feeds', :action => 'faq'
  map.yesterday '/old/', :controller => 'feeds', :action => 'yesterday'
  map.small '/small/', :controller => 'feeds', :action => 'small'
- map.mailer '/mailer/', :controller => 'mailer', :action => 'index'
- map.signup '/signup/', :controller => 'signups', :action => 'index'
- map.advertisers '/advertisers/', :controller => 'feeds', :action => 'advertisers'
- map.success '/jobs/success', :controller => 'feeds', :action => 'success'
+ #map.mailer '/mailer/', :controller => 'mailer', :action => 'index'
+ #map.signup '/signup/', :controller => 'signups', :action => 'index'
+ #map.advertisers '/advertisers/', :controller => 'feeds', :action => 'advertisers'
 
   # See how all your routes lay out with "rake routes"
 

@@ -64,17 +64,5 @@ class FeedsController < ApplicationController
     end
   end
   
-  def edit
-    redirect_to root_url
-  end
-  
-  def new
-    redirect_to root_url
-  end
-  
-  def success
-    require 'rest_client'
-    @success = RestClient.post 'http://www.dailtsteal.co.nz/jobs/success'  
-  end
-  
+
 end
