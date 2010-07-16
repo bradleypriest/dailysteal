@@ -76,7 +76,7 @@ end
 
 #every 1.day, :at => '12.10am' do
 #Stock levels
-  rake "fetch_stock"
+#  rake "fetch_stock"
 #end
 
 
