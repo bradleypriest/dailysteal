@@ -112,6 +112,7 @@ border:1px solid #999999;
 margin:2px auto auto;
 padding:6px;
 width:1104px;
+min-height:800px;
 }
 
 .logo {
