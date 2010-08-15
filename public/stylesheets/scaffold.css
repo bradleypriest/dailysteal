@@ -93,7 +93,6 @@ border:medium none;
 * img, div {
 }
 body {
-background:url("/images/header.png") repeat-x scroll 0 0 #F2F2F2;
 font-family:Helvetica,Arial;
 font-size:14px;
 letter-spacing:0.02em;
@@ -139,6 +138,7 @@ text-align:right;
 
 #navigation {
 height:30px;
+background-color:orange;
 }
 #navigation ul {
 font-size:10pt;
@@ -149,7 +149,6 @@ text-align:right;
 }
 #navigation li {
 display:inline;
-font-weight:bold;
 text-decoration:none;
 }
 #navigation li a {
