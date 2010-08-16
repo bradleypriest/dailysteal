@@ -1,0 +1,12 @@
+<h1>Editing coupon</h1>
+
+<% form_for(@coupon) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @coupon %> |
+<%= link_to 'Back', coupons_path %>
