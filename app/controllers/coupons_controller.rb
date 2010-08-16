@@ -2,8 +2,11 @@ class CouponsController < ApplicationController
   # GET /coupons
   # GET /coupons.xml
   def index
-    @coupons = Coupon.all
-
+    @coupons = Coupon.find(
+    :all,
+    :conditions => ['published > ?', (Time.now-1.day)],
+    :order => 'rank'
+    )
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @coupons }
