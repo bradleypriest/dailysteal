@@ -1,0 +1,11 @@
+<% @coupons.each do |coupon| %>
+  <div class = "coupon">
+  <% if coupon.home == "DailyDo" %>
+  <img src="<%= coupon.picture%>"/>
+  <% else%>
+  <h2><%= coupon.name%></h2>
+  <img src="<%= coupon.picture%>"/>
+  
+  <%end%>
+
+<% end %>

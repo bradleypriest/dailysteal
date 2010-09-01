@@ -9,7 +9,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100709050246) do
+ActiveRecord::Schema.define(:version => 20100816030026) do
+
+  create_table "coupons", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "url"
+    t.string   "price"
+    t.string   "fullprice"
+    t.string   "guid"
+    t.datetime "published"
+    t.string   "picture"
+    t.string   "home"
+    t.string   "home_url"
+    t.integer  "stock"
+    t.integer  "rank"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "feed_entries", :force => true do |t|
     t.string   "name"
