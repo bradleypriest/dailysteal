@@ -93,7 +93,7 @@ border:medium none;
 * img, div {
 }
 body {
-font-family:Arial;
+font-family:'Trebuchet MS',Arial;
 font-size:12px;
 letter-spacing:0.02em;
 margin:0;
@@ -122,7 +122,7 @@ min-height:800px;
 }
 .logo {
 margin-top:15px;
-text-align:left;
+text-align:center;
 }
 .logo img {
 }
@@ -174,8 +174,8 @@ color:#CC0000;
 float:right;
 }
 .deal {
--moz-box-shadow:0 0 2px #999999;
--webkit-box-shadow:0 0 2px #999999;
+-moz-box-shadow:0 0 4px #bbb;
+-webkit-box-shadow:0 0 4px #bbb;
 background-color:#FFFFFF;
 display:inline-block;
 height:225px;
@@ -197,14 +197,14 @@ display:block;
 margin-bottom:auto;
 margin-top:auto;
 max-height:160px;
-max-width:240px;
+max-width:236px;
 }
 .deal_price {
 -moz-box-shadow:0 0 1px white;
 -webkit-box-shadow:0 0 1px white;
 background-color:red;
 display:block;
-margin:-34px 0 0 163px;
+margin:-34px 0 0 150px;
 min-width:85px;
 opacity:0.8;
 padding:5px 0px;
@@ -212,8 +212,8 @@ position:relative;
 }
 .price {
 color:white;
-font-family:Georgia;
-font-size:15pt;
+/*font-family:Georgia;
+*/font-size:14pt;
 font-weight:bold;
 margin:-4px 0 0 4px;
 opacity:1;
@@ -237,7 +237,7 @@ margin:-3px 0 0 0;
 position:absolute;
 text-align:right;
 text-decoration:line-through;
-width:256px;
+width:239px;
 z-index:1;
 }
 .deal_date {
@@ -263,25 +263,25 @@ z-index:1;
 color:black;
 }
 .deal_bottom {
-background-color:#999999;
+background:url(/images/bottom.png) repeat-x;
 display:block;
 height:12px;
-margin:-9px 0 0 0;
-padding:4px 2px 2px;
+margin:-12px 0 0 0;
+padding:4px 2px 4px;
 position:relative;
 vertical-align:bottom;
-width:256px;
+width:239px;
 }
 .deal_stock {
-background-color:#007FD9;
+background:url(/images/bottom_stock.png) repeat-x;
 display:block;
 height:12px;
 margin:-4px 0 0 -2px;
-opacity:0.5;
-padding:4px 2px 2px;
+/*opacity:0.5;
+*/padding:4px 2px 4px;
 }
 .deal_stock_bar {
-width:256px;
+width:239px;
 }
 .deal_site {
 color:white;
@@ -290,7 +290,7 @@ font-size:9pt;
 margin:0 0 0;
 position:absolute;
 text-align:center;
-width:256px;
+width:239px;
 z-index:1;
 }
 .deal_site a {
@@ -304,7 +304,7 @@ line-height:1.2;
 padding-top:12px;
 position:relative;
 text-align:center;
-width:250px;
+width:240px;
 display:inline-block;
 font-size:11pt;
 font-weight:normal;
@@ -367,13 +367,14 @@ width:239px;
 }
 .sold_out {
 display:block;
-margin:-175px 0 0 0;
+margin:-175px 0px 0 0;
 opacity:0.7;
 position:absolute;
-width:260px;
+width:242px;
 }
 .sold_out img {
-text-align:center
+text-align:center;
+width:230px;
 }
 #history {
 margin:-30px 0 0 10px;
@@ -437,4 +438,10 @@ margin:2px 24px;
 #errorExplanation ul li {
 font-size:12px;
 list-style:disc outside none;
+}
+#FAQ h2{
+  font-size:2em;}
+#FAQ
+ h3{
+  font-weight:bold;
 }

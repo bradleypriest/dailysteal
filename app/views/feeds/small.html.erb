@@ -1,18 +1,10 @@
-<%= render 'layouts/sidebar' %>
+<!-- <%= render 'layouts/sidebar' %> -->
 <div id="deal-list">
 
-	<% deal_id = 0%>
-	<% @feeds.sort_by { |feed_entry| feed_entry[:rank]}.each do |feed_entry| %>
+	<% @feeds.sort_by { |feed_entry| feed_entry[:rank]}.each_with_index do |feed_entry, i| %>
 
-	
 
-	<% deal_id += 1%>
-	
-	<% if deal_id<=4 %>
-	<% dealid = (((deal_id+1)%2)+1) %>
-	<% else %>
-	<% dealid = (((deal_id+1)%3)+1) %>
-	<%end%>
+	<% dealid = ((i%3)+1) %>
 	
 	
 	<div class ="deal deal-<%= dealid %>" > 
