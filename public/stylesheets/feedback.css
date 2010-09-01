@@ -34,6 +34,7 @@ a#feedback_link.left {
 }
 
 a#feedback_link.right {
+  display:none;
   right: 0;
   top: 25%;
   width: 26px;
@@ -121,4 +122,5 @@ form#feedback_form {
 }
 form#feedback_form p{
 	padding-top:4px;
+	display:block;
 }
