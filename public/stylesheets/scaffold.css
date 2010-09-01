@@ -93,28 +93,33 @@ border:medium none;
 * img, div {
 }
 body {
-font-family:Helvetica,Arial;
-font-size:14px;
+font-family:Arial;
+font-size:12px;
 letter-spacing:0.02em;
 margin:0;
+background-color:#bbb;
 }
 #container {
 margin-left:auto;
 margin-right:auto;
-width:1104px;
+/*width:1104px;*/
+background-color:#eee;
 }
 
 #content {
--moz-box-shadow:0 0 2px #636363;
--webkit-box-shadow:0 0 2px #636363;
-background-color:#FFFFF5;
-border:1px solid #999999;
+/*-moz-box-shadow:0 0 2px #636363;
+-webkit-box-shadow:0 0 2px #636363;*/
 margin:2px auto auto;
 padding:6px;
-width:1104px;
+width:1024px;
 min-height:800px;
 }
+#info{
+  height:30px;
+  background-color:#444;
 
+  
+}
 .logo {
 margin-top:15px;
 text-align:left;
@@ -126,7 +131,12 @@ margin-left:380px;
 margin-top:-33px;
 position:absolute;
 }
-
+h1{
+  font-family:'chunkfive';
+  font-size:5em;
+  text-shadow: 2px 2px 4px #999;
+  text-align:center;
+}
 .sub-logo {
 font-family:Georgia;
 font-size:130%;
@@ -138,13 +148,14 @@ text-align:right;
 }
 
 #navigation {
-height:30px;
+height:25px;
 background-color:orange;
-}
+/*border-bottom:1px solid #666;
+*/}
 #navigation ul {
-font-size:10pt;
-line-height:30px;
-margin:0 5px 0 0;
+font-size:9pt;
+line-height:25px;
+margin:0px 5px 0 0;
 padding:0;
 text-align:right;
 }
@@ -166,14 +177,13 @@ float:right;
 -moz-box-shadow:0 0 2px #999999;
 -webkit-box-shadow:0 0 2px #999999;
 background-color:#FFFFFF;
-border:1px solid #999999;
 display:inline-block;
 height:225px;
 list-style-type:none;
 margin:7px 3px 7px 7px;
 text-align:center;
 vertical-align:top;
-width:260px;
+width:242px;
 }
 .deal table{
 	display:block;
@@ -313,9 +323,9 @@ font-size:12pt;
 line-height:1.4;
 margin:2px 0 0 5px;
 }
-h1 {
+/*h1 {
 font-size:20pt;
-}
+}*/
 h2 {
 font-size:13pt;
 font-weight:bold;
