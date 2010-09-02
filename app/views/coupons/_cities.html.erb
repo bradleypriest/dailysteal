@@ -1,5 +1,10 @@
 <div id = 'cities'>
-  <% Coupon.find(:all, :conditions => ['published > ?', (Time.now-1.day)]).each do |coupon|%>
-  <%=coupon.location%>
-<%end%>
+  <ul>
+    <% Location.all.each do |location|%>
+      <a href = "<%= coupons_url(location.name)%>">
+        <li><%=location.name.capitalize%>
+        </li>
+      </a>
+    <%end%>
+  </ul>
 </div>

@@ -4,6 +4,7 @@ task :fetch_grabone => :environment do
   require 'nokogiri'  
   require 'open-uri'
   url = "http://www.grabone.co.nz/"
+
   doc = Nokogiri::HTML(open(url))  
       doc.css(".deal-left, .deal-right").each do |item|
         picture = item.at_css(".deal-image img")[:src]
@@ -12,6 +13,26 @@ task :fetch_grabone => :environment do
         unless Coupon.exists? :guid => guid 
           name =  item.at_css(".active-deal a").text
           url = item.at_css(".active-deal a")[:href]
+          locations = url[/\w+/]
+          if locations == 'auckland'
+            location = 1
+          elsif locations =='wellington'
+            location = 2
+          elsif locations =='christchurch'
+            location = 3
+          elsif locations =='dunedin'
+            location = 4
+          elsif locations =='hamilton'
+            location = 5
+          elsif locations =='tauranga'
+            location = 6
+            elsif locations =='waikato'
+              location = 7
+            elsif locations == 'northland'
+              location =8
+            else
+              location = 10
+          end
       #description = doc.at_css(".shadow-box-green").text
       #price = doc.at_css(".big-price").text
           Coupon.create!(
@@ -21,7 +42,7 @@ task :fetch_grabone => :environment do
           :url        => 'http://www.grabone.co.nz'+url,
           :picture    => 'http://www.grabone.co.nz'+picture,
           :published  => published,
-          :location   => url[/\w+/],
+          :location_id   => location,
           :home       => 'Grabone',
           :home_url   => 'http://www.grabone.co.nz',
           :guid       =>  guid,

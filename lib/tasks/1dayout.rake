@@ -3,8 +3,8 @@ task :fetch_1dayout => :environment do
   require 'rubygems'  
   require 'nokogiri'  
   require 'open-uri'
-  @urls = ["/10/title/Auckland","/11/title/Waikato%20/%20BOP", "/12/title/Wellington", "/13/title/Christchurch" ]
-  @urls.each do |url|
+  @urls = ["/10/title/Auckland", "/12/title/Wellington", "/13/title/Christchurch", "/11/title/Waikato%20/%20BOP" ]
+  @urls.each_with_index do |url, i|
   doc = Nokogiri::HTML(open("http://www.1-dayout.co.nz/dealLocation"+url))  
         picture = doc.at_css(".image_holder img")[:src]
         published  = (Time.now+12.hours).hour>=12? Date.today : Date.today-24.hours
@@ -13,6 +13,9 @@ task :fetch_1dayout => :environment do
           name =  doc.at_css(".productTitle h1").text.strip
       description = doc.at_css(".description").text.strip
       price =  doc.at_css(".getit_button p").text
+        if i == 4
+          i = 7
+        end
           Coupon.create!(
           :name       => name,
           :description => description,
@@ -20,7 +23,7 @@ task :fetch_1dayout => :environment do
           :url        => 'http://www.1-dayout.co.nz/dealLocation'+url,
           :picture    => 'http://www.1-dayout.co.nz'+picture,
           :published  => published,
-          :location   => url[/\w\w\w\w\w\w+/].downcase,
+          :location_id   => i+1,
           :home       => '1dayout',
           :home_url   => 'http://www.1-dayout.co.nz',
           :guid       =>  guid,

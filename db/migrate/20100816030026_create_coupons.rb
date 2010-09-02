@@ -10,7 +10,7 @@ class CreateCoupons < ActiveRecord::Migration
         t.string :picture
         t.string :home
         t.string :home_url
-        t.string :location
+        t.integer :location_id
         t.integer    :stock
         t.integer    :rank
       t.timestamps

@@ -1,4 +1,5 @@
 class Coupon < ActiveRecord::Base
-  named_scope :grabone, :conditions => {:home => 1}
-  named_scope :first, :first
+  belongs_to :location
+  accepts_nested_attributes_for :location
+  
 end

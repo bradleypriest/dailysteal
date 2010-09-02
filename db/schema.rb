@@ -9,24 +9,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100902000326) do
+ActiveRecord::Schema.define(:version => 20100902203922) do
 
   create_table "coupons", :force => true do |t|
     t.string   "name"
     t.text     "description"
     t.string   "url"
     t.string   "price"
-    t.string   "fullprice"
     t.string   "guid"
     t.datetime "published"
     t.string   "picture"
     t.string   "home"
     t.string   "home_url"
+    t.integer  "location_id"
     t.integer  "stock"
     t.integer  "rank"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "location"
   end
 
   create_table "feed_entries", :force => true do |t|
@@ -40,10 +39,10 @@ ActiveRecord::Schema.define(:version => 20100902000326) do
     t.string   "picture"
     t.string   "home"
     t.string   "home_url"
+    t.integer  "stock"
+    t.integer  "rank"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "rank"
-    t.integer  "stock"
   end
 
   create_table "feedbacks", :force => true do |t|
@@ -52,6 +51,10 @@ ActiveRecord::Schema.define(:version => 20100902000326) do
     t.text     "comment"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "locations", :force => true do |t|
+    t.string "name"
   end
 
   create_table "signups", :force => true do |t|
