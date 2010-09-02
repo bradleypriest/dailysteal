@@ -5,7 +5,7 @@ ActionController::Routing::Routes.draw do |map|
   map.new_feedback 'feedbacks/new', :controller => 'feedbacks', :action => 'new'
 
   map.resources :feeds, :as => 'deals', :only => [:index, :show] #,do |feeds|
-  map.connect 'coupons/:id', :controller => 'coupons', :action => 'index'
+  map.coupons 'coupons/:id', :controller => 'coupons', :action => 'index'
   #  feeds.resources :signups
  # end
   
