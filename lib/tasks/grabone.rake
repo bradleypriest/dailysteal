@@ -25,7 +25,7 @@ task :fetch_grabone => :environment do
           :home       => 'Grabone',
           :home_url   => 'http://www.grabone.co.nz',
           :guid       =>  guid,
-          :rank       =>  2,
+          :rank       =>  3,
           :stock      => 100
             )
         end
