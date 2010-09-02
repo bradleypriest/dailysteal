@@ -7,7 +7,7 @@ task :fetch_1dayout => :environment do
   @urls.each do |url|
   doc = Nokogiri::HTML(open("http://www.1-dayout.co.nz/dealLocation"+url))  
         picture = doc.at_css(".image_holder img")[:src]
-        published  = (Time.now).hour>=12? Date.today+12.hours : Date.today-12.hours
+        published  = (Time.now+12.hours).hour>=12? Date.today : Date.today-24.hours
         guid = picture[/\w+(?=_large)/]+(published.strftime(fmt='%d%m%g'))
         unless Coupon.exists? :guid => guid 
           name =  doc.at_css(".productTitle h1").text.strip
