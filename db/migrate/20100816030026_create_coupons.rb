@@ -5,12 +5,12 @@ class CreateCoupons < ActiveRecord::Migration
         t.text :description
         t.string :url
         t.string :price
-        t.string :fullprice
         t.string :guid
         t.datetime :published
         t.string :picture
         t.string :home
         t.string :home_url
+        t.string :location
         t.integer    :stock
         t.integer    :rank
       t.timestamps
