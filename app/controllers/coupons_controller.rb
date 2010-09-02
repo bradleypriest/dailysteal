@@ -4,8 +4,9 @@ class CouponsController < ApplicationController
   def index
     @coupons = Coupon.find(
     :all,
-    :conditions => ['published > ?', (Time.now-1.day)],
-    :order => 'rank'
+    # :conditions => ['published > ?', (Time.now-1.day)],
+    :conditions => ['location = ?', params[:id]]
+    # :order => 'rank'
     )
     respond_to do |format|
       format.html # index.html.erb

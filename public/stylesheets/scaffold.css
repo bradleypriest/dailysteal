@@ -445,3 +445,30 @@ list-style:disc outside none;
  h3{
   font-weight:bold;
 }
+.coupon{
+  width:800px;
+  height:160px;
+  background-color:white;
+  margin:20px auto;
+  border:1px solid #bbb;
+  -moz-box-shadow:0 0 4px #bbb;
+  -webkit-box-shadow:0 0 4px #bbb;
+}
+.coupon img{
+  height:158px;
+  margin:1px 0 0 1px;
+}
+.c_name{
+  font-size:15px;
+  line-height:1.4em;
+  padding:20px;
+  position:absolute;
+  vertical-align:top;
+  width:500px;
+}
+.c_price{
+  float:right;
+  font-size:20pt;
+  margin-top:116px;
+  padding:10px;
+}
