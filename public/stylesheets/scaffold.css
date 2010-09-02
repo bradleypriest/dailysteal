@@ -480,9 +480,10 @@ list-style:disc outside none;
 .dailydo{
   margin-left:112px;
 }
-.dailydo img{
-  -moz-box-shadow:0 0 5px #777;
-  -webkit-box-shadow:0 0 5px #777;
-  box-shadow:0 0 5px #777;
-  
+
+.title{
+  float:left;
+  color:white;
+  padding:4px 20px;
+  font-size:16px;
 }

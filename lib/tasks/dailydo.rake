@@ -3,7 +3,7 @@ task :fetch_dailydo => :environment do
   require 'rubygems'  
   require 'nokogiri'  
   require 'open-uri'
-  @urls = ['wellington', 'bop', 'hamilton', 'whangarei', 'dunedin', '', 'christchurch']      
+  @urls = ['wellington', 'bop', 'hamilton', 'dunedin', '']      
   @urls.each do |url|
         item = Nokogiri::HTML(open('http://dailydo.co.nz/'+url))
         picture = item.at_css("#div_results td td td img")[:src]
@@ -15,7 +15,7 @@ task :fetch_dailydo => :environment do
               Coupon.create!(
               :description => description,
               :price      => description[/\$[\d,\.]+/],
-              :url        => 'http://www.dailydo.co.nz'+url,
+              :url        => 'http://www.dailydo.co.nz/'+url,
               :picture    => 'http://www.dailydo.co.nz/'+picture,
               :published  => published,
               :location   => href,

@@ -1,7 +1,9 @@
 <% @coupons.each do |coupon|%>
   <%if coupon.home == "Dailydo"%>
-  <a href = "<%= coupon.url%>"><div class = "dailydo">
+  <a href = "<%= coupon.url%>"><div class = "coupon dailydo">
     <span class = "c_image"><img src="<%= coupon.picture%>"/></span>
+    <span class = "c_url"><%= coupon.home_url%></span>
+    <span class = "c_price"><%= coupon.price%></span>
   </div></a>
   
   <%else%>
