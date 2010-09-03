@@ -2,8 +2,8 @@ ActionController::Routing::Routes.draw do |map|
 
   map.feedback 'feedbacks', :controller => 'feedbacks', :action => 'create'
   map.new_feedback 'feedbacks/new', :controller => 'feedbacks', :action => 'new'
-
-  map.resources :feeds, :as => 'deals', :only => [:index, :show] #,do |feeds|
+  #map.mailer 'mailer', :controller => 'mailer', :action => 'index'
+ # map.resources :feeds, :as => 'deals', :only => [:index, :show] #,do |feeds|
   map.coupons 'coupons', :controller => 'coupons', :action => 'index', :id => 'auckland'
   
   map.coupons 'coupons/:id', :controller => 'coupons', :action => 'index'

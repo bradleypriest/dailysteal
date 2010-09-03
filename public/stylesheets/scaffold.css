@@ -162,6 +162,7 @@ text-align:right;
 #navigation li {
 display:inline;
 text-decoration:none;
+font-size:10pt;
 }
 #navigation li a {
 color:#FFFFF9;
@@ -478,12 +479,11 @@ list-style:disc outside none;
   position:absolute;}
   
 .dailydo{
-  margin-left:112px;
 }
 
 .title{
   float:left;
   color:white;
   padding:6px 20px;
-  font-size:13px;
+  font-size:10pt;
 }
