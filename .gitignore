@@ -8,4 +8,5 @@ db/*.sqlite3
 *.swp
 *~
 
-.DS_Storedb/schema.rb
+.DS_Store
+db/schema.rb
