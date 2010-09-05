@@ -4,7 +4,7 @@ ActionController::Routing::Routes.draw do |map|
   map.new_feedback 'feedbacks/new', :controller => 'feedbacks', :action => 'new'
   #map.mailer 'mailer', :controller => 'mailer', :action => 'index'
  # map.resources :feeds, :as => 'deals', :only => [:index, :show] #,do |feeds|
-  map.coupons 'coupons', :controller => 'coupons', :action => 'index', :id => 'auckland'
+  map.coupons 'coupons', :controller => 'coupons', :action => 'index', :id => 0
   
   map.coupons 'coupons/:id', :controller => 'coupons', :action => 'index'
   #  feeds.resources :signups
