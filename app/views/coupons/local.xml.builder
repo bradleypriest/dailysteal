@@ -1,5 +1,6 @@
 xml.instruct!
 xml.coupons do
+  xml.title "DailySteal"
   @coupons.each do |coupon|
     xml.coupon do
       xml.title   coupon.name
