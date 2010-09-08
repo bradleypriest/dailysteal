@@ -1,4 +1,4 @@
-<span id = 'cities'>- <%=@location.capitalize%><a href = '#' style = "color:purple" onClick = "$(this).next().toggle()" > change</a>
+<span id = 'cities'>- <%=@location.capitalize%><a href = '#' style = "color:purple" onClick = "$(this).next().toggle()" > ▾ change</a>
   <ul>
     <% Location.all.each do |location|%>
     <li>
