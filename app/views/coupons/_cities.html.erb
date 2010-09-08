@@ -1,10 +1,11 @@
-<div id = 'cities'>
+<span id = 'cities'>- <%=@location.capitalize%><a href = '#' style = "color:purple" onClick = "$(this).next().toggle()" > change</a>
   <ul>
     <% Location.all.each do |location|%>
-      <a href = "<%= coupons_url(location.name)%>">
-        <li><%=location.name.capitalize%>
-        </li>
+    <li>
+      <a href = "<%= coupons_url()%>" onClick = "$.cookie('location', '<%=location.name%>', { expires: 365 });">
+        <%=location.name.capitalize%>
       </a>
+    </li>
     <%end%>
   </ul>
-</div>
+</span>

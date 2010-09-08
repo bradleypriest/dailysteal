@@ -2,10 +2,15 @@ class CouponsController < ApplicationController
   # GET /coupons
   # GET /coupons.xml
   def index
+    if cookies[:location].nil?
+      @location = 'auckland'
+    else
+      @location = request.cookies["location"]
+    end
     @coupons = Coupon.find(
     :all,
     :joins => :location,
-    :conditions => ['published > ? && locations.name = ?', (Time.now-1.day), params[:id]],
+    :conditions => ['published > ? && locations.name = ?', (Time.now-1.day), @location],
     :order => 'rank'
     )
     respond_to do |format|

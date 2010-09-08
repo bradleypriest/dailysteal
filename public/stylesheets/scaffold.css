@@ -152,23 +152,54 @@ height:25px;
 background-color:orange;
 /*border-bottom:1px solid #666;
 */}
-#navigation ul {
+#right_nav ul {
 font-size:9pt;
 line-height:25px;
 margin:0px 5px 0 0;
 padding:0;
 text-align:right;
 }
-#navigation li {
+#right_nav li {
 display:inline;
 text-decoration:none;
 font-size:10pt;
 }
-#navigation li a {
+#right_nav li a {
 color:#FFFFF9;
 padding:8px 10px;
 }
-#navigation li a:hover {
+#right_nav li a:hover {
+color:#CC0000;
+}
+#left_nav{
+  float:left;
+  display:inline-block;
+  color:white;
+  font-size:10pt;
+  line-height:25px;
+  margin:0px 5px 0 0;
+}
+#cities ul{
+  position:absolute;
+}
+#left_nav ul {
+padding:0;
+text-align:left;
+display:none;
+background-color:orange;
+border:1px solid #ddd;
+}
+#left_nav li {
+text-decoration:none;
+padding:2px 10px;
+z-index:10;
+
+}
+#left_nav li a {
+color:#FFFFF9;
+padding:8px 10px 8px 0px;
+}
+#left_nav li a:hover {
 color:#CC0000;
 }
 .toggle {
@@ -482,8 +513,9 @@ list-style:disc outside none;
 }
 
 .title{
-  float:left;
   color:white;
-  padding:6px 20px;
+  padding-left:8px;
   font-size:10pt;
+}
+#right_nav{
 }
