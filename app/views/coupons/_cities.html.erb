@@ -2,7 +2,7 @@
   <ul>
     <% Location.all.each do |location|%>
     <li>
-      <a href = "<%= coupons_url()%>" onClick = "$.cookie('location', '<%=location.name%>', { expires: 365 });">
+      <a href = "<%= coupons_url()%>" onClick = "$.cookie('location', '<%=location.name%>', { expires: 90 });">
         <%=location.name.capitalize%>
       </a>
     </li>
