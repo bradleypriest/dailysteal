@@ -6,7 +6,7 @@ ActionController::Routing::Routes.draw do |map|
  # map.resources :feeds, :as => 'deals', :only => [:index, :show] #,do |feeds|
   map.coupons 'coupons', :controller => 'coupons', :action => 'index'
   
-  map.coupons 'coupons/:id', :controller => 'coupons', :action => 'index'
+  #map.coupons 'coupons/:id.:format', :controller => 'coupons', :action => 'local'
   #  feeds.resources :signups
  # end
   

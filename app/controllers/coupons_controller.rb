@@ -19,6 +19,21 @@ class CouponsController < ApplicationController
     end
   end
 
+  def local
+    @coupons = Coupon.find(
+    :all,
+    :joins => :location,
+    :conditions => ['published > ? && locations.name = ?', (Time.now-1.day), params[:id]],
+    :order => 'rank'
+    )
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @coupons }
+    end
+  end
+
+
+
   # GET /coupons/1
   # GET /coupons/1.xml
   def show
