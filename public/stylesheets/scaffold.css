@@ -520,5 +520,6 @@ list-style:disc outside none;
 #right_nav{
 }
 #advertising{
-  margin:auto;
+  margin:8px auto;
+  text-align:center;
 }
