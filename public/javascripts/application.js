@@ -5,14 +5,14 @@ $(document).ready(function() {
    var $winwidth = $(window).width();
    var $width = Math.floor($winwidth/256);
    var $fin = $width*256+'px';
-   $("#deal-list").css({
+   $("#content").css({
      width: $fin
    });
    $(window).bind("resize", function(){
      var $winwidth = $(window).width();
      var $width = Math.floor($winwidth/256);
      var $fin = $width*256+'px';
-     $("#deal-list").css({
+     $("#content").css({
        width: $fin
      });
  });

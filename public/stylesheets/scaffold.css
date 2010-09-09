@@ -105,12 +105,8 @@ margin-right:auto;
 /*width:1104px;*/
 background-color:#eee;
 }
-#content{
-  padding:6px;
-  width:1024px;
-  min-height:800px;
-}
-#deal-list {
+
+#content {
 /*-moz-box-shadow:0 0 2px #636363;
 -webkit-box-shadow:0 0 2px #636363;*/
 margin:2px auto auto;
