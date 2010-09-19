@@ -1,7 +1,7 @@
 
 <div id= 'navigation'>
   <span id = 'left_nav'>
-  <a href = <%=root_url%>><span class ="title">The Daily Steal - NZ's best daily deals</span></a>
+  <%= link_to "The Daily Steal - NZ's best daily deals", root_path, :class=> :title%>
   <% if controller_name == "coupons"%>
   <%= render "cities"%>
   <%end%>
