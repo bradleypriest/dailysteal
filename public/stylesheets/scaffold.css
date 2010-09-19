@@ -149,7 +149,7 @@ text-align:right;
 
 #navigation {
 height:25px;
-background-color:orange;
+background-color:#669dc5;
 /*border-bottom:1px solid #666;
 */}
 #right_nav ul {
@@ -305,7 +305,7 @@ vertical-align:bottom;
 width:239px;
 }
 .deal_stock {
-background:url(/images/bottom_stock.png) repeat-x;
+background-color:#669dc5;
 display:block;
 height:12px;
 margin:-4px 0 0 -2px;
