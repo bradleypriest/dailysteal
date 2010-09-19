@@ -1,12 +1,5 @@
-log/*.log
-config/database.yml
-tmp/*
-tmp/**/*
-doc/api
-doc/app
+.bundle
 db/*.sqlite3
-*.swp
-*~
-
+log/*.log
+tmp/**/*
 .DS_Store
-db/schema.rb
