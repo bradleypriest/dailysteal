@@ -5,7 +5,7 @@ Agg::Application.routes.draw do
   match 'feedbacks/new' => 'feedbacks#new', :as => :new_feedback
   
   match 'coupons' => 'coupons#index', :as => :coupons
-  match 'coupons/:id.:format' => 'coupons#local', :as => :local_coupons
+  # match 'coupons/:id.:format' => 'coupons#local', :as => :local_coupons
   
   match '/about' => 'feeds#about', :as => :about
   match '/faq' => 'feeds#faq', :as => :faq
