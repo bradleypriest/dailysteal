@@ -1,6 +1,5 @@
 GEM
   remote: http://rubygems.org/
-  remote: http://gemcutter.org/
   specs:
     aaronh-chronic (0.3.9)
     abstract (1.0.0)
@@ -74,7 +73,7 @@ GEM
     whenever (0.5.2)
       aaronh-chronic (>= 0.3.9)
       activesupport (>= 2.3.4)
-    will_paginate (2.3.12)
+    will_paginate (3.0.pre2)
 
 PLATFORMS
   ruby
@@ -87,4 +86,4 @@ DEPENDENCIES
   rails (= 3.0.0)
   rest-client
   whenever
-  will_paginate (= 2.3.12)
+  will_paginate (~> 3.0.pre2)

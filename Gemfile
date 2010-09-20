@@ -1,11 +1,11 @@
 source 'http://rubygems.org'
-source 'http://gemcutter.org'
+# source 'http://gemcutter.org'
 
 gem 'rails', '3.0.0'
 
 gem 'mysql'
 gem 'whenever'
-gem 'will_paginate', '2.3.12'
+gem 'will_paginate', "~> 3.0.pre2"
 gem 'nokogiri'
 gem 'rest-client'
 gem 'meta-tags', :require => 'meta_tags'
