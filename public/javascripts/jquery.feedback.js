@@ -158,7 +158,7 @@
       text = settings.loadingText;
 					
     $(settings.modalContent).html(
-      '<h1>' + text + '<img src="' + settings.loadingImage + '" /></h1>');	
+      '<h2>' + text + '<img src="' + settings.loadingImage + '" /></h2>');	
 	
     showFeedback();
 	  				
