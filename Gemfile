@@ -12,7 +12,6 @@ gem 'meta-tags', :require => 'meta_tags'
 gem 'haml'
 
 
-
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
