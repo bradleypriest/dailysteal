@@ -9,6 +9,7 @@ gem 'will_paginate', '2.3.12'
 gem 'nokogiri'
 gem 'rest-client'
 gem 'meta-tags', :require => 'meta_tags'
+gem 'haml'
 
 
 # Bundle edge Rails instead:
