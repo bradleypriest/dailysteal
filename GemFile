@@ -20,7 +20,6 @@ gem 'haml'
 
 # Deploy with Capistrano
 # gem 'capistrano'
-
 # To use debugger
 # gem 'ruby-debug'
 
