@@ -7,6 +7,9 @@ class CouponsController < ApplicationController
     else
       @location = request.cookies["location"]
     end
+    set_meta_tags :title => "#{@location.capitalize}'s Best Deals",
+                  :keywords => "Daily Deals, 1-day deals, daily coupons, groupy, grabone, dailydo, deals, one day, 1-day, Daily Steal", 
+                  :description => "The Daily Steal is New Zealand's home of best daily deals and 1 day sales. We put together a fresh collection of the NZ's best deals every day."
     @coupons = Coupon.find(
     :all,
     :joins => :location,

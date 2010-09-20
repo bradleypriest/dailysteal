@@ -1,5 +1,8 @@
 class SignupsController < ApplicationController
   def index
+    set_meta_tags :title => "Sign Up",
+                  :description => 'Sign Up For Your Personalized Deals Today',
+                  :keywords => 'Sign up, daily steal, Personalized Deals, 1-day, Deals, Email'
     @signup = Signup.new(params[:signup])
     if request.post?
       @signup.save
