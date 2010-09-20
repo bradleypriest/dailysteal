@@ -523,3 +523,36 @@ list-style:disc outside none;
   margin:8px auto;
   text-align:center;
 }
+#newsletter{
+  width:650px;
+  background-color:white;
+  padding:40px;
+  margin:20px auto;
+  border:1px solid #ddd;
+  -box-shadow:1px 0px 3px #888;
+}
+#newstop{
+ margin-bottom:20px; 
+}
+#newsletter h3{
+  font-weight:bold;
+  font-size:130%;
+  text-align:center;
+}
+#newsletter h4{
+  font-weight:bold;
+  font-size:110%;
+  margin-bottom:10px;
+}
+#newsletter form{
+  background-color:#eee;
+  padding:20px 40px 40px;
+  width:300px;
+  margin:0 auto;
+  border:1px solid #bbb;
+  
+}
+#newsletter form input{
+  display:block;
+  padding:3px;
+}

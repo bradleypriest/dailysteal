@@ -1,7 +1,10 @@
 class SignupsController < ApplicationController
   def index
     @signup = Signup.new(params[:signup])
-    @signup.save if request.post?
+    if request.post?
+      @signup.save
+      redirect_to(signup_thanks_url)
+    end
   end
   def new
     @signup = Signup.new
@@ -26,5 +29,7 @@ class SignupsController < ApplicationController
         format.xml  { render :xml => @signup.errors, :status => :unprocessable_entity }
       end
     end
+  end
+  def thanks
   end
 end

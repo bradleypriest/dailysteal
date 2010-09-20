@@ -13,4 +13,6 @@ Agg::Application.routes.draw do
   match '/small/' => 'feeds#small', :as => :small
   match '/advertisers/' => 'feeds#advertisers', :as => :advertisers
   match '/signup/' => 'signups#index', :as => :signups
+  match '/signup/thanks' => 'signups#thanks', :as => :signup_thanks
+  
 end
