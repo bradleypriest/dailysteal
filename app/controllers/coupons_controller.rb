@@ -8,6 +8,7 @@ class CouponsController < ApplicationController
       @location = request.cookies["location"]
     end
     @coupons = Coupon.find(
+    :all,
     :joins => :location,
     :conditions => ['published > ? && locations.name = ?', (Time.now-1.day), @location],
     :order => 'rank'
@@ -20,6 +21,7 @@ class CouponsController < ApplicationController
 
   def local
     @coupons = Coupon.find(
+    :all,
     :joins => :location,
     :conditions => ['published > ? && locations.name = ?', (Time.now-1.day), params[:id]],
     :order => 'rank'
