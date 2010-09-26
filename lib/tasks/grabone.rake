@@ -6,13 +6,13 @@ task :fetch_grabone => :environment do
   url = "http://www.grabone.co.nz/"
 
   doc = Nokogiri::HTML(open(url))  
-      doc.css(".deal-left, .deal-right").each do |item|
+      doc.css(".deal").each do |item|
         picture = item.at_css(".deal-image img")[:src]
         published  = (Time.now).hour>=12? Date.today+12.hours : Date.today-12.hours
         guid = picture[/\d\w+(?=\.jpg)/]+(published.strftime(fmt='%d%m%g'))
         unless Coupon.exists? :guid => guid 
-          name =  item.at_css(".active-deal a").text
-          url = item.at_css(".active-deal a")[:href]
+          name =  item.at_css(".deal-heading").text
+          url = item.at_css(".link-overlay")[:href]
           locations = url[/\w+/]
           if locations == 'auckland'
             location = 1
