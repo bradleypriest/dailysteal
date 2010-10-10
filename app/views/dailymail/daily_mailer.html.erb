@@ -1,8 +1,8 @@
 <% @feeds = FeedEntry.where('name LIKE ?', @search) %>
 <div id="deal-list">
   Brad rocks
-
-	<% @feeds.sort_by { |feed_entry| feed_entry[:rank]}.each do |feed_entry| %>
+  <%= @feeds.count%>
+	<% @feeds.each do |feed_entry| %>
 
 
 	
