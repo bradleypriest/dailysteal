@@ -6,22 +6,16 @@ task :fetch_otb => :environment do
   url = "http://www.offtheback.co.nz"
   doc = Nokogiri::HTML(open(url))  
     
-  doc.css("#main_product, .side_deal").each do |item|  
-    url = item.at_css("h1 a")[:href]
+  doc.css(".tabset li").each do |item|  
+    url = item.at_css("a")[:href]
     published  = (Time.now+12.hours).hour>=9? Date.today+21.hours : Date.today-3.hours
-    guid = url[/\d+/]+(published.strftime(fmt='%d%m%g'))
+    guid = url[/\d+/]+(published.strftime(fmt='%d%m%g')) rescue url+(published.strftime(fmt='%d%m%g'))
 unless FeedEntry.exists? :guid => guid 
-    name = item.at_css("h1").text
-    price = item.at_css(".price").text[/\$[\d,]+\.\d\d/]    
-    picture = item.at_css("#main_image")[:src]
-    if item.at_css(".sold_out")[:style].nil?
-      stock = 0
-    else
-     stock = 100
-    end
-    unless item.at_css("strike").nil?
-      fullprice = item.at_css("strike").text
-    end
+    name = item.at_css("strong.heading").text
+    price = item.at_css(".sale .price").text.chomp    
+    picture = item.at_css(".tab-b img")[:src]
+    stock = 100
+    fullprice = item.at_css(".normal .price").text.chomp
   
 
 
