@@ -1,6 +1,4 @@
-<% @feeds = FeedEntry.where('name LIKE ?', "%#{@search}%") %>
 <div id="deal-list">
-  Brad rocks
   <%= @feeds.count%>
 	<% @feeds.each do |feed_entry| %>
 
