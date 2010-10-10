@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100920005446) do
+ActiveRecord::Schema.define(:version => 20101010040829) do
 
   create_table "coupons", :force => true do |t|
     t.string   "name"
@@ -71,6 +71,13 @@ ActiveRecord::Schema.define(:version => 20100920005446) do
     t.string   "city"
     t.string   "phone"
     t.text     "details"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "email"
+    t.string   "search"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

@@ -10,7 +10,7 @@ gem 'nokogiri'
 gem 'rest-client'
 gem 'meta-tags', :require => 'meta_tags'
 gem 'haml'
-
+gem 'scoped-search', :require => "scoped_search"
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
