@@ -3,11 +3,12 @@ task :fetch_groupy => :environment do
   require 'rubygems'  
   require 'nokogiri'  
   require 'open-uri'
-  @urls = ["auckland","wellington" ]
+  @urls = ["auckland","wellington"]
   @urls.each_with_index do |url, i|
   doc = Nokogiri::HTML(open("http://www.groupy.co.nz/"+url))  
-        published  = (Time.now).hour>=12? Date.today+12.hours : Date.today-12.hours
-        guid = doc.at_css(".btn_buy")[:href][/\d+/]+(published.strftime(fmt='%d%m%g'))
+        published  = (Time.now).hour>=12 ? Date.today+12.hours : Date.today-12.hours
+        href = doc.at_css("a.buy_purchase")[:href]
+        guid = href[/\d+/]+(published.strftime(fmt='%d%m%g')) rescue url+(published.strftime(fmt='%d%m%g'))
         unless Coupon.exists? :guid => guid 
           picture = doc.at_css(".boxee_mask img")[:src]
           name =  doc.at_css(".deal_title").text
