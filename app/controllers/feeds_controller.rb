@@ -4,11 +4,14 @@ class FeedsController < ApplicationController
     set_meta_tags :title => "NZ's Best 1-Day and Daily Deals",
                   :keywords => "Daily Deals, 1-day deals, deals, one day, 1-day, Daily Steal", 
                   :description => "The Daily Steal is New Zealand's home of best daily deals and 1 day sales. We put together a fresh collection of the NZ's best deals every day."
-    @feeds = FeedEntry.find(
-    :all,
-    :conditions => ['published > ?', (Time.now-1.day)],
-    :order => 'rank'
-    )
+    order = params[:order].present? ? ['published','rank'] : 'rank'               
+    @feeds = FeedEntry.where('published > ?', (Time.now-1.day)).order(order)
+    
+    # find(
+    # :all,
+    # :conditions => ['published > ?', (Time.now-1.day)],
+    # :order => 'rank'
+    # )
 
     respond_to do |format|
       format.html # index.html.erb
