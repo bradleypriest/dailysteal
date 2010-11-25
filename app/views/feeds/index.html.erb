@@ -1,5 +1,5 @@
 <div id="deal-list">
-  <div id = "toggle" style="position:absolute">
+  <div id = "toggle" style="height:1.2em">
     <% if params[:order]%>
       <%=link_to "Order by Most Popular ▾",root_url, :style => "color:blue;float:right"%>
     
@@ -13,25 +13,25 @@
 
 	
 	<div class ="deal deal-<%= dealid %>" > 
-			<a href="<%=h feed_entry.url %>" title="<%=h feed_entry.name %>" style="display:box">
+			<a href="<%= feed_entry.url %>" title="<%= feed_entry.name %>" style="display:box">
 				
 				
 		
 			<span class ="deal_inner">
 				<span class ="deal_image"> 
-					<img src= "<%=h feed_entry.picture %>"
-				 	alt ="<%=h feed_entry.name %>" />
+					<img src= "<%= feed_entry.picture %>"
+				 	alt ="<%= feed_entry.name %>" />
 				</span>
 				
 				<span class="deal_price">	
 					<span class="price">
-						<%=h feed_entry.price %>
+						<%= feed_entry.price %>
 					</span>
 				</span>
 				
 				<span class="deal_name">
 						 
-							<%=h feed_entry.name.length >59? feed_entry.name[0..59]<<'...': feed_entry.name unless feed_entry.name.nil? %> 	
+							<%= truncate(feed_entry.name, :length => 60)%> 	
 						
 				</span>
 					
@@ -40,19 +40,19 @@
 				<span class = "deal_bottom">
 					
 					<span class="fullprice">
-					 	<%=h feed_entry.fullprice %>	
+					 	<%= feed_entry.fullprice %>	
 					</span>
 			
 					<span class="deal_site"> 
-						<%=h feed_entry.home%>
+						<%= feed_entry.home%>
 					</span>
 
 					<span class="deal_expires">
-						Expires <%=h (feed_entry.published+12.hours).strftime(fmt='%l%P')%>
+						Expires <%= (feed_entry.published+12.hours).strftime(fmt='%l%P')%>
 					</span>
 				
 					<span class ="deal_stock_bar">
-						<span class = "deal_stock" style="width:<%=h feed_entry.stock%>% <% if feed_entry.stock == 0 %> ; display:none <%end%>">
+						<span class = "deal_stock" style="width:<%= feed_entry.stock%>% <% if feed_entry.stock == 0 %> ; display:none <%end%>">
 						</span>
 					</span>
 				</span>
