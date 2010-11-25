@@ -557,9 +557,8 @@ list-style:disc outside none;
   padding:3px;
 }
 #abcd{
-  width:100%;
+  text-align:center;
 }
-
 #abcd a{
   margin:auto;
 }
