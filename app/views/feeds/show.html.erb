@@ -37,7 +37,7 @@
 				</span>
 
 				<span class="deal_expires">
-					Expires <%=h (feed_entry.published).strftime(fmt='%l%P')%>
+					Expires <%=h (feed_entry.published+12).strftime(fmt='%l%P')%>
 				</span>
 			
 				<span class ="deal_stock_bar">
