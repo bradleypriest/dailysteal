@@ -1,5 +1,12 @@
-
 <div id="deal-list">
+  <div id = "toggle">
+    <% if params[:order]%>
+      <%=link_to "Order by Most Popular ▾",root_url, :style => "color:blue;float:right"%>
+    
+    <%else%>
+      <%=link_to "Order by Most Recent ▾",{:order => 'published'}, :style => "color:blue;float:right"%>
+    <%end%>
+  </div>
 		<% @feeds.each_with_index do |feed_entry, i| %>
 
 	<% dealid = ((i%4)+1) %>
