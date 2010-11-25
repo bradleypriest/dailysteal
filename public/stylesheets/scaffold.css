@@ -556,3 +556,9 @@ list-style:disc outside none;
   display:block;
   padding:3px;
 }
+#abcd{
+  width:100%;
+}
+#abcd a{
+  margin:auto;
+}
