@@ -11,6 +11,13 @@ gem 'rest-client'
 gem 'meta-tags', :require => 'meta_tags'
 gem 'haml'
 gem 'scoped-search', :require => "scoped_search"
+
+
+group :development do
+  gem 'wirble'
+  gem 'hirb'
+  gem 'what_methods'
+end
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
