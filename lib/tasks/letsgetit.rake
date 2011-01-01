@@ -3,9 +3,10 @@ task :fetch_letsgetit => :environment do
   require 'rubygems'  
   require 'nokogiri'  
   require 'open-uri'
-  @urls = ['auckland']
+  @urls = ['auckland','wellington']
     @urls.each_with_index do |url, i|
     doc = Nokogiri::HTML(open("http://www.letsgetit.co.nz/city/"+url))
+      if doc.at_css('#deal-intro h1 a')
         published  = (Time.now).hour>=12 ? Date.today+12.hours : Date.today-12.hours
         guid = doc.at_css('#deal-intro h1 a')[:href][/\d+/]+(published.strftime(fmt='%d%m%g'))
         unless Coupon.exists? :guid => guid 
@@ -30,6 +31,7 @@ task :fetch_letsgetit => :environment do
             )
         end
     end
+  end
 end
 
 
