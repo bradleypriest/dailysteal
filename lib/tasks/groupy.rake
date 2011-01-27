@@ -7,13 +7,13 @@ task :fetch_groupy => :environment do
   @urls.each_with_index do |url, i|
   doc = Nokogiri::HTML(open("http://www.groupy.co.nz/"+url))  
         published  = (Time.now).hour>=12 ? Date.today+12.hours : Date.today-12.hours
-        href = doc.at_css("a.buy_purchase")[:href]
+        href = doc.at_css("a.btn-buy")[:href]
         guid = href[/\d+/]+(published.strftime(fmt='%d%m%g')) rescue url+(published.strftime(fmt='%d%m%g'))
         unless Coupon.exists? :guid => guid 
-          picture = doc.at_css(".boxee_mask img")[:src]
-          name =  doc.at_css(".deal_title").text
-      description = doc.at_css("#detailsContainer").text.strip
-      price =  doc.at_css("#buyContainer h1").text
+          picture = doc.at_css(".deal-image img")[:src]
+          name =  doc.at_css(".deal-title").text
+      description = doc.at_css("#storyContainer").text.strip
+      price =  doc.at_css(".price").text
           Coupon.create!(
           :name       => name.gsub("Today's Deal: ", ""),
           :description => description,
