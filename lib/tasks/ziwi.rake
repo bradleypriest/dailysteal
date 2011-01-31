@@ -18,6 +18,7 @@ task :fetch_ziwi => :environment do
          author = item.at_css(".title .bold").text.gsub(/\s+/,' ').gsub(',','&')
          price = item.at_css(".bold.black").text[/\$[\d,]+\.\d\d/]
          picture = item.at_css("#image img")[:src]
+         picture = picture[0] == 'h' ? picture : 'http://www.ziwi.co.nz/'+picture
          fullprice = item.at_css(".strike").text[/\$[\d,]+\.\d\d/]
         
     FeedEntry.create!(
