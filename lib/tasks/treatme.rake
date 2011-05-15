@@ -25,13 +25,13 @@ task :fetch_treatme => :environment do
         :description => description,
         :price      => price.strip,
         :url        => "http://www.treatme.co.nz"+url,
-        :picture    => "http://www.treatme.co.nz"+picture,
+        :picture    => picture,
         :published  => published,
         :location_id => i+1,
         :home       => 'Treatme',
         :home_url   => "http://www.treatme.co.nz",
         :guid       =>  guid,
-        :rank       =>  3,
+        :rank       =>  2,
         :stock      => 100
         )
     end

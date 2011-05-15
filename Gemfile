@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 # source 'http://gemcutter.org'
 
-gem 'rails', '3.0.0'
+gem 'rails', '~> 3.0.7'
 
 gem 'mysql'
 gem 'whenever'
@@ -16,7 +16,6 @@ gem 'scoped-search', :require => "scoped_search"
 group :development do
   gem 'wirble'
   gem 'hirb'
-  gem 'what_methods'
 end
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
