@@ -11,7 +11,7 @@ gem 'rest-client'
 gem 'meta-tags', :require => 'meta_tags'
 gem 'haml'
 gem 'scoped-search', :require => "scoped_search"
-
+gem 'webbynode'
 
 group :development do
   gem 'wirble'
