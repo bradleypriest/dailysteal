@@ -6,7 +6,7 @@ task :fetch_treatme => :environment do
   @urls = ["/Auckland", "/Wellington", "/Christchurch", "/Waikato" ]
   @urls.each_with_index do |url, i|
     doc = Nokogiri::HTML(open("http://www.treatme.co.nz"+url)) 
-      published  = (Time.now+12.hours).hour>=12? Date.today : Date.today-24.hours
+      published  = (Time.now).hour>=12? Date.today+12.hours : Date.today-12.hours
       if doc.at_css("#buyButton a")
         guid = doc.at_css("#buyButton a")[:href].split('=')[1]+(published.strftime(fmt='%d%m%g'))
       else
