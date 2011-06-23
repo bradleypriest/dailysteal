@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 # source 'http://gemcutter.org'
-
-gem 'rails', '~> 3.0.7'
+gem 'rake', '0.8.7'
+gem 'rails', '~> 3.0.8'
 
 gem 'mysql'
 gem 'whenever'
@@ -17,6 +17,7 @@ group :development do
   gem 'wirble'
   gem 'hirb'
 end
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
