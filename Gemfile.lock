@@ -55,7 +55,7 @@ GEM
     meta-tags (1.2.4)
       actionpack
     mime-types (1.16)
-    mysql (2.8.1)
+    mysql2 (0.3.6)
     net-ssh (2.1.0)
     nokogiri (1.4.4)
     polyglot (0.3.1)
@@ -107,7 +107,7 @@ DEPENDENCIES
   haml
   hirb
   meta-tags
-  mysql
+  mysql2
   nokogiri
   rails (~> 3.0.8)
   rake (= 0.8.7)

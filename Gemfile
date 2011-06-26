@@ -3,7 +3,7 @@ source 'http://rubygems.org'
 gem 'rake', '0.8.7'
 gem 'rails', '~> 3.0.8'
 
-gem 'mysql'
+gem 'mysql2'
 gem 'whenever'
 gem 'will_paginate', "~> 3.0.pre2"
 gem 'nokogiri'
