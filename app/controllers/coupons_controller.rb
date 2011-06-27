@@ -10,12 +10,7 @@ class CouponsController < ApplicationController
     set_meta_tags :title => "#{@location.capitalize}'s Best Deals",
                   :keywords => "Daily Deals, 1-day deals, daily coupons, groupy, grabone, dailydo, deals, one day, 1-day, Daily Steal", 
                   :description => "The Daily Steal is New Zealand's home of best daily deals and 1 day sales. We put together a fresh collection of the NZ's best deals every day."
-    @coupons = Coupon.find(
-    :all,
-    :joins => :location,
-    :conditions => ['published > ? && locations.name = ?', (Time.now-1.day), @location],
-    :order => 'rank'
-    )
+    @coupons = Coupon.joins(:location).order('rank').where('published > ?', Time.now-1.day).where('locations.name IS ?', @location)
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @coupons }
