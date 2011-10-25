@@ -1,15 +1,13 @@
 
 <div id= 'navigation'>
   <span id = 'left_nav'>
-  <%= link_to "The Daily Steal - NZ's best daily deals", root_path, :class=> :title%>
-  <% if controller_name == "coupons"%>
-  <%= render "coupons/cities"%>
-  <%end%>
+    <%= link_to "The Daily Steal - NZ's best daily deals", root_path, :class=> :title%>
+    <%= render "coupons/cities" if controller_name == "coupons"%>
   </span>
   <span id = 'right_nav'>
 	<ul>
-	  <li><%= link_to "(NEWER!!) Personalized Deals", signups_path() %></li>
-	  <li><%= link_to "(NEW!!) Today's Coupons", coupons_path() %></li>
+	  <li><%#= link_to "(NEWER!!) Personalized Deals", signups_path() %></li>
+	  <li><%= link_to "Today's Coupons", coupons_path() %></li>
 	    <li><%= link_to "Today's Deals", root_path %></li>
 		<li><%= link_to "FAQ", faq_path %></li>
 	  	<li><%= link_to "Previous Deals", yesterday_path %></li>

@@ -1,29 +1,28 @@
 desc "Fetch 1-day Prices"
 task :fetch_snatchadeal => :environment do
-  require 'rubygems'  
-  require 'nokogiri'  
+  require 'rubygems'
+  require 'nokogiri'
   require 'open-uri'
   url = "http://www.snatchadeal.co.nz"
-  doc = Nokogiri::HTML(open(url))  
-    
-    doc.css(".box").each do |item|
-       url = item.at_css(".box-image a")[:href][/.+(?=&)/]
+  doc = Nokogiri::HTML(open(url))
+
+    doc.css(".home-daily-deal").each do |item|
+       url = item.at_css("h2 a")[:href]
         published  = (Time.now+12.hours).hour>=11? Date.today+23.hours : Date.today-1.hours
         guid = url[/\d+/]+(published.strftime(fmt='%d%m%g'))
 unless FeedEntry.exists? :guid => guid
-      name = item.at_css(".pageHeading2").text
-      price = item.at_css(".discount-price").text[/\$[\d,]+\.\d\d/]
-      fullprice = item.at_css(".rrp").text[/\$[\d,]+\.\d\d/]
-      picture = item.at_css(".box-image img")[:src].gsub(/\s/,'%20')
-  doc = Nokogiri::HTML(open(url))
-      stock = doc.at_css("#product-info-right img")[:title][/\d+/]
-        
-            
+      name = item.at_css("h2 a").text
+      price = item.at_css(".home-daily-deal-pricing").text[/\$[\d,]+\.\d\d/]
+      fullprice = item.at_css(".home-daily-deal-rrp").text[/\$[\d,]+\.\d\d/]
+      picture = item.at_css("img")[:src].gsub(/\s/,'%20')
+      stock = doc.at_css(".home-daily-deal-buy-now") ? 100 : 0
+
+
     FeedEntry.create!(
       :name       => name,
       :price      => price,
       :fullprice  => fullprice,
-      :url        => url,
+      :url        => 'http://www.snatchadeal.co.nz/'+url,
       :picture    => 'http://www.snatchadeal.co.nz/'+picture,
       :published  => published,
       :home       => 'Snatchadeal',
@@ -32,7 +31,7 @@ unless FeedEntry.exists? :guid => guid
       :rank       =>  5,
       :stock      => stock
       )
-    
+
     end
   end
 end

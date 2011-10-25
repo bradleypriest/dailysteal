@@ -1,12 +1,12 @@
 desc "Fetch MightyApe Prices"
 task :fetch_mightyape => :environment do
-  require 'rubygems'  
-  require 'nokogiri'  
+  require 'rubygems'
+  require 'nokogiri'
   require 'open-uri'
   url = "http://www.mightyape.co.nz/daily-deals/"
-  doc = Nokogiri::HTML(open(url))  
-    
-    doc.css(".deal").each do |item|  
+  doc = Nokogiri::HTML(open(url))
+
+    doc.css(".deal").each do |item|
       url = item.at_css(".title .title")[:href]
       published  = (Time.now+12.hours).hour>=12? Date.today : Date.today-24.hours
       guid = url[/\d\d\d\d\d+/]+(published.strftime(fmt='%d%m%g'))
@@ -15,7 +15,7 @@ unless FeedEntry.exists? :guid => guid
       price = item.at_css(".price .price").text
       fullprice = item.at_css(".old").text
       picture = item.at_css(".boxshot")[:src]
-      stock = item.at_xpath('div[@class="dealBox"]/div')[:class][/\d+/]
+      stock = item.at_css('.productCap')[:class][/\d+/]
 
 
     FeedEntry.create!(
