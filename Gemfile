@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 # source 'http://gemcutter.org'
-gem 'rake', '0.8.7'
+gem 'rake', '0.9.2'
 gem 'rails', '~> 3.0.8'
 
 gem 'mysql2', '~>0.2.10', :group => :production
