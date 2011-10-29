@@ -1,4 +1,4 @@
-set :output, path+'/logs/cron.log'
+set :output, path+'/log/cron.log'
 
 every 1.day, :at => '12.03 am' do
   rake "fetch_groupy"
