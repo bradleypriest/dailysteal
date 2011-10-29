@@ -1,87 +1,57 @@
-#every 1.day, :at => '12:04 am' do
-#Ziwi   
-#  rake "fetch_ziwi" 
-#end
+set :output, path+'/logs/cron.log'
 
-every 1.day, :at => '12.01 am' do
-#Daysale
-  rake "fetch_daysale"
-#6Shooter
-  rake "fetch_6shooter"
-#Catchoftheday
-  rake "fetch_catchoftheday"
-#3deals
-  rake "fetch_3deals"  
-#1-day
-  rake "fetch_1day"
-#1-daytee
-#  rake "fetch_1daytee"
-#Crazysales
-  rake "fetch_crazysales"
-#MightyApe
-  rake "fetch_mightyape"
+every 1.day, :at => '12.03 am' do
+  rake "fetch_groupy"
 end
-
-every 1.day, :at => '12:16 am' do
-#Ziwi   
-  rake "fetch_ziwi" 
-#Daysale
-  rake "fetch_daysale"
-#6Shooter
-  rake "fetch_6shooter"
-#Catchoftheday
-  rake "fetch_catchoftheday"
-#3deals
-  rake "fetch_3deals"  
-#1-day
-  rake "fetch_1day"
-#1-daytee
-#  rake "fetch_1daytee"
-#Crazysales
-  rake "fetch_crazysales"
-#MightyApe
-  rake "fetch_mightyape"
+every 1.day, :at => '12.04 am' do
+  rake "fetch_grabone"
 end
-
-every 1.day, :at => '11:01 pm' do
-#Snatchadeal
-  rake "fetch_snatchadeal"
+every 1.day, :at => '12.06 am' do
+  rake "fetch_spreets"
 end
-
-every 1.day, :at => '10:01 pm' do
-#Dealaday
+every 1.day, :at => '12.07 am' do
+  rake "fetch_treatme"
+end
+every 1.day, :at => '9.02 am' do
+  rake "fetch_dailydo"
+end
+every 1.day, :at => '10.02 am' do
   rake "fetch_dealaday"
-#Gameaday
-  rake "fetch_gameaday"
-#Trademe
+end
+every 1.day, :at => '10.03 am' do
   rake "fetch_trademe"
 end
-
-every 1.day, :at => '9:01 pm' do
-#OffTheBack
-  rake "fetch_otb"
+# every 1.day, :at => '10.05 am' do
+#   rake "fetch_ziwi"
+# end
+every 1.day, :at => '11.01 am' do
+  rake "fetch_snatchadeal"
+end
+every 1.day, :at => '12.01 pm' do
+  rake "fetch_1day"
+end
+every 1.day, :at => '12.02 pm' do
+  rake "fetch_6shooter"
+end
+every 1.day, :at => '12.03 am' do
+  rake "fetch_3deals"
+end
+every 1.day, :at => '12.04 am' do
+  rake "fetch_mightyape"
+end
+every 1.day, :at => '12.05 pm' do
+  rake "fetch_daysale"
+end
+every 1.day, :at => '12.06 pm' do
+  rake "fetch_crazysales"
 end
 
-every 1.day, :at => '12:03 pm' do
-#TheDeal
-  rake "fetch_thedeal"
-#Yahoo
-#  rake "fetch_yahoo"
+#Stock
+every 1.day, :at => '12.10am' do
+ rake "fetch_stock"
 end
 
-#every 1.day, :at => '10.01 am' do
-#NZHerald
-#  rake "fetch_nzh"
-#end
-
-#every 1.day, :at => '12.10am' do
-#Stock levels
-#  rake "fetch_stock"
-#end
-
-
-#every 30.minutes do
-#Stock levels
-#  rake "fetch_stock"
-#end
+every '15,45 * * * *' do
+ rake "fetch_stock"
+end
 
