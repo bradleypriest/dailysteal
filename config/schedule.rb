@@ -1,5 +1,5 @@
 set :output, path+'/log/cron.log'
-job_type :rake,    "cd :path && RAILS_ENV=:environment rake :task --silent :output"
+job_type :rake,    "cd :path && RAILS_ENV=:environment /usr/local/bin/rake :task --silent :output"
 
 every 1.day, :at => '12.03 am' do
   rake "fetch_groupy"
