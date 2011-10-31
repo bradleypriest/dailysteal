@@ -5,16 +5,16 @@ class DealadayWorker < DJ::Worker
   url = "http://www.dealaday.co.nz"
   doc = Nokogiri::HTML(open(url))
 
-    doc.css("#deal").each do |item|
-      picture = item.at_css("#mainimage")[:src]
-      published  = (Time.now+12.hours).hour>=10? Date.today+22.hours : Date.today-2.hours
-      guid = item.at_css("#buynow_daily a")[:href][/\d+/]+(published.strftime(fmt='%d%m%g'))
-  unless FeedEntry.exists? :guid => guid
-      name = item.at_css("#dealLeft .dealTitle a").text
-      name2 = item.at_css("#dealLeft .dealSubtitle").text
-      price = item.at_css("#dealRight .ourPrice p").text[/\$[\d,]+\.\d\d/]
-      fullprice = item.at_css("#dealRight table td.r").text[/\$[\d,]+\.\d\d/]
-      stock = item.at_css("#productstatus tr td")[:width][/\d+/].to_i
+  doc.css("#deal").each do |item|
+    picture = item.at_css("#mainimage")[:src]
+    published  = (Time.now+12.hours).hour>=10? Date.today+22.hours : Date.today-2.hours
+    guid = item.at_css("#buynow_daily a")[:href][/\d+/]+(published.strftime(fmt='%d%m%g'))
+    unless FeedEntry.exists? :guid => guid
+      name = item.at_css(".dealTitle a").text
+      name2 = item.at_css(".dealSubtitle").text
+      price = item.at_css(".ourPrice p").text[/\$[\d,]+\.\d\d/]
+      fullprice = item.at_css(".whyPay td.r").text[/\$[\d,]+\.\d\d/]
+      stock = 100
 
     FeedEntry.create!(
       :name       => name+' '+name2,

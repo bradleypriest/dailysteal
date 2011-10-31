@@ -56,9 +56,9 @@ class StockWorker < DJ::Worker
     end
     FeedEntry.find_all_by_home('Dealaday', :conditions => ['published > ?', (Time.now-1.day)]).each do |feed_entry|
           if feed_entry.published >= Time.now-1.day
-            doc = Nokogiri::HTML(open(feed_entry.url))
-            stock = item.at_css("#productstatus tr td")[:width][/\d+/].to_i
-              feed_entry.update_attribute(:stock, stock)
+            doc = Nokogiri::HTML(open('http://www.dealaday.co.nz/index/progress'))
+            stock = doc.at_css("body").content.to_i
+              feed_entry.update_attribute(:stock, 100-stock)
           end
     end
 
