@@ -1,7 +1,8 @@
 class StockWorker < DJ::Worker
   def perform
-  require 'nokogiri'
-  require 'open-uri'
+    begin
+    require 'nokogiri'
+    require 'open-uri'
 
 
 
@@ -135,8 +136,9 @@ class StockWorker < DJ::Worker
   #      end
 
       puts "Stock Fetched"
-
-
+    rescue Errno::ETIMEDOUT
+      puts "Timeout"
+    end
 end
 
 end
