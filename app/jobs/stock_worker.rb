@@ -62,13 +62,13 @@ class StockWorker < DJ::Worker
           end
     end
 
-    FeedEntry.find_all_by_home('Snatchadeal', :conditions => ['published > ?', (Time.now-1.day)]).each do |feed_entry|
-      if feed_entry.published>=Time.now-1.day
-          doc = Nokogiri::HTML(open(feed_entry.url))
-            stock = doc.at_css("#product-info-right img")[:title][/\d+/]
-          feed_entry.update_attribute(:stock, stock)
-      end
-    end
+    # FeedEntry.find_all_by_home('Snatchadeal', :conditions => ['published > ?', (Time.now-1.day)]).each do |feed_entry|
+    #   if feed_entry.published>=Time.now-1.day
+    #       doc = Nokogiri::HTML(open(feed_entry.url))
+    #         stock = doc.at_css("#product-info-right img")[:title][/\d+/]
+    #       feed_entry.update_attribute(:stock, stock)
+    #   end
+    # end
 
     FeedEntry.find_all_by_home('Crazysales', :conditions => ['published > ?', (Time.now-1.day)]).each do |feed_entry|
       if feed_entry.published>=Time.now-1.day
