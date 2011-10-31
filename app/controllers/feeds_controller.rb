@@ -2,10 +2,10 @@ class FeedsController < ApplicationController
 
   def index
     set_meta_tags :title => "NZ's Best 1-Day and Daily Deals",
-                  :keywords => "Daily Deals, 1-day deals, deals, one day, 1-day, Daily Steal", 
+                  :keywords => "Daily Deals, 1-day deals, deals, one day, 1-day, Daily Steal",
                   :description => "The Daily Steal is New Zealand's home of best daily deals and 1 day sales. We put together a fresh collection of the NZ's best deals every day."
-                  
-    order = params[:order].present? ? ['published DESC','rank'] : 'rank'               
+
+    order = params[:order].present? ? ['published DESC','rank'] : 'rank'
     @feeds = FeedEntry.where('published > ?', (Time.now-1.day)).order(order)
 
     respond_to do |format|
@@ -23,7 +23,7 @@ class FeedsController < ApplicationController
   end
 
 
-  
+
   def yesterday
     set_meta_tags :title => "Previous Deals Page #{params[:page]}",
                   :description => 'Previous Daily Deals',
@@ -34,16 +34,16 @@ class FeedsController < ApplicationController
      :order => 'published DESC',
      :per_page => '40'
      )
-    
 
-     
+
+
     respond_to do |format|
       format.html # yesterday.html.erb
       format.xml  { render :xml => @feed_entries }
     end
   end
-  
-  
+
+
   def small
     stylesheets << 'scaffoldsmall'
     @feeds = FeedEntry.find(
@@ -56,9 +56,9 @@ class FeedsController < ApplicationController
       format.html # index.html.erb
       format.xml  { render :xml => @feed_entries }
     end
-  
+
   end
-  
+
   def mailer
     @feeds = FeedEntry.all
 
@@ -67,6 +67,9 @@ class FeedsController < ApplicationController
       format.xml  { render :xml => @feed_entries }
     end
   end
-  
 
+  def backlog
+    @jobs = Delayed::Job.all
+    render :json => @jobs
+  end
 end
