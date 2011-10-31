@@ -1,5 +1,7 @@
 set :output, path+'/log/cron.log'
+
 set :job_template, nil
+
 every 1.day, :at => '12.02 am' do
   runner "GroupyWorker.enqueue"
   runner "GraboneWorker.enqueue"
