@@ -26,7 +26,7 @@ every 1.day, :at => '12.01 pm' do
   runner "OneDayWorker.enqueue"
   runner "SixShooterWorker.enqueue"
   runner "ThreeDealsWorker.enqueue"
-  runner "MightyApeWorker.enqueue"
+  #runner "MightyApeWorker.enqueue"
   runner "DaysaleWorker.enqueue"
   runner "CrazysalesWorker.enqueue"
 end
