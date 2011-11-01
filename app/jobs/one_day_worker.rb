@@ -5,7 +5,7 @@ class OneDayWorker < DJ::Worker
     url = "http://www.1-day.co.nz"
     doc = Nokogiri::HTML(open(url))
 
-    doc.css(".content_prod").each do |item|
+    doc.css(".content_prod dl").each do |item|
       url = item.at_css(".home_top img")[:src][/\/products.+(?=_small)/]
       published  = (Time.now+12.hours).hour>=12? Date.today : Date.today-24.hours
       guid = url.gsub(/\/products\//,'')+(published.strftime(fmt='%d%m%g'))

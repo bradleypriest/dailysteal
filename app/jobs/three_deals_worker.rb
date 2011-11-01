@@ -5,7 +5,7 @@ class ThreeDealsWorker < DJ::Worker
     url = "http://www.3deals.co.nz/site/index.php"
     doc = Nokogiri::HTML(open(url))
 
-    doc.css("#hp-product-detail-middle , td:nth-child(3) .navigation-product, #home-list td:nth-child(2) .navigation-product").each do |item|
+    doc.css("#hp-product-detail-middle table, td:nth-child(3) .navigation-product table, #home-list td:nth-child(2) .navigation-product table").each do |item|
       href = item.at_css("a")[:href]
       published  = (Time.now+12.hours).hour>=12? Date.today : Date.today-24.hours
       guid = href[/\d\d+/]+(published.strftime(fmt='%d%m%g'))
