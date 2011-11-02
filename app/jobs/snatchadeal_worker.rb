@@ -27,7 +27,7 @@ unless FeedEntry.exists? :guid => guid
       :home       => 'Snatchadeal',
       :home_url   => 'http://www.snatchadeal.co.nz/',
       :guid       =>  guid,
-      :rank       =>  15,
+      :rank       =>  25,
       :stock      => stock
       )
 

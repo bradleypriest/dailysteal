@@ -10,8 +10,9 @@ class StockWorker < DJ::Worker
     FeedEntry.find_all_by_home('1-day', :conditions => ['published > ?', (Time.now-1.day)]).each do |feed_entry|
       if feed_entry.published>=Time.now-1.day
           doc = Nokogiri::HTML(open(feed_entry.url))
-            stock = doc.at_css(".stock_bar script").text[/\d+(?=',\s\/\/)/]
-          feed_entry.update_attribute(:stock, stock)
+          stock = doc.at_css(".stock_bar script")
+
+          feed_entry.update_attribute(:stock, stock.text[/\d+(?=',\s\/\/)/]) if stock
       end
     end
     # FeedEntry.find_all_by_home('OffTheBack', :conditions => ['published > ?', (Time.now-1.day)]).each do |feed_entry|
