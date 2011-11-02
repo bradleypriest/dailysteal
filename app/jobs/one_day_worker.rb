@@ -7,7 +7,7 @@ class OneDayWorker < DJ::Worker
 
     doc.css(".content_prod dl").each do |item|
       url = item.at_css(".home_top img")[:src][/\/products.+(?=_small)/]
-      published  = (Time.now+12.hours).hour>=12? Date.today : Date.today-24.hours
+      published = PublishTime.new( 12 ).time
       guid = url.gsub(/\/products\//,'')+(published.strftime(fmt='%d%m%g'))
 
       unless FeedEntry.exists? :guid => guid

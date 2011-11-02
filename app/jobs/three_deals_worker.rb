@@ -7,7 +7,7 @@ class ThreeDealsWorker < DJ::Worker
 
     doc.css("#hp-product-detail-middle table, td:nth-child(3) .navigation-product table, #home-list td:nth-child(2) .navigation-product table").each do |item|
       href = item.at_css("a")[:href]
-      published  = (Time.now+12.hours).hour>=12? Date.today : Date.today-24.hours
+      published = PublishTime.new( 12 ).time
       guid = href[/\d\d+/]+(published.strftime(fmt='%d%m%g'))
       unless FeedEntry.exists? :guid => guid
           url = 'http://www.3deals.co.nz/site/'+href
