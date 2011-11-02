@@ -6,11 +6,11 @@ class FeedsController < ApplicationController
                   :description => "The Daily Steal is New Zealand's home of best daily deals and 1 day sales. We put together a fresh collection of the NZ's best deals every day."
 
     order = params[:order].present? ? ['published DESC','rank'] : 'rank'
-    @feeds = FeedEntry.where('published > ?', (Time.now-1.day)).order(order)
+
+    @feeds = FeedEntry.where(:published => 1.day.ago...Time.now).order(order)
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @feed_entries }
     end
   end
   def show
