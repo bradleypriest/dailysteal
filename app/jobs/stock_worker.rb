@@ -29,7 +29,7 @@ class StockWorker < DJ::Worker
     FeedEntry.find_all_by_home('3Deals', :conditions => ['published > ?', (Time.now-1.day)]).each do |feed_entry|
           if feed_entry.published>=Time.now-1.day
             doc = Nokogiri::HTML(open(feed_entry.url))
-            stock = doc.at_xpath('//div[@style="margin-bottom: 5px; font-weight: bold;"]/img')[:alt][/\d+/]+'0'
+            stock = item.xpath('//img[@alt]').detect{ |img| img[:alt] =~ /Stock/ }[:alt][/\d+/]+'0'
           feed_entry.update_attribute(:stock, stock)
 
           end
