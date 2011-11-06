@@ -10,7 +10,7 @@ class DailydoWorker < DJ::Worker
         guid = picture[/\d+/]+(published.strftime(fmt='%d%m%g'))
         href = url.present? ?  url : 'auckland'
           unless Coupon.exists? :guid => guid
-            description = nil #item.at_css(".normaltext div").text
+            description = item.at_css(".normaltxt").text
               Coupon.create!(
               :description => description,
               :price      => description[/\$[\d]+/],
