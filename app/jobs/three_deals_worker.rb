@@ -8,7 +8,7 @@ class ThreeDealsWorker < DJ::Worker
     doc.css("#hp-product-detail-middle table, td:nth-child(3) .navigation-product table, #home-list td:nth-child(2) .navigation-product table").each do |item|
       href = item.at_css("a")[:href]
       published = PublishTime.new( 12 ).time
-      guid = href[/\d\d+/]+(published.strftime(fmt='%d%m%g'))
+      guid = href[/deal-\w+/].split('-')[1]+(published.strftime(fmt='%d%m%g'))
       unless FeedEntry.exists? :guid => guid
           url = 'http://www.3deals.co.nz/site/'+href
            doc = Nokogiri::HTML(open(url))

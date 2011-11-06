@@ -7,8 +7,8 @@ class DealadayWorker < DJ::Worker
 
   doc.css("#deal").each do |item|
     picture = item.at_css("#mainimage")[:src]
-    published  = (Time.now+12.hours).hour>=10? Date.today+22.hours : Date.today-2.hours
-    guid = item.at_css("#buynow_daily a")[:href][/\d+/]+(published.strftime(fmt='%d%m%g'))
+    published = PublishTime.new( 10 ).time
+    guid = item.at_css(".dealTitle a")[:onclick][/\d+/]+(published.strftime(fmt='%d%m%g'))
     unless FeedEntry.exists? :guid => guid
       name = item.at_css(".dealTitle a").text
       name2 = item.at_css(".dealSubtitle").text
