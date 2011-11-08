@@ -4,9 +4,6 @@ class StockWorker < DJ::Worker
     require 'nokogiri'
     require 'open-uri'
 
-
-
-
     FeedEntry.find_all_by_home('1-day', :conditions => ['published > ?', (Time.now-1.day)]).each do |feed_entry|
       if feed_entry.published>=Time.now-1.day
           doc = Nokogiri::HTML(open(feed_entry.url))
@@ -31,29 +28,27 @@ class StockWorker < DJ::Worker
         item = Nokogiri::HTML(open(feed_entry.url))
         stock = item.xpath('//img[@alt]').detect{ |img| img[:alt] =~ /Stock/ }[:alt][/\d+/]+'0'
         feed_entry.update_attribute(:stock, stock)
-
       end
     end
 
     FeedEntry.find_all_by_home('Trademe', :conditions => ['published > ?', (Time.now-1.day)]).each do |feed_entry|
-          if feed_entry.published>=Time.now-1.day
-            doc = Nokogiri::HTML(open(feed_entry.url))
-            stock = doc.at_css("#DailyDealsStockMeter div")[:class][/\d+/]
-          feed_entry.update_attribute(:stock, stock)
-
-          end
+      if feed_entry.published>=Time.now-1.day
+        doc = Nokogiri::HTML(open(feed_entry.url))
+        stock = doc.at_css("#DailyDealsStockMeter div")[:class][/\d+/]
+        feed_entry.update_attribute(:stock, stock)
+      end
     end
 
     FeedEntry.find_all_by_home('Daysale', :conditions => ['published > ?', (Time.now-1.day)]).each do |feed_entry|
-          if feed_entry.published>=Time.now-1.day
-            doc = Nokogiri::HTML(open(feed_entry.url))
-            unless doc.at_css(".stockdiv").nil?
-               stock = doc.at_css(".stockdiv img")[:src][/\d+/]
-            else
-               stock = 0
-            end
-          feed_entry.update_attribute(:stock, stock)
-          end
+      if feed_entry.published>=Time.now-1.day
+        doc = Nokogiri::HTML(open(feed_entry.url))
+        unless doc.at_css(".stockdiv").nil?
+           stock = doc.at_css(".stockdiv img")[:src][/\d+/]
+        else
+           stock = 0
+        end
+        feed_entry.update_attribute(:stock, stock)
+      end
     end
     FeedEntry.find_all_by_home('Dealaday', :conditions => ['published > ?', (Time.now-1.day)]).each do |feed_entry|
           if feed_entry.published >= Time.now-1.day

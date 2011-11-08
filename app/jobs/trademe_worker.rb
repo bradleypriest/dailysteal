@@ -7,14 +7,14 @@ class TrademeWorker < DJ::Worker
 
     doc.css(".deal-gallery-card").each do |item|
       url = item.at_css(".deal-margin a")[:href]
-      published  = (Time.now+12.hours).hour>=10? Date.today+22.hours : Date.today-2.hours
+      published = PublishTime.new( 10 ).time
       guid = url[/\d+/]+(published.strftime(fmt='%d%m%g'))
-unless FeedEntry.exists? :guid => guid
-      name = item.at_css(".deal-margin a").text
-      price = item.at_css(".deal-price").text[/\$[\d,]+\.\d\d/]
-      fullprice = item.at_css(".deal-meta").text[/\$[\d,]+\.\d\d/]
-      picture = item.at_css(".deal-image img")[:src]
-      stock = item.at_css("#DailyDealsStockMeter div")[:class][/\d+/]
+      unless FeedEntry.exists? :guid => guid
+        name = item.at_css(".deal-margin a").text
+        price = item.at_css(".deal-price").text[/\$[\d,]+\.\d\d/]
+        fullprice = item.at_css(".deal-meta").text[/\$[\d,]+\.\d\d/]
+        picture = item.at_css(".deal-image img")[:src]
+        stock = item.at_css("#DailyDealsStockMeter div")[:class][/\d+/]
 
 
     FeedEntry.create!(
