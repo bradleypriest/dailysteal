@@ -16,4 +16,6 @@ Agg::Application.routes.draw do
   match '/signup/thanks' => 'signups#thanks', :as => :signup_thanks
 
   match '/backlog' => 'feeds#backlog'
+  match '/cronlog' => 'feeds#cronlog'
+  match '/djlog' => 'feeds#djlog'
 end

@@ -72,4 +72,14 @@ class FeedsController < ApplicationController
     @jobs = Delayed::Job.all
     render :json => @jobs
   end
+
+  def cronlog
+    length = params[:length] || 100
+    render :json => `tail -n #{length} ./log/cron.log`
+  end
+
+  def djlog
+    length = params[:length] || 100
+    render :json => `tail -n #{length} ./log/delayed_job.log`
+  end
 end
