@@ -23,11 +23,7 @@ every 1.day, :at => '11.02am' do
 end
 
 every 1.day, :at => Time.now.at_beginning_of_day+12.hours+4.minutes do
-  runner "OneDayWorker.enqueue"
-  runner "SixShooterWorker.enqueue"
-  runner "ThreeDealsWorker.enqueue"
-  runner "DaysaleWorker.enqueue"
-  runner "CrazysalesWorker.enqueue"
+  runner "QueueMaster.midday"
 end
 
 every '15,45 * * * *' do
