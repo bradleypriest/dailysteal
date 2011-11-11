@@ -1,5 +1,5 @@
-class QueueMaster
-  def self.midday
+class MiddayWorker
+  def self.enqueue
     OneDayWorker.enqueue
     SixShooterWorker.enqueue
     ThreeDealsWorker.enqueue

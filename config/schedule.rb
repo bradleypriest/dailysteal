@@ -1,33 +1,34 @@
 set :output, path+'/log/cron.log'
+job_type :curl, "curl http://www.dailysteal.co.nz/touch/:task :output"
 
 set :job_template, nil
 
 every 1.day, :at => '12.05am' do
-  runner "GroupyWorker.enqueue"
-  runner "GraboneWorker.enqueue"
-  runner "SpreetsWorker.enqueue"
-  runner "TreatmeWorker.enqueue"
+  curl "groupy"
+  curl "grabone"
+  curl "spreets"
+  curl "treatme"
 end
 
 every 1.day, :at => '9.02am' do
-  runner "DailydoWorker.enqueue"
+  curl "dailydo"
 end
 every 1.day, :at => '10.02am' do
-  runner "DealadayWorker.enqueue"
-  runner "TrademeWorker.enqueue"
-  #runner "ZiwiWorker.enqueue"
+  curl "dealaday"
+  curl "trademe"
+  #curl "ziwi"
 end
 
 every 1.day, :at => '11.02am' do
-  runner "SnatchadealWorker.enqueue"
+  curl "snatchadeal"
 end
 
 every 1.day, :at => Time.now.at_beginning_of_day+12.hours+4.minutes do
-  runner "QueueMaster.midday"
+  curl "midday"
 end
 
 every '15,45 * * * *' do
- runner "StockWorker.enqueue"
+ curl "stock"
 end
 
-#runner "MightyApeWorker.enqueue"
+#curl "mighty_ape"
