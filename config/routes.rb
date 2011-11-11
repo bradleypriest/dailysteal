@@ -2,20 +2,21 @@ Agg::Application.routes.draw do
   root :to => 'feeds#index'
 
   match 'feedbacks' => 'feedbacks#create', :as => :feedback
-  match 'feedbacks/new' => 'feedbacks#new', :as => :new_feedback
+  get 'feedbacks/new' => 'feedbacks#new', :as => :new_feedback
 
-  match 'coupons' => 'coupons#index', :as => :coupons
-  match 'coupons/:id.:format' => 'coupons#local', :as => :local_coupons
+  get 'coupons' => 'coupons#index', :as => :coupons
+  get 'coupons/:id.:format' => 'coupons#local', :as => :local_coupons
 
-  match '/about' => 'feeds#about', :as => :about
-  match '/faq' => 'feeds#faq', :as => :faq
-  match '/old/' => 'feeds#yesterday', :as => :yesterday
+  get '/about' => 'feeds#about', :as => :about
+  get '/faq' => 'feeds#faq', :as => :faq
+  get '/old/' => 'feeds#yesterday', :as => :yesterday
   match '/small/' => 'feeds#small', :as => :small
-  match '/advertisers/' => 'feeds#advertisers', :as => :advertisers
+  get '/advertisers/' => 'feeds#advertisers', :as => :advertisers
   match '/signup/' => 'signups#index', :as => :signups
   match '/signup/thanks' => 'signups#thanks', :as => :signup_thanks
 
-  match '/backlog' => 'feeds#backlog'
-  match '/cronlog' => 'feeds#cronlog'
-  match '/djlog' => 'feeds#djlog'
+  get '/backlog' => 'feeds#backlog'
+  get '/cronlog' => 'feeds#cronlog'
+  get '/djlog' => 'feeds#djlog'
+  get '/touch/:id' => 'touch#perform'
 end
