@@ -9,13 +9,14 @@ class DailydoWorker < DJ::Worker
         published  = (Time.now+12.hours).hour>=9? Date.today+21.hours : Date.today-3.hours
         guid = picture[/\d+/]+(published.strftime(fmt='%d%m%g'))
         href = url.present? ?  url : 'auckland'
+        picture = picture[0..3] == "http" ? picture : 'http://www.dailydo.co.nz/'+picture
           unless Coupon.exists? :guid => guid
             description = item.at_css(".normaltxt").text
               Coupon.create!(
               :description => description,
               :price      => description[/\$[\d]+/],
-              :url        => 'http://www.dailydo.co.nz/'+url,
-              :picture    => 'http://www.dailydo.co.nz/'+picture,
+              :url        => 'http://www.dailydo.co.nz/'+href,
+              :picture    => picture,
               :published  => published,
               :location_id  => i+1,
               :home       => 'Dailydo',
