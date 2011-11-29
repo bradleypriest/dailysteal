@@ -7,7 +7,7 @@ class GraboneWorker < DJ::Worker
   doc = Nokogiri::HTML(open(url))
       doc.css(".deal").each do |item|
         picture = item.at_css(".deal-image img")[:src]
-        published  = (Time.now).hour>=12? Date.today+12.hours : Date.today-12.hours
+        published = PublishTime.new( 0 ).time
         guid = picture[/\d\w+(?=\.jpg)/]+(published.strftime(fmt='%d%m%g'))
         unless Coupon.exists? :guid => guid
           name =  item.at_css(".deal-heading").text

@@ -5,7 +5,7 @@ class GroupyWorker < DJ::Worker
   @urls = ["auckland","wellington"]
   @urls.each_with_index do |url, i|
   doc = Nokogiri::HTML(open("http://www.groupy.co.nz/"+url))
-        published  = (Time.now).hour>=12 ? Date.today+12.hours : Date.today-12.hours
+  published = PublishTime.new( 0 ).time
         href = doc.at_css("a.btn-buy")[:href]
         guid = href[/\d+/]+(published.strftime(fmt='%d%m%g')) rescue url+(published.strftime(fmt='%d%m%g'))
         unless Coupon.exists? :guid => guid

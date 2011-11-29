@@ -5,7 +5,7 @@ class TreatmeWorker < DJ::Worker
   @urls = ["/Auckland", "/Wellington", "/Christchurch","/Otago", "/Tauranga", "/Waikato" ]
   @urls.each_with_index do |url, i|
     doc = Nokogiri::HTML(open("http://www.treatme.co.nz"+url))
-      published  = (Time.now).hour>=12? Date.today+12.hours : Date.today-12.hours
+      published = PublishTime.new( 0 ).time
       if doc.at_css("#buyButton a")
         guid = doc.at_css("#buyButton a")[:href].split('=')[1]+(published.strftime(fmt='%d%m%g'))
       else

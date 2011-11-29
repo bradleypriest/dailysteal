@@ -6,7 +6,7 @@ class DailydoWorker < DJ::Worker
   @urls.each_with_index do |url, i|
         item = Nokogiri::HTML(open('http://dailydo.co.nz/'+url))
         picture = item.at_css("#div_tabresults td td td img")[:src]
-        published  = (Time.now+12.hours).hour>=9? Date.today+21.hours : Date.today-3.hours
+        published = PublishTime.new( 9 ).time
         guid = picture[/\d+/]+(published.strftime(fmt='%d%m%g'))
         href = url.present? ?  url : 'auckland'
         picture = picture[0..3] == "http" ? picture : 'http://www.dailydo.co.nz/'+picture

@@ -6,7 +6,7 @@ class DaysaleWorker < DJ::Worker
   doc = Nokogiri::HTML(open(url))
   doc.css(".smallprod_table , .mainprod_content").each do |item|
     href = item.at_css(".mainprod_manu a, .smallprod_manu a")[:href][/.+html/]
-    published  = (Time.now+12.hours).hour>=12? Date.today : Date.today-24.hours
+    published = PublishTime.new( 12 ).time
     guid = href[/\d+(?=.html)/]+(published.strftime(fmt='%d%m%g'))
 unless FeedEntry.exists? :guid => guid
   doc = Nokogiri::HTML(open(href))
