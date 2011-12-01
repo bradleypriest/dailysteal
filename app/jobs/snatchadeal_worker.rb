@@ -7,7 +7,7 @@ class SnatchadealWorker < DJ::Worker
 
     doc.css(".home-daily-deal").each do |item|
       url = item.at_css("h2 a")[:href]
-      unless url[/\d+/]
+      if url[/\d+/].present?
         published = PublishTime.new( 11 ).time
         guid = url[/\d+/]+(published.strftime(fmt='%d%m%g'))
         name = item.at_css("h2 a").text
