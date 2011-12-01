@@ -11,7 +11,7 @@ class GraboneWorker < DJ::Worker
         guid = picture[/\d\w+(?=\.jpg)/]+(published.strftime(fmt='%d%m%g'))
         unless Coupon.exists? :guid => guid
           name =  item.at_css(".deal-heading").text
-          url = item.at_css(".link-overlay")[:href]
+          url = item.at_css(".row-link")[:href]
           locations = url[/\w+/]
           if locations == 'auckland'
             location = 1

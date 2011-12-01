@@ -13,7 +13,7 @@ class SpreetsWorker < DJ::Worker
           name =  doc.at_css(".body h1").text.strip
           description = nil #doc.at_css("#dealbominfodesc").text.strip
           price =  doc.at_css(".info b").text
-          fullprice = doc.at_css(".fullprice b")
+          fullprice = doc.at_css(".fullprice b").text
 
           Coupon.create!(
           :name       => name,
