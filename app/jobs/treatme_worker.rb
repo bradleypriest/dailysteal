@@ -12,7 +12,7 @@ class TreatmeWorker < DJ::Worker
         guid = nil
       end
       unless !guid || Coupon.exists?(:guid => guid)
-        picture = doc.at_css("#mainDealImageBackground")[:src]
+        picture = doc.at_css("#mainDealImageForeground")[:src]
         name =  doc.at_css("#colMain h1").text
         description = doc.at_css("#voucherDescription").text.strip
         price =  doc.at_css("#buy .title h2 span").text
