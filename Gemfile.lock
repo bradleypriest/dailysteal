@@ -57,6 +57,7 @@ GEM
     httparty (0.7.8)
       crack (= 0.1.8)
     i18n (0.5.0)
+    kgio (2.7.4)
     launchy (0.4.0)
       configuration (>= 0.0.5)
       rake (>= 0.8.1)
@@ -94,6 +95,7 @@ GEM
       rake (>= 0.8.7)
       rdoc (~> 3.4)
       thor (~> 0.14.4)
+    raindrops (0.10.0)
     rake (0.8.7)
     rdoc (3.6.1)
     rest-client (1.6.1)
@@ -105,6 +107,10 @@ GEM
     treetop (1.4.9)
       polyglot (>= 0.3.1)
     tzinfo (0.3.28)
+    unicorn (4.3.1)
+      kgio (~> 2.6)
+      rack
+      raindrops (~> 0.7)
     webbynode (1.0.4.3)
       bundler (>= 0.9.26)
       domainatrix (>= 0.0.7)
@@ -135,6 +141,7 @@ DEPENDENCIES
   rest-client
   scoped-search
   sqlite3
+  unicorn
   webbynode
   whenever
   will_paginate (~> 3.0.pre2)
