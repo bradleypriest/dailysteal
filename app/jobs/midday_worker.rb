@@ -1,9 +1,9 @@
 class MiddayWorker
-  def self.enqueue
-    OneDayWorker.enqueue
-    SixShooterWorker.enqueue
-    ThreeDealsWorker.enqueue
-    DaysaleWorker.enqueue
-    CrazysalesWorker.enqueue
+  def perform
+    OneDayWorker.new.perform
+    SixShooterWorker.new.perform
+    ThreeDealsWorker.new.perform
+    DaysaleWorker.new.perform
+    CrazysalesWorker.new.perform
   end
 end
