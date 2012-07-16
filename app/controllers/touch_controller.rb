@@ -3,7 +3,7 @@ class TouchController < ApplicationController
     begin
       (params[:id] + "_worker").classify.constantize.new.perform
       render :text  => "OK"
-    rescue e
+    rescue Exception => e
       render :text => e.message
     end
   end
